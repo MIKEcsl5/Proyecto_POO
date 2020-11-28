@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package prueba;
 
 /**
  *
- * @author Miguel
+ * @author roble
  */
-public class Proyecto {
+public class Prueba {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Prueba, hola xdxd");
         System.out.println("PRUEBA GIT");
     }
     
