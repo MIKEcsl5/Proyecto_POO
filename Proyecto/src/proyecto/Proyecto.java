@@ -16,7 +16,7 @@ public class Proyecto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Prueba jsjsjs XD");
+        System.out.println("Prueba, hola xdxd");
     }
     
 }
