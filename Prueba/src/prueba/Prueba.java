@@ -24,6 +24,8 @@ public class Prueba {
         System.out.println("Editado a las 5:55pm");
         System.out.println("Cuarta prueba de Daniel rojas");
         System.out.println("Editado a las 5:58pm");
+        System.out.println("Quinta prueba de Daniel rojas");
+        System.out.println("Editado a las 6:12pm");
     }
     
 }
