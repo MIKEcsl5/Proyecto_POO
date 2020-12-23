@@ -5,6 +5,9 @@
  */
 package proyecto;
 
+//se importa la clase gerente del paquete Login
+import Login.Gerente;
+
 /**
  *
  * @author Miguel
@@ -21,6 +24,10 @@ public class Proyecto {
         Cancion cancion1 = new Cancion();
         cancion1.fechaPublicacion = input.readString();
         System.out.println("fecha"+cancion1.fechaPublicacion);
+        
+        //prueba: usar clases de otros paquetes
+        Gerente pruebaGerente = new Gerente();
+        System.out.println("toString Gerente:"+pruebaGerente.toString());
     }
 
 }
