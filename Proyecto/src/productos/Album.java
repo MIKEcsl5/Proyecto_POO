@@ -71,26 +71,6 @@ public class Album extends Producto {
     }
 
     @Override
-    public int getSku() {
-        return getSku();
-    }
-
-    @Override
-    public void setSku(int sku) {
-        this.setSku(sku);
-    }
-
-    @Override
-    public int getPrecio() {
-        return getPrecio();
-    }
-
-    @Override
-    public void setPrecio(int precio) {
-        this.setPrecio(precio);
-    }
-
-    @Override
     public String toString() {
         return super.toString() +"Album{" + "titulo=" + titulo + ", artista=" + artista + ", fechaPublicacion=" + fechaPublicacion + ", numCanciones=" + numCanciones + '}';
     }
