@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package productos;
 
 /**
  *
@@ -26,36 +26,6 @@ public class Cancion extends Album {
 
     public void setDuration(float duration) {
         this.duration = duration;
-    }
-
-    @Override
-    public String getTitulo() {
-        return titulo;
-    }
-
-    @Override
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    @Override
-    public String getArtista() {
-        return artista;
-    }
-
-    @Override
-    public void setArtista(String artista) {
-        this.artista = artista;
-    }
-
-    @Override
-    public String getFechaPublicacion() {
-        return fechaPublicacion;
-    }
-
-    @Override
-    public void setFechaPublicacion(String fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
     }
 
     @Override

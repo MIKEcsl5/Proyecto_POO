@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Login;
+package login;
 
 /**
  *
  * @author socce
  */
-public class Login {
-    public static void main(String[] args) {
-        
-    }
+public class Vendedor extends Empleado {
+    
 }
