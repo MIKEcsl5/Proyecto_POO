@@ -7,8 +7,23 @@ package login;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Vendedor extends Empleado {
+    
+    public Vendedor() {
+        super.setPinAcceso(3170);
+    }
+
+    public Vendedor(String nombre, int numEmpleado) {
+        super(nombre, numEmpleado);
+        super.setPinAcceso(3170);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +  "Vendedor{" + '}';
+    }
+    
     
 }

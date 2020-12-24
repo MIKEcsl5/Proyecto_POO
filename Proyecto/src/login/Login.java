@@ -7,7 +7,7 @@ package login;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Login {
     public static void main(String[] args) {

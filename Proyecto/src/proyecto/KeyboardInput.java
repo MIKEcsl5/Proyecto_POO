@@ -3,7 +3,7 @@ package proyecto;
 import java.io.*;
 /**
  * clase KeyboardInput que nos permite introducir datos mediante el teclado al implementarla
- * @author Daniel Rojas
+ * @author Equipo D
  */
 public class KeyboardInput {
     private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));

@@ -7,8 +7,36 @@ package login;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Gerente extends Empleado {
+
+    public Gerente() {
+    }
+
+    public Gerente(String nombre, int numEmpleado) {
+        super(nombre, numEmpleado);
+        super.setPinAcceso(2390);
+    }
+    
+    
+    
+    public static void vender(){
+        
+    }
+    
+    public static void buscar(){
+        
+    }
+    
+    public static void ponerCancion(){
+        
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Gerente{" + '}';
+    }
+    
     
 }

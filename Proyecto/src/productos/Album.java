@@ -5,6 +5,8 @@
  */
 package productos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Equipo D
@@ -14,7 +16,8 @@ public class Album extends Producto {
     String artista;
     String fechaPublicacion;
     int numCanciones = 0;
-
+    ArrayList<Cancion> canciones = new ArrayList<>();
+    
     public Album() {
     }
 

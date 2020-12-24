@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Miguel
+ * @author Equipo D
  */
 public class Proyecto {
 
@@ -27,16 +27,17 @@ public class Proyecto {
         ArrayList<Album> inventario = new ArrayList<>();
         
         while(opcion != 0){
-            System.out.print("Que desea realizar\n 1)Agregar album al inventario: ");
+            System.out.print("Que desea realizar\n 1)Iniciar sesion \n 2)Agregar album al inventario: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1: 
+                    
+                    break;
+                case 2:
                     nuevoAlbum(inventario);
                     inventario.forEach((album) -> {
                         System.out.println(album.toString());
                     });
-                    break;
-                case 2:
                     break;
                     
                 case 3:

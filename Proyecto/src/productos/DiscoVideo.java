@@ -7,7 +7,7 @@ package productos;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class DiscoVideo extends Producto{
     String artista;

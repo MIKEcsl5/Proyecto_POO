@@ -7,8 +7,32 @@ package login;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Acomodador extends Empleado {
+    
+    public Acomodador() {
+        super.setPinAcceso(4030);
+    }
+
+    public Acomodador(String nombre, int numEmpleado) {
+        super(nombre, numEmpleado);
+        super.setPinAcceso(4030);
+    }
+    
+    public static void buscar(){
+        
+    }
+    
+    public static void ponerCancion(){
+        
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Acomodador{" + '}';
+    }
+    
+    
     
 }
