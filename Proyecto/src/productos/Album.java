@@ -16,7 +16,7 @@ public class Album extends Producto {
     String artista;
     String fechaPublicacion;
     int numCanciones = 0;
-    ArrayList<Cancion> canciones = new ArrayList<>();
+    ArrayList<Cancion> Listacanciones = new ArrayList<>(); //Arreglo para la lista de canciones de un objeto de la clase Album
     
     public Album() {
     }

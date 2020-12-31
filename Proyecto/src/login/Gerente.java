@@ -12,6 +12,7 @@ package login;
 public class Gerente extends Empleado {
 
     public Gerente() {
+        super.setPinAcceso(2390); //PIN de accesos por defecto para un objeto de la clase Gerente
     }
 
     public Gerente(String nombre, int numEmpleado) {

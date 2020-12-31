@@ -5,11 +5,16 @@
  */
 package proyecto;
 
-//se importa la clase gerente del paquete Login
-import productos.Album;
-import productos.DiscoVideo;
-import login.Gerente;
+//se importa la clase gerente del paquete Login (usando asterisco despues del nombre del paquete y el "." se importan todas las clases publicas del paquete)
+import productos.*;
+import login.*;
+import caja.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -26,7 +31,7 @@ public class Proyecto {
         KeyboardInput input = new KeyboardInput();
         ArrayList<Album> inventario = new ArrayList<>();
         
-        while(opcion != 0){
+        while(opcion != 8){
             System.out.print("Que desea realizar\n 1)Iniciar sesion \n 2)Agregar album al inventario: ");
             opcion = input.readInteger();
             switch(opcion){
@@ -41,6 +46,12 @@ public class Proyecto {
                     break;
                     
                 case 3:
+                   //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
+                    Date date = new Date();
+                    DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
+                    String fecha = hourdateFormat.format(date);
+                    Caja nuevaCaja = new Caja();
+                    nuevaCaja.crearArchivoTicket(fecha);
                     break;
                     
                 case 4:
@@ -49,10 +60,8 @@ public class Proyecto {
                 case 5:
                     break;
                     
-                case 6:
-                    break;
-                    
-                case 7: 
+                case 8:
+                    System.out.println("Adios :)");
                     break;
                 default:
                     System.out.println(opcion + "no es opcion valida");

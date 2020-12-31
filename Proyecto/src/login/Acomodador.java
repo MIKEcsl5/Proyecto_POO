@@ -12,7 +12,7 @@ package login;
 public class Acomodador extends Empleado {
     
     public Acomodador() {
-        super.setPinAcceso(4030);
+        super.setPinAcceso(4030); //PIN de accesos por defecto para un objeto de la clase Acomodador
     }
 
     public Acomodador(String nombre, int numEmpleado) {
