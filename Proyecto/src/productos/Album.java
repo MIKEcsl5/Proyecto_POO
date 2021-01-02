@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Equipo D
  */
-public class Album extends Producto {
+public class Album extends Producto{
     String titulo;
     String artista;
     String fechaPublicacion;
@@ -78,7 +78,4 @@ public class Album extends Producto {
         return super.toString() +"Album{" + "titulo=" + titulo + ", artista=" + artista + ", fechaPublicacion=" + fechaPublicacion + ", numCanciones=" + numCanciones + '}';
     }
    
-    
-
-    
 }

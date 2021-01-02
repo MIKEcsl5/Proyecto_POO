@@ -36,7 +36,31 @@ public class Proyecto {
             opcion = input.readInteger();
             switch(opcion){
                 case 1: 
-                    
+                    int eleccion = 0;
+                    System.out.println("con que perfil quiere iniciar sesion\n 1)Gerebte\n 2)Vendedor\n 3)Acomodador");
+                    while(eleccion != 0){
+                        switch(opcion){
+                            case 1:
+                                Gerente perfilGerente = new Gerente();
+                                KeyboardInput tmpPIN = new KeyboardInput();
+                                System.out.println("ingrese PIN de acceso");
+                                
+                                if(tmpPIN.readInteger() != perfilGerente.getPinAcceso()){
+                                    
+                                }
+                                break;
+                            case 2:
+                                Vendedor perfilVendedor = new Vendedor();
+                                perfilVendedor.getPinAcceso();
+                                break;
+                            case 3:
+                                Acomodador perfilAcomodador = new Acomodador();
+                                break;
+                            default:
+                                System.out.println("Opcion no valida");
+                                break;
+                        }
+                    }
                     break;
                 case 2:
                     nuevoAlbum(inventario);
@@ -46,7 +70,7 @@ public class Proyecto {
                     break;
                     
                 case 3:
-                   //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
+                    //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
                     Date date = new Date();
                     DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
                     String fecha = hourdateFormat.format(date);
@@ -55,6 +79,9 @@ public class Proyecto {
                     break;
                     
                 case 4:
+                    Album album1 = new Album();
+                    Gerente pruebaGerente = new Gerente();
+                    pruebaGerente.vender(album1);
                     break;
                     
                 case 5:
@@ -88,11 +115,12 @@ public class Proyecto {
         
         
         
-        Gerente pruebaGerente = new Gerente();
-        System.out.println("toString Gerente:"+pruebaGerente.toString());     
+        /*Gerente pruebaGerente = new Gerente();
+        System.out.println("toString Gerente:"+pruebaGerente.toString());    
+        */
     }
     
-    public static void nuevoAlbum (ArrayList<Album> inventario){
+    public void nuevoAlbum (ArrayList<Object> inventario){
         KeyboardInput input = new KeyboardInput();
         Album nuevoAlbum = new Album();
         System.out.println("ingrese nombre del artista");

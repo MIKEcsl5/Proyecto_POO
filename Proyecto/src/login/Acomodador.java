@@ -20,11 +20,11 @@ public class Acomodador extends Empleado {
         super.setPinAcceso(4030);
     }
     
-    public static void buscar(){
+    public void buscar(){
         
     }
     
-    public static void ponerCancion(){
+    public void ponerCancion(){
         
     }
 

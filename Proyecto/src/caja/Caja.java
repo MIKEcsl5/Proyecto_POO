@@ -9,16 +9,26 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
+        
 /**
  *
  * @author socce
  */
 public class Caja {
-
+    Object producto;
+    
     public Caja() {
     }
     
-    public static void crearArchivoTicket(Object fecha){
+    public Caja(Object producto) {
+        this.producto = producto;
+    }
+    
+    public void cobrar(){
+        System.out.println("Total a pagar: ");
+    }
+    
+    public void crearArchivoTicket(Object fecha){
         Ticket nuevoTicket = new Ticket(fecha);
         try {
             String ruta = "tickets/"+nuevoTicket.fecha.toString()+".txt";

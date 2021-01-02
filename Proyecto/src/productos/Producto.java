@@ -41,5 +41,5 @@ public class Producto {
     public String toString() {
         return "Producto{" + "sku=" + sku + ", precio=" + precio + '}';
     }
-    
+
 }
