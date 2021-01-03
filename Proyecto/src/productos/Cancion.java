@@ -15,10 +15,11 @@ public class Cancion extends Album {
     public Cancion() {
     }
 
-    public Cancion(float duration, String titulo, String artista, String fechaPublicacion) {
-        super(titulo, artista, fechaPublicacion);
-        this.duration = duration;
+    public Cancion(String nombre, String artista, String fechaPublicacion, float duracion) {
+        super(nombre, artista, fechaPublicacion);
+        this.duration = duracion;
     }
+
 
     public float getDuration() {
         return duration;

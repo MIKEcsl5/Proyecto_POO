@@ -12,7 +12,6 @@ import java.util.ArrayList;
  * @author Equipo D
  */
 public class Album extends Producto{
-    String titulo;
     String artista;
     String fechaPublicacion;
     int numCanciones = 0;
@@ -21,32 +20,23 @@ public class Album extends Producto{
     public Album() {
     }
 
-    public Album(String titulo, String artista, String fechaPublicacion, int sku, int precio, int numCanciones) {
-        super(sku, precio);
-        this.titulo = titulo;
+    public Album(int sku, int precio, String nombre, String artista, String fechaPublicacion, int numCanciones) {
+        super(sku, precio, nombre);
         this.artista = artista;
         this.fechaPublicacion = fechaPublicacion;
         this.numCanciones = numCanciones;
     }
     
     /**
-     * Constructor utilizado para la clase Cancion
-     * @param titulo
+     * Constructor utilizado para la clase Cancion 
+     * @param nombre
      * @param artista
      * @param fechaPublicacion 
      */
-     public Album(String titulo, String artista, String fechaPublicacion) {
-        this.titulo = titulo;
+     public Album(String nombre, String artista, String fechaPublicacion) {
+        super(nombre);
         this.artista = artista;
         this.fechaPublicacion = fechaPublicacion;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public String getArtista() {
@@ -75,7 +65,9 @@ public class Album extends Producto{
 
     @Override
     public String toString() {
-        return super.toString() +"Album{" + "titulo=" + titulo + ", artista=" + artista + ", fechaPublicacion=" + fechaPublicacion + ", numCanciones=" + numCanciones + '}';
+        return super.toString() + "Album{" + "artista=" + artista + ", fechaPublicacion=" + fechaPublicacion + ", numCanciones=" + numCanciones + ", Listacanciones=" + Listacanciones + '}';
     }
+
+    
    
 }

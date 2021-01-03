@@ -14,8 +14,8 @@ public class Audifonos extends Producto{
     public Audifonos() {
     }
 
-    public Audifonos(int sku, int precio) {
-        super(sku, precio);
+    public Audifonos(int sku, int precio, String nombre) {
+        super(sku, precio, nombre);
     }
 
     @Override

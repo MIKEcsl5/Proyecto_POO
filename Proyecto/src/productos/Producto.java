@@ -10,15 +10,29 @@ package productos;
  * @author socce
  */
 public class Producto {
+    public String nombre;
     private int sku;
     private int precio = 0;
 
     public Producto() {
     }
 
-    public Producto(int sku, int precio) {
+    public Producto(int sku, int precio, String nombre) {
+        this.nombre = nombre;
         this.sku = sku;
         this.precio = precio;
+    }
+    
+    public Producto(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getSku() {
@@ -39,7 +53,8 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "sku=" + sku + ", precio=" + precio + '}';
+        return "Producto{" + "nombre=" + nombre + ", sku=" + sku + ", precio=" + precio + '}';
     }
+
 
 }

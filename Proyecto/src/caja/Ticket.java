@@ -20,10 +20,5 @@ public class Ticket {
         this.producto = producto;
         this.fecha = fecha;
     }
-    
-    public Ticket(Object fecha) {
-        this.fecha = fecha;
-    }
-    
-    
+
 }

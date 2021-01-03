@@ -5,10 +5,13 @@
  */
 package login;
 
+import caja.Caja;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import productos.Producto;
+import java.util.Iterator;
+import productos.Album;
+import proyecto.KeyboardInput;
 
 /**
  *
@@ -27,38 +30,66 @@ public class Gerente extends Empleado {
     
     
     
-    public void vender(Object producto) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-        System.out.println("Prueba obtener la clase que pertenece el objeto: "+producto.getClass());
-        Class objeto = producto.getClass();
+    public void venderProducto(ArrayList<Object> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+        Object producto = null;
+        producto = buscarProducto(inventario);
+        if(producto == null){
+            return;
+        }else{
+            Caja caja_1 = new Caja();
+            caja_1.cobrar(producto);
+            caja_1.crearArchivoTicket(producto);
+        }
         
-        //como esta funcion recibe un objeto de clase no es pecificada no es posible usar metodos tradicionales para acceder a sus atributos y metodos
-        //usando java.lang.reflect.Method; es posible "bascar si existe el metodo en el objetivo recibido y si si existe se invoca
-        //Method [] metodos = objeto.class.getMethods(); 
-        
-        
-        
-        
-        Method method = producto.getClass().getMethod("getPrecio");//creando un objeto Metodo buscando el metodo "getPrecio" del objeto recivido (producto)
-        System.out.println("Precio: "+ method.invoke(producto));//invocando el metodo al objeto recibido
-        
+        /*
         Method [] metodos = objeto.getMethods(); 
         System.out.println("Prueba precio:"+metodos[9].invoke(producto));
         System.out.println("Lista de atributos del objeto recivido");
         for(Method allMetodos: metodos){
             System.out.println("sdsadsdadsa XDXD: "+allMetodos);
-          
+        }*/
+        
+    }
+    
+    public Object buscarProducto(ArrayList<Object> inventario) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+        KeyboardInput entrada = new KeyboardInput();
+        System.out.println("Ingrese el nombre del producto que busca: ");
+        String busqueda = entrada.readString();
+        Method metodoGetNombre;
+        for(Object tmpProducto : inventario) {
+            metodoGetNombre = tmpProducto.getClass().getMethod("getNombre");
+            if(busqueda.equals(metodoGetNombre.invoke(tmpProducto))){
+                System.out.println("Detalles del producto: "+tmpProducto.toString());
+                return tmpProducto;
+            }
         }
-        
+        System.out.println("No se encontro el producto buscado");
+        return null;
+    }
+    
+    public void reproducirMultimedia(){
         
     }
     
-    public Object buscar(ArrayList<Object> inventario){
-        Object producto;
-        return producto;
+    public void acomodarInventario(ArrayList<Object> inventario){
+        
     }
     
-    public void ponerCancion(){
-        
+    public void imprimirListaInventario(ArrayList<Object> inventario){
+        Iterator iterador = inventario.iterator();
+        while(iterador.hasNext()){
+            System.out.println(iterador.next());
+        }
+    }
+    
+    public void agregarProducto (ArrayList<Object> inventario){
+        KeyboardInput input = new KeyboardInput();
+        Album nuevoAlbum = new Album();
+        System.out.println("ingrese nombre del artista");
+        nuevoAlbum.setArtista(input.readString());
+        System.out.println("ingrese nombre del titulo");
+        nuevoAlbum.setNombre(input.readString());
+        inventario.add(nuevoAlbum);
     }
 
     @Override

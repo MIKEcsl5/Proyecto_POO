@@ -6,15 +6,10 @@
 package proyecto;
 
 //se importa la clase gerente del paquete Login (usando asterisco despues del nombre del paquete y el "." se importan todas las clases publicas del paquete)
-import productos.*;
 import login.*;
-import caja.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
-
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Date;
+import productos.*;
 
 /**
  *
@@ -24,12 +19,15 @@ public class Proyecto {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.NoSuchMethodException
+     * @throws java.lang.IllegalAccessException
+     * @throws java.lang.reflect.InvocationTargetException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
         int opcion = 1;
         KeyboardInput input = new KeyboardInput();
-        ArrayList<Album> inventario = new ArrayList<>();
+        ArrayList<Object> inventario = new ArrayList<>();
         
         while(opcion != 8){
             System.out.print("Que desea realizar\n 1)Iniciar sesion \n 2)Agregar album al inventario: ");
@@ -37,7 +35,7 @@ public class Proyecto {
             switch(opcion){
                 case 1: 
                     int eleccion = 0;
-                    System.out.println("con que perfil quiere iniciar sesion\n 1)Gerebte\n 2)Vendedor\n 3)Acomodador");
+                    System.out.println("con que perfil quiere iniciar sesion\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
                     while(eleccion != 0){
                         switch(opcion){
                             case 1:
@@ -63,25 +61,20 @@ public class Proyecto {
                     }
                     break;
                 case 2:
-                    nuevoAlbum(inventario);
-                    inventario.forEach((album) -> {
-                        System.out.println(album.toString());
-                    });
+                   
                     break;
                     
                 case 3:
-                    //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
-                    Date date = new Date();
-                    DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
-                    String fecha = hourdateFormat.format(date);
-                    Caja nuevaCaja = new Caja();
-                    nuevaCaja.crearArchivoTicket(fecha);
+                    
                     break;
                     
                 case 4:
-                    Album album1 = new Album();
-                    Gerente pruebaGerente = new Gerente();
-                    pruebaGerente.vender(album1);
+                    Album titulo1 = new Album("Los Angeles Azules", "Alue Angels", "20/10/12");
+                    Audifonos audifonos1 = new Audifonos(231264, 1600, "Xiaomi");
+                    inventario.add(titulo1);
+                    inventario.add(audifonos1);
+                    Gerente pruebaGerente2 = new Gerente();
+                    pruebaGerente2.buscarProducto(inventario);
                     break;
                     
                 case 5:
@@ -120,14 +113,4 @@ public class Proyecto {
         */
     }
     
-    public void nuevoAlbum (ArrayList<Object> inventario){
-        KeyboardInput input = new KeyboardInput();
-        Album nuevoAlbum = new Album();
-        System.out.println("ingrese nombre del artista");
-        nuevoAlbum.setArtista(input.readString());
-        System.out.println("ingrese nombre del titulo");
-        nuevoAlbum.setTitulo(input.readString());
-        inventario.add(nuevoAlbum);
-    }
-
 }
