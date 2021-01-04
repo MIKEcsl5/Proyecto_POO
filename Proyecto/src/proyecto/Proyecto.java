@@ -30,14 +30,14 @@ public class Proyecto {
         ArrayList<Object> inventario = new ArrayList<>();
         
         while(opcion != 8){
-            System.out.print("Que desea realizar\n 1)Iniciar sesion \n 2)Agregar album al inventario: ");
+            System.out.print("Que desea realizar\n 1)Iniciar sesion \n 2)Prueba de venta de un producto\n 8)Salir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1: 
                     int eleccion = 0;
                     System.out.println("con que perfil quiere iniciar sesion\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
                     while(eleccion != 0){
-                        switch(opcion){
+                        switch(eleccion){
                             case 1:
                                 Gerente perfilGerente = new Gerente();
                                 KeyboardInput tmpPIN = new KeyboardInput();
@@ -61,7 +61,12 @@ public class Proyecto {
                     }
                     break;
                 case 2:
-                   
+                    Album titulo1 = new Album("album de canciones 1", "jose jose", "20/10/12");
+                    Audifonos audifonos1 = new Audifonos(231264, 1600, "audifonos sony");
+                    inventario.add(titulo1);
+                    inventario.add(audifonos1);
+                    Gerente pruebaGerente2 = new Gerente();
+                    pruebaGerente2.venderProducto(inventario);
                     break;
                     
                 case 3:
@@ -69,12 +74,6 @@ public class Proyecto {
                     break;
                     
                 case 4:
-                    Album titulo1 = new Album("album de canciones 1", "jose jose", "20/10/12");
-                    Audifonos audifonos1 = new Audifonos(231264, 1600, "audifonos sony");
-                    inventario.add(titulo1);
-                    inventario.add(audifonos1);
-                    Gerente pruebaGerente2 = new Gerente();
-                    pruebaGerente2.venderProducto(inventario);
                     break;
                     
                 case 5:
