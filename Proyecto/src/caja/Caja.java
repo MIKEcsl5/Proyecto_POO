@@ -20,7 +20,6 @@ import java.util.Date;
  * @author socce
  */
 public class Caja {
-    Object producto;
     
     public Caja() {
     }
@@ -33,7 +32,7 @@ public class Caja {
         System.out.println("Total a pagar: "+ getPrecio.invoke(producto));//invocando el metodo al objeto recibido
     }
     
-    public void crearArchivoTicket(Object Producto){
+    public void crearArchivoTicket(Object producto){
         //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
@@ -52,7 +51,7 @@ public class Caja {
             }
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(contenido);
+            bw.write(producto.toString());
             bw.close();
             System.out.println("Archivo creado con exito :3");
         }catch (Exception e) {

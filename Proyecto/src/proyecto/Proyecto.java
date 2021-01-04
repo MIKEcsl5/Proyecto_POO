@@ -69,12 +69,12 @@ public class Proyecto {
                     break;
                     
                 case 4:
-                    Album titulo1 = new Album("Los Angeles Azules", "Alue Angels", "20/10/12");
-                    Audifonos audifonos1 = new Audifonos(231264, 1600, "Xiaomi");
+                    Album titulo1 = new Album("album de canciones 1", "jose jose", "20/10/12");
+                    Audifonos audifonos1 = new Audifonos(231264, 1600, "audifonos sony");
                     inventario.add(titulo1);
                     inventario.add(audifonos1);
                     Gerente pruebaGerente2 = new Gerente();
-                    pruebaGerente2.buscarProducto(inventario);
+                    pruebaGerente2.venderProducto(inventario);
                     break;
                     
                 case 5:
