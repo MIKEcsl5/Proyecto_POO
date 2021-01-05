@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
-import productos.Album;
+import productos.*;
 import proyecto.KeyboardInput;
 
 /**
@@ -41,14 +41,13 @@ public class Gerente extends Empleado {
             caja_1.crearArchivoTicket(producto);
         }
         
-        /*
+        /* ciclo que muestra todos los metodos de un objeto
         Method [] metodos = objeto.getMethods(); 
         System.out.println("Prueba precio:"+metodos[9].invoke(producto));
         System.out.println("Lista de atributos del objeto recivido");
         for(Method allMetodos: metodos){
             System.out.println("sdsadsdadsa XDXD: "+allMetodos);
-        }*/
-        
+        }*/ 
     }
     
     public Object buscarProducto(ArrayList<Object> inventario) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
@@ -83,13 +82,37 @@ public class Gerente extends Empleado {
     }
     
     public void agregarProducto (ArrayList<Object> inventario){
+        int opcion = 0;
         KeyboardInput input = new KeyboardInput();
+        KeyboardInput datos = new KeyboardInput();
+        while (opcion != 4){
+            System.out.print("Que producto desea agrear\n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos\n 4)Cancelar: ");
+            opcion = input.readInteger();
+            switch(opcion){
+                case 1:
+                   inventario.add(new Album("aaaaaaaaaaa", "XDXDXD", "1/1/1"));//creacion de objeto en tiempo dinamico
+                   break;
+                   
+                case 2:
+                    inventario.add(new DiscoVideo());
+                    break;
+                case 3:
+                    inventario.add(new Audifonos());
+                    break;
+            }
+        }
+        
+       
         Album nuevoAlbum = new Album();
         System.out.println("ingrese nombre del artista");
         nuevoAlbum.setArtista(input.readString());
         System.out.println("ingrese nombre del titulo");
         nuevoAlbum.setNombre(input.readString());
         inventario.add(nuevoAlbum);
+    }
+    
+    public void editarProducto (ArrayList<Object> inventario){
+        
     }
 
     @Override

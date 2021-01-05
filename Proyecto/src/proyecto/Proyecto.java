@@ -63,10 +63,13 @@ public class Proyecto {
                 case 2:
                     Album titulo1 = new Album("album de canciones 1", "jose jose", "20/10/12");
                     Audifonos audifonos1 = new Audifonos(231264, 1600, "audifonos sony");
+                    inventario.add(new Album("aaaaaaaaaaa", "XDXDXD", "1/1/1"));//Prueba creacion de objeto en tiempo dinamico
                     inventario.add(titulo1);
                     inventario.add(audifonos1);
-                    Gerente pruebaGerente2 = new Gerente();
-                    pruebaGerente2.venderProducto(inventario);
+                    for(Object tmp : inventario){
+                        System.out.println(":oooooooooooooo"+tmp);
+                    }
+                   
                     break;
                     
                 case 3:
@@ -101,15 +104,6 @@ public class Proyecto {
         /*for(Album album : inventario){
             System.out.println(album);
         } */ 
-        
-        
-        
-        
-        
-        
-        /*Gerente pruebaGerente = new Gerente();
-        System.out.println("toString Gerente:"+pruebaGerente.toString());    
-        */
     }
     
 }

@@ -1,0 +1,1 @@
+Producto{nombre=audifonos sony, sku=231264, precio=1600}audifonos{}

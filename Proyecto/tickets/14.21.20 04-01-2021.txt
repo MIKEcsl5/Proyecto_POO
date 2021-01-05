@@ -1,0 +1,1 @@
+Producto{nombre=album de canciones 1, sku=0, precio=0}Album{artista=jose jose, fechaPublicacion=20/10/12, numCanciones=0, Listacanciones=[]}

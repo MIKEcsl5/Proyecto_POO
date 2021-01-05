@@ -53,7 +53,7 @@ public class Caja {
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(producto.toString());
             bw.close();
-            System.out.println("Archivo creado con exito :3");
+            System.out.println("Archivo de ticket creado con exito :3");
         }catch (Exception e) {
             e.printStackTrace();
         }
