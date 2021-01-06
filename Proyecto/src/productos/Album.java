@@ -20,7 +20,7 @@ public class Album extends Producto{
     public Album() {
     }
 
-    public Album(int sku, int precio, String nombre, String artista, String fechaPublicacion, int numCanciones) {
+    public Album(String sku, int precio, String nombre, String artista, String fechaPublicacion, int numCanciones) {
         super(sku, precio, nombre);
         this.artista = artista;
         this.fechaPublicacion = fechaPublicacion;

@@ -11,13 +11,13 @@ package productos;
  */
 public class Producto {
     public String nombre;
-    private int sku;
-    private int precio = 0;
+    public String sku;
+    public int precio = 0;
 
     public Producto() {
     }
 
-    public Producto(int sku, int precio, String nombre) {
+    public Producto(String sku, int precio, String nombre) {
         this.nombre = nombre;
         this.sku = sku;
         this.precio = precio;
@@ -35,11 +35,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int getSku() {
+    public String getSku() {
         return sku;
     }
 
-    public void setSku(int sku) {
+    public void setSku(String sku) {
         this.sku = sku;
     }
 

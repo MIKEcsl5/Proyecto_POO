@@ -17,7 +17,7 @@ public class DiscoVideo extends Producto{
     public DiscoVideo() {
     }
 
-    public DiscoVideo(String artista, int numCanciones, float duracion, int sku, int precio, String nombre) {
+    public DiscoVideo(String artista, int numCanciones, float duracion, String sku, int precio, String nombre) {
         super(sku, precio, nombre);
         this.artista = artista;
         this.numCanciones = numCanciones;
