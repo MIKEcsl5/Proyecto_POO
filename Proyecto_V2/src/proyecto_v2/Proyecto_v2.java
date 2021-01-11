@@ -35,9 +35,9 @@ public class Proyecto_v2 {
         Gerente pruebaGerente = new Gerente("Eduardo",1);
         empleados.add(pruebaGerente);
         
+        //Prueba inventario
         Audifonos audifonos1 = new Audifonos("1223",45,"Sony");
         inventario.add(audifonos1);
-        
         System.out.println(inventario);
         
         System.out.println(empleados);

@@ -17,7 +17,7 @@ import proyecto_v2.KeyboardInput;
  *
  * @author Equipo D
  */
-public class Gerente extends Empleado {
+public class Gerente extends Empleado{
 
     public Gerente() {
         super.setPinAcceso(2390); //PIN de accesos por defecto para un objeto de la clase Gerente
@@ -64,12 +64,13 @@ public class Gerente extends Empleado {
                 tmpProducto.setNombre(busqueda);
                
                 for(int i=0;i<inventario.size();i++) {
-                    if(inventario.get(i).getNombre()== busqueda){
+                    if(inventario.get(i).getNombre().equals(busqueda)){
                         System.out.println("Detalles del producto: "+inventario.get(i));
                         tmpProducto.setPrecio(inventario.get(i).getPrecio());
                         tmpProducto.setSku(inventario.get(i).getSku());
                         return tmpProducto;
                     } else {
+                        System.out.println("No se ha encontrado el producto");
                     }
                 }
                 break;
@@ -77,7 +78,19 @@ public class Gerente extends Empleado {
             case 2:
                 System.out.println("Ingrese el SKU del producto que busca: ");
                 busqueda = entrada.readString();
+                Producto tmpProducto2 = new Producto(); 
+                tmpProducto2.setSku(busqueda);
                 
+                for(int i=0;i<inventario.size();i++) {
+                    if(inventario.get(i).getSku().equals(busqueda)){
+                        System.out.println("Detalles del producto: "+inventario.get(i));
+                        tmpProducto2.setPrecio(inventario.get(i).getPrecio());
+                        tmpProducto2.setNombre(inventario.get(i).getNombre());
+                        return tmpProducto2;
+                    } else {
+                        System.out.println("No se ha encontrado el producto");
+                    }
+                }
                 break;
                 
             default:

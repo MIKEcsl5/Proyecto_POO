@@ -11,10 +11,10 @@ import modelo.productos.*;
  * @author roble
  */
 public interface metodosEmpleados {
-    Object buscarProducto(ArrayList<Object> inventario);
-    void venderProducto(ArrayList<Object> inventario);
-    void agregarProducto(ArrayList<Object> inventario);
+    //Object buscarProducto(ArrayList<Producto> inventario);
+    //void venderProducto(ArrayList<Object> inventario);
+    //void agregarProducto(ArrayList<Object> inventario);
     
-    void ponerCancion(String nombre, int sku);
+    //void ponerCancion(String nombre, int sku);
     
 }
