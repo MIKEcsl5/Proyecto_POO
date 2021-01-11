@@ -30,7 +30,7 @@ public class Gerente extends Empleado {
     
     
     
-    public void venderProducto(ArrayList<Object> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+    public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
         Object producto = null;
         producto = buscarProducto(inventario);
         if(producto == null){
@@ -50,7 +50,7 @@ public class Gerente extends Empleado {
         }*/ 
     }
     
-    public Object buscarProducto(ArrayList<Object> inventario) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+    public Object buscarProducto(ArrayList<Producto> inventario) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
         int opcion = 0;
         String busqueda;
         KeyboardInput entrada = new KeyboardInput();
@@ -60,12 +60,16 @@ public class Gerente extends Empleado {
             case 1:
                 System.out.println("Ingrese el nombre del producto que busca: ");
                 busqueda = entrada.readString();
-                Method metodoGetNombre;
-                for(Object tmpProducto : inventario) {
-                    metodoGetNombre = tmpProducto.getClass().getMethod("getNombre");
-                    if(busqueda.equals(metodoGetNombre.invoke(tmpProducto))){
-                        System.out.println("Detalles del producto: "+tmpProducto.toString());
+                Producto tmpProducto = new Producto(); 
+                tmpProducto.setNombre(busqueda);
+               
+                for(int i=0;i<inventario.size();i++) {
+                    if(inventario.get(i).getNombre()== busqueda){
+                        System.out.println("Detalles del producto: "+inventario.get(i));
+                        tmpProducto.setPrecio(inventario.get(i).getPrecio());
+                        tmpProducto.setSku(inventario.get(i).getSku());
                         return tmpProducto;
+                    } else {
                     }
                 }
                 break;
@@ -73,14 +77,7 @@ public class Gerente extends Empleado {
             case 2:
                 System.out.println("Ingrese el SKU del producto que busca: ");
                 busqueda = entrada.readString();
-                Method metodoGetSku;
-                for(Object tmpProducto : inventario) {
-                    metodoGetNombre = tmpProducto.getClass().getMethod("getSku");
-                    if(busqueda.equals(metodoGetNombre.invoke(tmpProducto))){
-                        System.out.println("Detalles del producto: "+tmpProducto.toString());
-                        return tmpProducto;
-                    }
-                }
+                
                 break;
                 
             default:
@@ -162,7 +159,7 @@ public class Gerente extends Empleado {
                     System.out.println("Ingrese el SKU de identificacion");
                     sku = tmpSku.readString();
                     
-                    inventario.add(new DiscoVideo(artista, numCanciones, duracion, sku, precio, nombre));//creacion de objeto en tiempo dinamico
+                    inventario.add(new DiscoVideo(duracion, artista, numCanciones, sku, precio, nombre));//creacion de objeto en tiempo dinamico
                     break;
                 case 3:
                     System.out.println("Ingrese marca y/o modelo de los audifonos: ");

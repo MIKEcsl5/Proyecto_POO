@@ -29,9 +29,19 @@ public class Proyecto_v2 {
         
         int opcion = 1;
         KeyboardInput input = new KeyboardInput();
-        ArrayList<Object> inventario = new ArrayList<>();
-        Object pruebaGerente;
-        pruebaGerente = new Gerente();
+        ArrayList<Empleado> empleados = new ArrayList<>();
+        ArrayList<Producto> inventario = new ArrayList<>();
+        
+        Gerente pruebaGerente = new Gerente("Eduardo",1);
+        empleados.add(pruebaGerente);
+        
+        Audifonos audifonos1 = new Audifonos("1223",45,"Sony");
+        inventario.add(audifonos1);
+        
+        System.out.println(inventario);
+        
+        System.out.println(empleados);
+        System.out.println("Nombre empleado prueba: "+empleados.get(0).getNombre());
         
         while(opcion != 8){
             System.out.print("Que desea realizar\n 1)Iniciar sesion\n 2)Prueba de venta de un producto\n 3)Buscar producto\n 4)Agregar Producto al inventario\n 8)Salir: ");
@@ -56,7 +66,9 @@ public class Proyecto_v2 {
                                 perfilVendedor.getPinAcceso();
                                 break;
                             case 3:
-                                Acomodador perfilAcomodador = new Acomodador();
+                                Gerente temporal = new Gerente();
+                                System.out.println(temporal.buscarProducto(inventario));
+                                
                                 break;
                             default:
                                 System.out.println("Opcion no valida");

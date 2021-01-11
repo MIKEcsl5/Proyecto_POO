@@ -160,7 +160,7 @@ public class Vendedor extends Empleado {
                     System.out.println("Ingrese el SKU de identificacion");
                     sku = tmpSku.readString();
                     
-                    inventario.add(new DiscoVideo(artista, numCanciones, duracion, sku, precio, nombre));//creacion de objeto en tiempo dinamico
+                    inventario.add(new DiscoVideo(duracion,artista, numCanciones, sku, precio, nombre));//creacion de objeto en tiempo dinamico
                     break;
                 case 3:
                     System.out.println("Ingrese marca y/o modelo de los audifonos: ");

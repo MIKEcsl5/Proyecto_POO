@@ -9,18 +9,18 @@ package modelo.productos;
  *
  * @author Equipo D
  */
-public class DiscoVideo extends Producto{
-    String artista;
-    int numCanciones;
+public class DiscoVideo extends Disco{
     float duracion;
 
     public DiscoVideo() {
     }
 
-    public DiscoVideo(String artista, int numCanciones, float duracion, String sku, int precio, String nombre) {
-        super(sku, precio, nombre);
-        this.artista = artista;
-        this.numCanciones = numCanciones;
+    public DiscoVideo(String artista, int numCanciones) {
+        super(artista, numCanciones);
+    }
+
+    public DiscoVideo(float duracion, String artista, int numCanciones, String sku, int precio, String nombre) {
+        super(artista, numCanciones, sku, precio, nombre);
         this.duracion = duracion;
     }
 
