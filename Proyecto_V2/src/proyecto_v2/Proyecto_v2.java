@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package proyecto_v2;
 
 //se importa la clase gerente del paquete Login (usando asterisco despues del nombre del paquete y el "." se importan todas las clases publicas del paquete)
-import login.*;
+import modelo.usuarios.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import productos.*;
+import modelo.productos.*;
 
 
 /**
  *
  * @author Equipo D
  */
-public class Proyecto {
+public class Proyecto_v2 {
 
     /**
      * @param args the command line arguments
