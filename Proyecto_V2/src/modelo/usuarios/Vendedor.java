@@ -5,13 +5,13 @@
  */
 package modelo.usuarios;
 
-import vista.caja.*;
+import vista.caja.Caja;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import modelo.productos.*;
-import proyecto_v2.KeyboardInput;
+import vista.KeyboardInput;
 
 /**
  *

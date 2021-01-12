@@ -1,5 +1,5 @@
 
-package proyecto_v2;
+package vista;
 import java.io.*;
 /**
  * clase KeyboardInput que nos permite introducir datos mediante el teclado al implementarla
