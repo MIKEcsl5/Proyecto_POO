@@ -8,8 +8,8 @@ package vista.menus;
  */
 public abstract class Menu {
     
-    public int respuesta;
-
+    protected int respuesta;
+    
     /**
      * El método despliegue es un método abstracto que debe ser implementado por cada menu específico
      * de el nivel de empleado (gerente, vendedor o acomodador) que se obtiene del
