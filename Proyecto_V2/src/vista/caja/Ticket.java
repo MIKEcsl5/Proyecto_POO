@@ -13,7 +13,7 @@ import modelo.productos.Producto;
  */
 public class Ticket {
     Producto producto;
-    Object fecha;
+    String fecha;
 
     public Ticket() {
     }
@@ -23,4 +23,26 @@ public class Ticket {
         this.fecha = fecha;
     }
 
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" + "producto=" + producto + ", fecha=" + fecha + '}';
+    }
+    
+    
 }

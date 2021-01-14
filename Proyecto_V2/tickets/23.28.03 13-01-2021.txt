@@ -1,0 +1,1 @@
+Producto{nombre=Sony, sku=1223, precio=900}
