@@ -46,9 +46,10 @@ public class Almacen {
                         tmpProducto.setPrecio(inventario.get(i).getPrecio());
                         tmpProducto.setSku(inventario.get(i).getSku());
                         return tmpProducto;
-                    } else {
-                        System.out.println("No se ha encontrado el producto");
-                    }
+                    } 
+                    
+                    System.out.println("No se ha encontrado el producto\n");
+                    return null;
                 }
                 break;
                 
@@ -64,9 +65,10 @@ public class Almacen {
                         tmpProducto2.setPrecio(inventario.get(i).getPrecio());
                         tmpProducto2.setNombre(inventario.get(i).getNombre());
                         return tmpProducto2;
-                    } else {
-                        System.out.println("No se ha encontrado el producto");
-                    }
+                    } 
+                    
+                    System.out.println("No se ha encontrado el producto\n");
+                    return null;
                 }
                 break;
                 
@@ -156,16 +158,6 @@ public class Almacen {
                     break;
             }
         }
-    }
-
-    public ArrayList<Producto> getInventario() {
-        return inventario;
-    }
-
-    public void setInventario(Producto producto) {
-        this.inventario.add(producto);
-    }
-    
-    
+    }  
 }
 
