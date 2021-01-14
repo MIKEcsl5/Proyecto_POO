@@ -25,24 +25,24 @@ public class Almacen {
     
     public Producto buscarProducto(ArrayList<Producto> inventario) {
         if(inventario.isEmpty()){
-            System.out.println("Inventario vacio\n");
+            System.out.println("\nInventario vacio......\n");
             return null;
         }
         int opcion = 0;
         String busqueda;
         KeyboardInput entrada = new KeyboardInput();
-        System.out.println("Buscar por\n 1)Nombre\n 2)SKU");
+        System.out.println("\nBuscar por\n 1)Nombre\n 2)SKU\n\nOpción: ");
         opcion = entrada.readInteger();
         switch(opcion){
             case 1:
-                System.out.println("Ingrese el nombre del producto que busca: ");
+                System.out.println("\nIngrese el nombre del producto que busca: ");
                 busqueda = entrada.readString();
                 Producto tmpProducto = new Producto(); 
                 tmpProducto.setNombre(busqueda);
                
                 for(int i=0;i<inventario.size();i++) {
                     if(inventario.get(i).getNombre().equals(busqueda)){
-                        System.out.println("Detalles del producto: "+inventario.get(i));
+                        System.out.println("\nDetalles del producto: "+inventario.get(i)+"\n");
                         tmpProducto.setPrecio(inventario.get(i).getPrecio());
                         tmpProducto.setSku(inventario.get(i).getSku());
                         return tmpProducto;
@@ -54,14 +54,14 @@ public class Almacen {
                 break;
                 
             case 2:
-                System.out.println("Ingrese el SKU del producto que busca: ");
+                System.out.println("\nIngrese el SKU del producto que busca: ");
                 busqueda = entrada.readString();
                 Producto tmpProducto2 = new Producto(); 
                 tmpProducto2.setSku(busqueda);
                 
                 for(int i=0;i<inventario.size();i++) {
                     if(inventario.get(i).getSku().equals(busqueda)){
-                        System.out.println("Detalles del producto: "+inventario.get(i));
+                        System.out.println("\nDetalles del producto: "+inventario.get(i)+"\n");
                         tmpProducto2.setPrecio(inventario.get(i).getPrecio());
                         tmpProducto2.setNombre(inventario.get(i).getNombre());
                         return tmpProducto2;
@@ -88,63 +88,63 @@ public class Almacen {
         KeyboardInput input = new KeyboardInput(), tmpNombre = new KeyboardInput(), tmpArtista = new KeyboardInput(), tmpFechaPublicacion = new KeyboardInput(), tmpNumCanciones = new KeyboardInput(), tmpPrecio = new KeyboardInput(), tmpSku = new KeyboardInput(), tmpDuracion = new KeyboardInput();
        
         while (opcion2 != 4){
-            System.out.print("Que producto desea agrear \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar: ");
+            System.out.print("\nQue producto desea agrear \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
             opcion2 = input.readInteger();
             switch(opcion2){
                 case 1:
-                    System.out.println("Ingrese nombre del disco de video: ");
+                    System.out.println("\nIngrese nombre del disco de video: ");
                     nombre = tmpNombre.readString();
                     
-                    System.out.println("Ingrese nombre del artista: ");
+                    System.out.println("\nIngrese nombre del artista: ");
                     artista = tmpArtista.readString();
                     
-                    System.out.println("Ingrese fecha de publicacion: ");
+                    System.out.println("\nIngrese fecha de publicacion: ");
                     fechaPublicacion = tmpFechaPublicacion.readString();
                     
-                    System.out.println("Ingrese el numero de canciones");
+                    System.out.println("\nIngrese el numero de canciones: ");
                     numCanciones = tmpNumCanciones.readInteger();
                     
-                    System.out.println("Ingrese el precio");
+                    System.out.println("\nIngrese el precio: ");
                     precio = tmpPrecio.readInteger();
                     
-                    System.out.println("Ingrese el SKU de identificacion");
+                    System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
                     inventario.add(new Album(sku, precio, nombre, artista, fechaPublicacion, numCanciones));//creacion de objeto en tiempo dinamico
                     break;
                    
                 case 2:
-                    System.out.println("Ingrese nombre del disco musical: ");
+                    System.out.println("\nIngrese nombre del disco musical: ");
                     nombre = tmpNombre.readString();
                     
-                    System.out.println("Ingrese nombre del artista: ");
+                    System.out.println("\nIngrese nombre del artista: ");
                     artista = tmpArtista.readString();
                     
-                    System.out.println("Ingrese fecha de publicacion: ");
+                    System.out.println("\nIngrese fecha de publicacion: ");
                     fechaPublicacion = tmpFechaPublicacion.readString();
                     
-                    System.out.println("Ingrese la duracion: ");
+                    System.out.println("\nIngrese la duracion: ");
                     duracion = tmpDuracion.readFloat();
                     
-                    System.out.println("Ingrese el numero de canciones");
+                    System.out.println("\nIngrese el numero de canciones: ");
                     numCanciones = tmpNumCanciones.readInteger();
                     
-                    System.out.println("Ingrese el precio");
+                    System.out.println("\nIngrese el precio: ");
                     precio = tmpPrecio.readInteger();
                     
-                    System.out.println("Ingrese el SKU de identificacion");
+                    System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
                     inventario.add(new DiscoVideo(duracion, artista, numCanciones, sku, precio, nombre));//creacion de objeto en tiempo dinamico
                     break;
                 case 3:
-                    System.out.println("Ingrese marca y/o modelo de los audifonos: ");
+                    System.out.println("\nIngrese marca y/o modelo de los audifonos: ");
                     nombre = tmpNombre.readString();
                     
-                    System.out.println("Ingrese el precio");
+                    System.out.println("\nIngrese el precio: ");
                     precio = tmpPrecio.readInteger();
                     
-                    System.out.println("Ingrese el SKU de identificacion");
+                    System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
                     inventario.add(new Audifonos(sku, precio, nombre));

@@ -51,7 +51,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "nombre=" + nombre + ", numEmpleado=" + numEmpleado + ", pinAcceso=" + pinAcceso + '}';
+        return "Empleado = " + "nombre: " + nombre + ", numEmpleado: " + numEmpleado + ", pinAcceso: " + pinAcceso + ", ";
     }
   
 }

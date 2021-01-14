@@ -72,7 +72,7 @@ public class Gerente extends Empleado{
 
     @Override
     public String toString() {
-        return super.toString() + "Gerente{" + '}';
+        return super.toString() + "Puesto: Gerente";
     }
     
     

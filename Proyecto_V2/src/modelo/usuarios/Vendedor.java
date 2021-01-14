@@ -31,7 +31,7 @@ public class Vendedor extends Empleado {
     }
     
     public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-        Venta venta_1 = null;
+        Venta venta_1 = new Venta();
         venta_1.venderProducto(inventario);
     }
     
@@ -69,7 +69,7 @@ public class Vendedor extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() +  "Vendedor{" + '}';
+        return super.toString() +  "Puesto: Vendedor";
     }
     
     

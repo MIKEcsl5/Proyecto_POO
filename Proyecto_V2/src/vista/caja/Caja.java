@@ -49,7 +49,7 @@ public class Caja {
             
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(producto.getClass().toString());
+            bw.write(producto.toString());
             bw.close();
             System.out.println("Archivo de ticket creado con exito :3");
             

@@ -39,7 +39,7 @@ public class Proyecto_v2 {
         System.out.println("Nombre empleado prueba: "+empleados.get(0).getNombre()+"\n");
         
         while(opcion != 8){
-            System.out.print("Que desea realizar\n 1)Iniciar sesion\n 2)Prueba de venta de un producto\n 3)Buscar producto\n 4)Agregar Producto al inventario\n 8)Salir: ");
+            System.out.print("¿Que desea realizar?\n 1)Iniciar sesion\n 2)Prueba de venta de un producto\n 3)Buscar producto\n 4)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1: 

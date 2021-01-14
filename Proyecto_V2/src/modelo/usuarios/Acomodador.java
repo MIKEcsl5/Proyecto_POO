@@ -30,7 +30,7 @@ public class Acomodador extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() + "Acomodador{" + '}';
+        return super.toString() + "Puesto: Acomodador";
     }
     
     
