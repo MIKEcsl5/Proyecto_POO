@@ -5,18 +5,20 @@
  */
 package vista.caja;
 
+import modelo.productos.Producto;
+
 /**
  *
  * @author socce
  */
 public class Ticket {
-    Object producto;
+    Producto producto;
     Object fecha;
 
     public Ticket() {
     }
 
-    public Ticket(Object producto, Object fecha) {
+    public Ticket(Producto producto, String fecha) {
         this.producto = producto;
         this.fecha = fecha;
     }

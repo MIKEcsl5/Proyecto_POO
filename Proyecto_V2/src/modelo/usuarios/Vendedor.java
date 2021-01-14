@@ -5,6 +5,7 @@
  */
 package modelo.usuarios;
 
+import controlador.Venta;
 import vista.caja.Caja;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -30,23 +31,8 @@ public class Vendedor extends Empleado {
     }
     
     public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-        Object producto = null;
-        producto = buscarProducto(inventario);
-        if(producto == null){
-            return;
-        }else{
-            Caja caja_1 = new Caja();
-            caja_1.cobrar(producto);
-            caja_1.crearArchivoTicket(producto);
-        }
-        
-        /* ciclo que muestra todos los metodos de un objeto
-        Method [] metodos = objeto.getMethods(); 
-        System.out.println("Prueba precio:"+metodos[9].invoke(producto));
-        System.out.println("Lista de atributos del objeto recivido");
-        for(Method allMetodos: metodos){
-            System.out.println("sdsadsdadsa XDXD: "+allMetodos);
-        }*/ 
+        Venta venta_1 = null;
+        venta_1.venderProducto(inventario);
     }
     
     public Producto buscarProducto(ArrayList<Producto> inventario){
