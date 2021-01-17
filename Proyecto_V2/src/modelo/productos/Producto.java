@@ -31,14 +31,6 @@ public class Producto {
         this.sku = sku;
         this.precio = precio;
     }
-    
-    /**
-     * Este es el constructor que únicamente asigna el nombre del producto.
-     * @param nombre Representa una cadena de caracteres que componen el modelo del producto.
-     */
-    public Producto(String nombre) {
-        this.nombre = nombre;
-    }
 
     //Métodos de información
     
