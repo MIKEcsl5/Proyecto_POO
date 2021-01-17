@@ -28,7 +28,8 @@ public class DiscoVideo extends Disco{
         this.duracion = duracion;
     }
 
-    public String info() {
+    @Override
+    public String toString() {
         return super.toString() + "\nDuracion: " + duracion;
     }
     

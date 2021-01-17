@@ -11,7 +11,7 @@ import vista.KeyboardInput;
 
 /**
  *
- * @author line_
+ * @author Daniel Rojas
  */
 public class Almacen {
     ArrayList<Producto> inventario;
@@ -23,76 +23,68 @@ public class Almacen {
         this.inventario = inventario;
     }
     
-    public Producto buscarProducto(ArrayList<Producto> inventario) {
+    public int buscarProducto() {
         if(inventario.isEmpty()){
             System.out.println("\nInventario vacio......\n");
-            return null;
+            return -1;
         }
         int opcion = 0;
         String busqueda;
+        Producto prodBuscado;
         KeyboardInput entrada = new KeyboardInput();
-        System.out.println("\nBuscar por\n 1)Nombre\n 2)SKU\n\nOpción: ");
+        System.out.println("\nBuscar por\n\t 1)Nombre\n\t 2)SKU\n\nOpción: ");
         opcion = entrada.readInteger();
         switch(opcion){
-            case 1:
+            case 1: //Busqueda por nombre
                 System.out.println("\nIngrese el nombre del producto que busca: ");
                 busqueda = entrada.readString();
-                Producto tmpProducto = new Producto(); 
-                tmpProducto.setNombre(busqueda);
-               
                 for(int i=0;i<inventario.size();i++) {
-                    if(inventario.get(i).getNombre().equals(busqueda)){
-                        System.out.println("\nDetalles del producto: "+inventario.get(i)+"\n");
-                        tmpProducto.setPrecio(inventario.get(i).getPrecio());
-                        tmpProducto.setSku(inventario.get(i).getSku());
-                        return tmpProducto;
+                    prodBuscado = inventario.get(i);
+                    if(prodBuscado.getNombre().equals(busqueda)){
+                        System.out.println(prodBuscado.toString());
+                        return i;
                     } 
-                    
-                    System.out.println("No se ha encontrado el producto\n");
-                    return null;
                 }
-                break;
+                System.out.println("No se ha encontrado el producto\n");
+                return -1;
                 
             case 2:
                 System.out.println("\nIngrese el SKU del producto que busca: ");
                 busqueda = entrada.readString();
-                Producto tmpProducto2 = new Producto(); 
-                tmpProducto2.setSku(busqueda);
-                
                 for(int i=0;i<inventario.size();i++) {
-                    if(inventario.get(i).getSku().equals(busqueda)){
-                        System.out.println("\nDetalles del producto: "+inventario.get(i)+"\n");
-                        tmpProducto2.setPrecio(inventario.get(i).getPrecio());
-                        tmpProducto2.setNombre(inventario.get(i).getNombre());
-                        return tmpProducto2;
+                    prodBuscado = inventario.get(i);
+                    if(prodBuscado.getSku().equals(busqueda)){
+                        System.out.println(prodBuscado.toString());
+                        return i;
                     } 
-                    
-                    System.out.println("No se ha encontrado el producto\n");
-                    return null;
                 }
-                break;
+                System.out.println("No se ha encontrado el producto\n");
+                return -1;
                 
             default:
                 System.out.println("Opcion no valida");
-                return null;
+                return -1;
                 
         }
-        return null;
        
     }
     
     public void agregarProducto (ArrayList<Producto> inventario){
-        int opcion2 = 0, numCanciones, precio; //String artista, int numCanciones, float duracion, String sku, int precio, String nombre
+        int opcion = 0, numCanciones, precio, cantidad; //String artista, int numCanciones, float duracion, String sku, int precio, String nombre
         String nombre, artista, sku, fechaPublicacion;
         float duracion;
-        KeyboardInput input = new KeyboardInput(), tmpNombre = new KeyboardInput(), tmpArtista = new KeyboardInput(), tmpFechaPublicacion = new KeyboardInput(), tmpNumCanciones = new KeyboardInput(), tmpPrecio = new KeyboardInput(), tmpSku = new KeyboardInput(), tmpDuracion = new KeyboardInput();
+        KeyboardInput input = new KeyboardInput(), tmpNombre = new KeyboardInput(), 
+                tmpArtista = new KeyboardInput(), tmpFechaPublicacion = new KeyboardInput(), 
+                tmpNumCanciones = new KeyboardInput(), tmpPrecio = new KeyboardInput(), 
+                tmpSku = new KeyboardInput(), tmpDuracion = new KeyboardInput(),
+                tmpCantidad = new KeyboardInput();
        
-        while (opcion2 != 4){
+        while (opcion != 4){
             System.out.print("\nQue producto desea agrear \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
-            opcion2 = input.readInteger();
-            switch(opcion2){
+            opcion = input.readInteger();
+            switch(opcion){
                 case 1:
-                    System.out.println("\nIngrese nombre del disco de video: ");
+                    System.out.println("\nIngrese nombre del disco de musica: ");
                     nombre = tmpNombre.readString();
                     
                     System.out.println("\nIngrese nombre del artista: ");
@@ -110,18 +102,19 @@ public class Almacen {
                     System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
-                    inventario.add(new Album(sku, precio, nombre, artista, fechaPublicacion, numCanciones));//creacion de objeto en tiempo dinamico
+                    System.out.println("\nIngrese la cantidad de productos para agregar: ");
+                    cantidad = tmpCantidad.readInteger();
+                    for (int i = 0; i < cantidad; i++) {
+                        inventario.add(new DiscoMusical(sku,precio,nombre,artista,fechaPublicacion,numCanciones));
+                    }
                     break;
                    
                 case 2:
-                    System.out.println("\nIngrese nombre del disco musical: ");
+                    System.out.println("\nIngrese nombre del disco de video: ");
                     nombre = tmpNombre.readString();
                     
                     System.out.println("\nIngrese nombre del artista: ");
                     artista = tmpArtista.readString();
-                    
-                    System.out.println("\nIngrese fecha de publicacion: ");
-                    fechaPublicacion = tmpFechaPublicacion.readString();
                     
                     System.out.println("\nIngrese la duracion: ");
                     duracion = tmpDuracion.readFloat();
@@ -135,8 +128,14 @@ public class Almacen {
                     System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
-                    inventario.add(new DiscoVideo(duracion, artista, numCanciones, sku, precio, nombre));//creacion de objeto en tiempo dinamico
+                    System.out.println("\nIngrese la cantidad de productos para agregar: ");
+                    cantidad = tmpCantidad.readInteger();
+                    for (int i = 0; i < cantidad; i++) {
+                        inventario.add(new DiscoVideo(duracion, artista, numCanciones, sku, precio, nombre));
+                    }
+                    //creacion de objeto en tiempo dinamico
                     break;
+                    
                 case 3:
                     System.out.println("\nIngrese marca y/o modelo de los audifonos: ");
                     nombre = tmpNombre.readString();
@@ -147,17 +146,31 @@ public class Almacen {
                     System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
-                    inventario.add(new Audifonos(sku, precio, nombre));
+                    System.out.println("\nIngrese la cantidad de productos para agregar: ");
+                    cantidad = tmpCantidad.readInteger();
+                    for (int i = 0; i < cantidad; i++) {
+                        inventario.add(new Audifonos(sku, precio, nombre));
+                    }
                     break;
+                    
                 case 4:
-                    System.out.println("");
-                    opcion2 = 4;
+                    System.out.println("\nOperacion cancelada");
+                    opcion = 4;
                     break;
                 default:
-                    System.out.println("Opcion no valida");
+                    System.out.println("\nOpcion no valida");
                     break;
             }
         }
-    }  
+    }
+    
+    public void llenarInventario(ArrayList<Producto> inventario){
+        for (int i = 0; i < 10; i++)
+            inventario.add(new DiscoMusical("M0"+i,250,"Disco de musica "+i,"Generico","2021",10));
+        for (int i = 0; i < 10; i++)
+            inventario.add(new DiscoVideo(50f, "Generico", 10, "V0"+i, 300, "Disco de video "+i));
+        for (int i = 0; i < 10; i++)
+            inventario.add(new Audifonos("A0"+i, 750, "Audifonos "+i));
+    }
 }
 

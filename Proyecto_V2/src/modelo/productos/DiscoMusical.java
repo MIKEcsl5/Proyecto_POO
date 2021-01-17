@@ -71,10 +71,13 @@ public class DiscoMusical extends Disco{
     
     /**
      * Este método despligega toda la información pertinente al disco musical
+     * @return 
      */
-    public void info() {
+    @Override
+    public String toString() {
         System.out.println(super.toString() + "\nFecha de Publicacion: " + fechaPublicacion + "\nLista de canciones: ");
         mostrarCanciones();
+        return "";
     }
     
     
