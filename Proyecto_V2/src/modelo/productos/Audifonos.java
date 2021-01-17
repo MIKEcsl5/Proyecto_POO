@@ -27,20 +27,8 @@ public class Audifonos extends Producto{
         super(sku, precio, nombre);
     }
 
-    //Métodos de información
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    //Métodos de información  
 
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
-    
     @Override
     public String toString() {
         return super.toString();

@@ -10,9 +10,9 @@ package modelo.productos;
  * @author socce
  */
 public class Producto {
-    public String nombre;
-    public String sku;
-    public int precio = 0;
+    protected String nombre;
+    protected String sku;
+    protected int precio = 0;
 
     /**
      * Es el constructor de la clase producto (no debe ser instanciado por si mismo como una entidad).

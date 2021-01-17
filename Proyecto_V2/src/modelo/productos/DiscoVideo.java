@@ -10,7 +10,7 @@ package modelo.productos;
  * @author Equipo D
  */
 public class DiscoVideo extends Disco{
-    float duracion;
+    private float duracion;
 
     public DiscoVideo() {
     }

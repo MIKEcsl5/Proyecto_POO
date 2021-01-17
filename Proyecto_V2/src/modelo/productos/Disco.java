@@ -10,8 +10,8 @@ package modelo.productos;
  * @author roble
  */
 public class Disco extends Producto{
-    String artista;
-    int numCanciones;
+    protected String artista;
+    protected int numCanciones;
 
     public Disco() {
     }

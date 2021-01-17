@@ -14,11 +14,9 @@ import vista.KeyboardInput;
  */
 public class DiscoMusical extends Disco{
 
-    String artista;
-    String fechaPublicacion;
-    int numCanciones = 0;
-    ArrayList<String> listaCanciones = new ArrayList<>(); //Arreglo para la lista de canciones de un objeto de la clase Album
-    KeyboardInput resp = new KeyboardInput();
+    private String fechaPublicacion;
+    private ArrayList<String> listaCanciones = new ArrayList<>(); //Arreglo para la lista de canciones de un objeto de la clase Album
+    private KeyboardInput resp = new KeyboardInput();
     
     /**
      * Este es el constructor vacio de un álbum.
