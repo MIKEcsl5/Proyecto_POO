@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package modelo.productos;
 
 import java.util.ArrayList;
+import vista.KeyboardInput;
 
 /**
  *
@@ -15,11 +12,24 @@ public class Album extends Producto{
     String artista;
     String fechaPublicacion;
     int numCanciones = 0;
-    ArrayList<String> Listacanciones = new ArrayList<>(); //Arreglo para la lista de canciones de un objeto de la clase Album
+    ArrayList<String> listaCanciones = new ArrayList<>(); //Arreglo para la lista de canciones de un objeto de la clase Album
+    KeyboardInput resp = new KeyboardInput();
     
+    /**
+     * Este es el constructor vacio de un álbum.
+     */
     public Album() {
     }
 
+    /**
+     * Este es el constructor completo de un álbum.
+     * @param sku Representa el código numérico de almacén con el que puede ser ubicado por los empleados.
+     * @param precio Representa una cantidad monetaria del costo del producto.
+     * @param nombre Representa una cadena de caracteres que componen el nombre del álbum..
+     * @param artista Representa una cadena de caracteres que componen el nombre del artista del álbum.
+     * @param fechaPublicacion Representa una cadena de caracteres que componen la fecha de publicación del álbum.
+     * @param numCanciones Representa la cantidad numérica de canciones incluídas en el álbum.
+     */
     public Album(String sku, int precio, String nombre, String artista, String fechaPublicacion, int numCanciones) {
         super(sku, precio, nombre);
         this.artista = artista;
@@ -28,10 +38,10 @@ public class Album extends Producto{
     }
     
     /**
-     * Constructor utilizado para la clase Cancion 
-     * @param nombre
-     * @param artista
-     * @param fechaPublicacion 
+     * Constructor utilizado para un album (solo se introducen nombre, artista y fecha de publicación).
+     * @param nombre Representa una cadena de caracteres que componen el nombre del álbum..
+     * @param artista Representa una cadena de caracteres que componen el nombre del artista del álbum.
+     * @param fechaPublicacion Representa una cadena de caracteres que componen la fecha de publicación del álbum.
      */
      public Album(String nombre, String artista, String fechaPublicacion) {
         super(nombre);
@@ -39,33 +49,48 @@ public class Album extends Producto{
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public String getArtista() {
-        return artista;
-    }
+     
+    //Métodos de información
 
     public void setArtista(String artista) {
         this.artista = artista;
-    }
-
-    public String getFechaPublicacion() {
-        return fechaPublicacion;
     }
 
     public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public int getNumCanciones() {
-        return numCanciones;
-    }
-
     public void setNumCanciones(int numCanciones) {
         this.numCanciones = numCanciones;
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + "Album{" + "artista=" + artista + ", fechaPublicacion=" + fechaPublicacion + ", numCanciones=" + numCanciones + ", Listacanciones=" + Listacanciones + '}';
+    
+    /**
+     * Este método permite agregar canciones a un álbum dependiendo del máximo especificado para el álbum.
+     */
+    public void setCanciones(){
+        String cancion;
+        for (int i = 0; i < numCanciones; i++) {
+            System.out.println("Ingrese nombre de la cancion " + i);
+            cancion = resp.readString();
+            listaCanciones.add(i, cancion);
+        }
+    }
+    
+    /**
+     * Este método permite desplegar en una lista con formato las canciones del álbum.
+     */
+    public void mostrarCanciones(){
+        if(numCanciones>0){
+            for (int i = 0; i < numCanciones; i++) {
+                System.out.println("\n\t" + (i+1) + ". " + listaCanciones.get(i));
+            }
+        }else
+            System.out.println("El album no cuenta con canciones. Revise el contenido con un Gerente");
+    }
+    
+    public void info() {
+        System.out.println(super.toString() + "\nArtista: " + artista + "\nFecha de Publicacion: " + fechaPublicacion + "\nNum. de Canciones: " + numCanciones + "\nLista de canciones: ");
+        mostrarCanciones();
     }
 
     

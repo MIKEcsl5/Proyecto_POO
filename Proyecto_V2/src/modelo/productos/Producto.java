@@ -14,19 +14,34 @@ public class Producto {
     public String sku;
     public int precio = 0;
 
+    /**
+     * Es el constructor de la clase producto (no debe ser instanciado por si mismo como una entidad).
+     */
     public Producto() {
     }
 
+    /**
+     * Este es el constructor completo de la clase Producto (no debe ser instanciada como una entidad).
+     * @param sku Representa el código numérico con el que se identifica en almacén un producto.
+     * @param precio Representa el valor monetario (numérico) del producto.
+     * @param nombre Representa una cadena de caracteres que componen el modelo del producto.
+     */
     public Producto(String sku, int precio, String nombre) {
         this.nombre = nombre;
         this.sku = sku;
         this.precio = precio;
     }
     
+    /**
+     * Este es el constructor que únicamente asigna el nombre del producto.
+     * @param nombre Representa una cadena de caracteres que componen el modelo del producto.
+     */
     public Producto(String nombre) {
         this.nombre = nombre;
     }
 
+    //Métodos de información
+    
     public String getNombre() {
         return nombre;
     }
@@ -35,16 +50,8 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getSku() {
-        return sku;
-    }
-
     public void setSku(String sku) {
         this.sku = sku;
-    }
-
-    public int getPrecio() {
-        return precio;
     }
 
     public void setPrecio(int precio) {
@@ -53,7 +60,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "nombre=" + nombre + ", sku=" + sku + ", precio=" + precio + '}';
+        return "Nombre: " + nombre + "\nSKU: " + sku + "\nPrecio: $" + precio;
     }
 
 

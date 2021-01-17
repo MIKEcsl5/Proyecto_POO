@@ -24,33 +24,12 @@ public class DiscoVideo extends Disco{
         this.duracion = duracion;
     }
 
-    public String getArtista() {
-        return artista;
-    }
-
-    public void setArtista(String artista) {
-        this.artista = artista;
-    }
-
-    public int getNumCanciones() {
-        return numCanciones;
-    }
-
-    public void setNumCanciones(int numCanciones) {
-        this.numCanciones = numCanciones;
-    }
-
-    public float getDuracion() {
-        return duracion;
-    }
-
     public void setDuracion(float duracion) {
         this.duracion = duracion;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + "discoVideo{" + "artista=" + artista + ", numCanciones=" + numCanciones + ", duracion=" + duracion + '}';
+    public String info() {
+        return super.toString() + "\nDuracion: " + duracion;
     }
     
 }

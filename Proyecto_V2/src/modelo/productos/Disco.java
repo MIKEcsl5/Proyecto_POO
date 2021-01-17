@@ -27,16 +27,8 @@ public class Disco extends Producto{
         this.numCanciones = numCanciones;
     }
 
-    public String getArtista() {
-        return artista;
-    }
-
     public void setArtista(String artista) {
         this.artista = artista;
-    }
-
-    public int getNumCanciones() {
-        return numCanciones;
     }
 
     public void setNumCanciones(int numCanciones) {
@@ -45,7 +37,7 @@ public class Disco extends Producto{
 
     @Override
     public String toString() {
-        return "Disco{" + "artista=" + artista + ", numCanciones=" + numCanciones + '}';
+        return "\nArtista: " + artista + "\nNum. de canciones: " + numCanciones;
     }
     
     
