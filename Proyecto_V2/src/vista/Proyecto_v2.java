@@ -50,7 +50,7 @@ public class Proyecto_v2 {
                         pass = input.readString();
                         if((usuario.getPuesto() == "Gerente") && (pass.equals(usuario.getPinAcceso() ) ) ){
                             cargoDeUsuarioActual = usuario.getPuesto();
-                            System.out.println("Acceso permitido");
+                            System.out.println("\nAcceso permitido");
                             opcion = 5;
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");

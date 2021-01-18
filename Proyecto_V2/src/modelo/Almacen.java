@@ -41,7 +41,7 @@ public class Almacen {
                 for(int i=0;i<inventario.size();i++) {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getNombre().equals(busqueda)){
-                        System.out.println(prodBuscado.toString());
+                        System.out.println("\n"+prodBuscado.toString());
                         
                         if (OP == 0)
                             return null;
@@ -62,7 +62,7 @@ public class Almacen {
                 for(int i=0;i<inventario.size();i++) {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getSku().equals(busqueda)){
-                        System.out.println(prodBuscado.toString());
+                        System.out.println("\n"+prodBuscado.toString());
                         
                         if (OP == 0)
                             return null;
