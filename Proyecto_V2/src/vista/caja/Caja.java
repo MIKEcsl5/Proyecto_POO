@@ -30,7 +30,7 @@ public class Caja {
     
     public void cobrar(Producto producto) throws IllegalAccessException, NoSuchMethodException, IllegalArgumentException, InvocationTargetException{
         int precio = producto.getPrecio(); 
-        System.out.println("Total a pagar: "+ precio);
+        System.out.println("\nTotal a pagar: "+ precio);
     }
     
     public void crearArchivoTicket(Producto producto){

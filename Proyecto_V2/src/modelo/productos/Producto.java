@@ -54,6 +54,11 @@ public class Producto {
         this.precio = precio;
     }
 
+    public int getPrecio() {
+        return precio;
+    }
+    
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + "\nSKU: " + sku + "\nPrecio: $" + precio;

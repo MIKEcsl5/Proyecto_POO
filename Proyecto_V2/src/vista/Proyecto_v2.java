@@ -38,15 +38,15 @@ public class Proyecto_v2 {
         empleados.put("prueba123",empleadoActual); //prueba de login con puesto gerente usuario: prueba123, pass: admin
       
         while(opcion != 5){ //ciclo del LogIn
-            System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Cancelar y salir");
+            System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Cancelar y salir\n\nOpción a elegir:");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
-                    System.out.println("Ingrese nombre de usuario: ");
+                    System.out.println("\nIngrese nombre de usuario: ");
                     user = input.readString();
                     if(empleados.containsKey(user)){
                         usuario = empleados.get(user);
-                        System.out.println("Ingrese contraseña: ");
+                        System.out.println("\nIngrese contraseña: ");
                         pass = input.readString();
                         if((usuario.getPuesto() == "Gerente") && (pass.equals(usuario.getPinAcceso() ) ) ){
                             cargoDeUsuarioActual = usuario.getPuesto();
@@ -111,30 +111,33 @@ public class Proyecto_v2 {
         System.out.println("Empleado en turno: "+usuario.getNombre());
        
         while(opcion != 8){
-            System.out.print("¿Que desea realizar?\n 1)Prueba de venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
+            System.out.print("\n¿Que desea realizar?\n 1)Prueba de venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
                     if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
-                        Producto tmpProd;
-                    inventario.add(new Audifonos("A1", 100, "sony"));
+                        inventario.add(new Audifonos("A1", 100, "sony"));
                         Gerente tmpUsuario = new Gerente();
-                        tmpProd = tmpUsuario.buscarProducto(inventario);
-                        System.out.println(tmpProd);
+                        tmpUsuario.venderProducto(inventario);
                     }
             
                     break;
                 case 2:
-                    Gerente temporal3 = new Gerente();
-                    temporal3.venderProducto(inventario);
-                    
-                    
+                    if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
+                        Producto tmpProd;
+                        inventario.add(new Audifonos("A2", 300, "Beats"));
+                        Gerente tmpUsuario2 = new Gerente();
+                        tmpProd = tmpUsuario2.buscarProducto(inventario);
+                        
+                    }
                     break;
                     
                 case 3:
-                    Gerente temporal = new Gerente();
-                    temporal.buscarProducto(inventario);
-                    break;
+                    if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
+                        Gerente tmpUsuario3 = new Gerente();
+                        tmpUsuario3.agregarProducto(inventario);
+                        
+                    }
                     
                 case 4:
                     Gerente temporal2 = new Gerente();

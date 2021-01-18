@@ -80,7 +80,7 @@ public class Almacen {
                 tmpCantidad = new KeyboardInput();
        
         while (opcion != 4){
-            System.out.print("\nQue producto desea agrear \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
+            System.out.print("\nQue producto desea agregar \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:

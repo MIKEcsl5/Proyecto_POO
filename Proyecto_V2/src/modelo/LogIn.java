@@ -21,7 +21,7 @@ public class LogIn {
         Empleado tmpEmpleado = null;
         
         try{
-            FileInputStream archivoDeEntrada = new FileInputStream("usuarios/pruebaNombre.ser");
+            FileInputStream archivoDeEntrada = new FileInputStream("usuarios/pruebaNombre.txt");
             ObjectInputStream objetoEntrada = new ObjectInputStream(archivoDeEntrada);
                 System.out.println("1");
                 tmpEmpleado = (Empleado) objetoEntrada.readObject();
