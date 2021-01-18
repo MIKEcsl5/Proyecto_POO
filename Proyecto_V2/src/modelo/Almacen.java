@@ -23,12 +23,12 @@ public class Almacen {
         this.inventario = inventario;
     }
     
-    public Producto buscarProducto() {
+    public Producto buscarProducto(int OP) {
         if(inventario.isEmpty()){
             System.out.println("\nInventario vacio......\n");
             return null;
         }
-        int opcion = 0;
+        int opcion;
         String busqueda;
         Producto prodBuscado;
         KeyboardInput entrada = new KeyboardInput();
@@ -42,7 +42,15 @@ public class Almacen {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getNombre().equals(busqueda)){
                         System.out.println(prodBuscado.toString());
-                        return inventario.remove(i);
+                        
+                        if (OP == 0)
+                            return null;
+                        
+                        
+                        else
+                          if (OP == 1)
+                              return inventario.remove(i);
+                   
                     } 
                 }
                 System.out.println("No se ha encontrado el producto\n");
@@ -55,7 +63,14 @@ public class Almacen {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getSku().equals(busqueda)){
                         System.out.println(prodBuscado.toString());
-                        return inventario.remove(i);
+                        
+                        if (OP == 0)
+                            return null;
+                        
+                        
+                        else
+                          if (OP == 1)
+                              return inventario.remove(i);
                     } 
                 }
                 System.out.println("No se ha encontrado el producto\n");

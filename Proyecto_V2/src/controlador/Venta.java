@@ -23,7 +23,7 @@ public class Venta {
     public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
         Producto producto = null;
         Almacen almacenTMP = new Almacen(inventario);
-        producto = almacenTMP.buscarProducto();
+        producto = almacenTMP.buscarProducto(1);
         if(producto == null){
             System.out.println("Venta fallida\n");
         }else{

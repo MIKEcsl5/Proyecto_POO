@@ -1,0 +1,3 @@
+Nombre: Sony
+SKU: A3
+Precio: $900

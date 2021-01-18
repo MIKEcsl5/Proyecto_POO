@@ -42,7 +42,7 @@ public class Gerente extends Empleado{
     public Producto buscarProducto(ArrayList<Producto> inventario) {
         Producto producto;
         Almacen almacen = new Almacen(inventario);
-        producto = almacen.buscarProducto();
+        producto = almacen.buscarProducto(0);
         return producto;
    
     }

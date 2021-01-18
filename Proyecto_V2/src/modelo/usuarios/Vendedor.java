@@ -38,7 +38,7 @@ public class Vendedor extends Empleado {
     public Producto buscarProducto(ArrayList<Producto> inventario){
         Producto producto;
         Almacen almacen = new Almacen();
-        producto = almacen.buscarProducto();
+        producto = almacen.buscarProducto(0);
         return producto;
        
     }
