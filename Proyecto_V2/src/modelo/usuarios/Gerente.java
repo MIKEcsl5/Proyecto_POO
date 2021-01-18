@@ -22,12 +22,13 @@ import controlador.Venta;
 public class Gerente extends Empleado{
 
     public Gerente() {
-        super.setPinAcceso(2390); //PIN de accesos por defecto para un objeto de la clase Gerente
+        super.setPinAcceso("2390"); //PIN de accesos por defecto para un objeto de la clase Gerente
+        
     }
 
-    public Gerente(String nombre, int numEmpleado) {
-        super(nombre, numEmpleado);
-        super.setPinAcceso(2390);
+    public Gerente(String nombre, int numEmpleado, String pass) {
+        super(nombre, numEmpleado, "Gerente");
+        super.setPinAcceso(pass);
     }
     
     

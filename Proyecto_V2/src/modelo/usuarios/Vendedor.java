@@ -22,12 +22,12 @@ import vista.KeyboardInput;
 public class Vendedor extends Empleado {
     
     public Vendedor() {
-        super.setPinAcceso(3170); //PIN de accesos por defecto para un objeto de la clase Vendedor
+        super.setPinAcceso("3170"); //PIN de accesos por defecto para un objeto de la clase Vendedor
     }
 
-    public Vendedor(String nombre, int numEmpleado) {
-        super(nombre, numEmpleado);
-        super.setPinAcceso(3170);
+    public Vendedor(String nombre, int numEmpleado, String pass) {
+        super(nombre, numEmpleado, "Vendedor");
+        super.setPinAcceso(pass);
     }
     
     public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
