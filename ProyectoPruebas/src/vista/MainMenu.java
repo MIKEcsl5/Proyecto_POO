@@ -38,11 +38,11 @@ public class MainMenu {
         Almacen almacen = new Almacen(inventario);
         almacen.llenarInventario();
         File archivoUsuario = null;
-        String pass, cargoDeUsuarioActual = null, nombreUsuario = null;
+        String pass, cargoDeUsuarioActual = null, nombreUsuario = null, numEmpleado;
         
         System.out.println("Prueba de commit");
-        while(opcion != 4){ //ciclo del LogIn
-            System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Cancelar y salir\n\nOpción a elegir:");
+        while(opcion != 5){ //ciclo del LogIn
+            System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Crear nuevo usuario\n 5)Cancelar y salir\n\nOpción a elegir:");
             opcion = input.readInteger();
             switch(opcion){
                 
@@ -61,7 +61,10 @@ public class MainMenu {
                         if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
                             System.out.println("\nAcceso permitido");
                             MenuGerente mainMenuGerente = new MenuGerente();
-                            mainMenuGerente.despliegue(nombreUsuario, almacen);
+                            numEmpleado = bufferReader.readLine();
+                            fileReader.close();
+                            bufferReader.close();
+                            mainMenuGerente.despliegue(nombreUsuario, numEmpleado ,almacen);
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");
                         }
@@ -72,7 +75,7 @@ public class MainMenu {
                     break;
                     
                     
-                case 2:
+                case 2: //LogIn Vendedor
                     System.out.println("\nIngrese nombre de usuario: ");
                     nombreUsuario = input.readString();
                     try{
@@ -86,7 +89,11 @@ public class MainMenu {
                         pass = input.readString();
                         if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
                             System.out.println("\nAcceso permitido");
-                            opcion = 5;
+                            MenuVendedor mainMenuVendedor = new MenuVendedor();
+                            numEmpleado = bufferReader.readLine();
+                            fileReader.close();
+                            bufferReader.close();
+                            mainMenuVendedor.despliegue(nombreUsuario, numEmpleado ,almacen);
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");
                         }
@@ -97,7 +104,7 @@ public class MainMenu {
                     break;
                     
                     
-                case 3:
+                case 3: //LogIn Acomodador
                     System.out.println("\nIngrese nombre de usuario: ");
                     nombreUsuario = input.readString();
                     try{
@@ -111,16 +118,24 @@ public class MainMenu {
                         pass = input.readString();
                         if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
                             System.out.println("\nAcceso permitido");
-                            opcion = 5;
+                            MenuAcomodador mainMenuAcomodador = new MenuAcomodador();
+                            numEmpleado = bufferReader.readLine();
+                            fileReader.close();
+                            bufferReader.close();
+                            mainMenuAcomodador.despliegue(nombreUsuario, numEmpleado ,almacen);
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");
                         }
                     }else{
                         System.out.println("Usuario incorrecto");
                     }
-                    }catch(Exception e){} 
+                    }catch(Exception e){}
                     break;
+                    
                 case 4:
+                    crearUsuario();
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("Opcion no valida");
@@ -131,32 +146,20 @@ public class MainMenu {
         
     }
     
-     /*public void crearUsuario(){
+     public static void crearUsuario(){
         int eleccion = 0;
-                    System.out.println("con que perfil quiere iniciar sesion\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
-                    while(eleccion != 0){
-                        switch(eleccion){
-                            case 1:
-                                Gerente perfilGerente = new Gerente();
-                                KeyboardInput tmpPIN = new KeyboardInput();
-                                System.out.println("ingrese PIN de acceso");
-                                
-                                if(tmpPIN.readInteger() != perfilGerente.getPinAcceso()){
-                                    
-                                }
-                                break;
-                            case 2:
-                                Vendedor perfilVendedor = new Vendedor();
-                                perfilVendedor.getPinAcceso();
-                                break;
-                            case 3:
-                                
-                                break;
-                            default:
-                                System.out.println("Opcion no valida");
-                                break;
-                        }
-                    }
-    } */
+        System.out.println("con que perfil quiere iniciar sesion\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
+        switch(eleccion){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                System.out.println("Opcion no valida");
+                break;
+        }        
+    }
     
 }

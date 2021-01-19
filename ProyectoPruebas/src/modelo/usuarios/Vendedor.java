@@ -24,26 +24,27 @@ public class Vendedor extends Empleado {
     public Vendedor() {
         super.setPinAcceso("3170"); //PIN de accesos por defecto para un objeto de la clase Vendedor
     }
-
-    public Vendedor(String nombre, int numEmpleado, String pass) {
-        super(nombre, numEmpleado, "endedor");
+    
+     public Vendedor(String nombre, String numEmpleado) {
+        super(nombre, numEmpleado);
+    }
+     
+    public Vendedor(String nombre, String numEmpleado, String pass) {
+        super(nombre, numEmpleado, "Vendedor", pass);
         super.setPinAcceso(pass);
     }
     
-    public void venderProducto(ArrayList<Producto> inventario, String nombreUsuario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+    public void venderProducto(Almacen almacen, String nombreUsuario) {
         Venta venta_1 = new Venta();
-        venta_1.venderProducto(inventario, nombreUsuario);
-    }
-    
-    public Producto buscarProducto(ArrayList<Producto> inventario){
-        Producto producto;
-        Almacen almacen = new Almacen();
-        producto = almacen.buscarProducto(0);
-        return producto;
+        venta_1.venderProducto(almacen, nombreUsuario);
        
     }
     
-    public void reproducirMultimedia(){
+    public void buscarProducto(Almacen almacen) {
+        almacen.buscarProducto(0);
+    }
+    
+    public void ponerCancion(Almacen almacen){
         
     }
     

@@ -21,11 +21,11 @@ public class Gerente extends Empleado  {
         super.setPinAcceso("2390"); //PIN de accesos por defecto para un objeto de la clase Gerente
     }
     
-    public Gerente(String nombre) {
-        super(nombre);
+    public Gerente(String nombre, String numEmpleado) {
+        super(nombre, numEmpleado);
     }
 
-    public Gerente(String nombre, int numEmpleado, String pass) {
+    public Gerente(String nombre, String numEmpleado, String pass) {
         super(nombre, numEmpleado, "Gerente", pass);
         super.setPinAcceso(pass);
     }

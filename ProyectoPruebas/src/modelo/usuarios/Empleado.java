@@ -12,19 +12,19 @@ package modelo.usuarios;
 public class Empleado {
     String nombre;
     String puesto;
-    int numEmpleado;
+    String numEmpleado;
     private String pinAcceso;
 
      public Empleado() {
-        this.numEmpleado = 0000;
+        this.numEmpleado = "0000";
     }
      
-    public Empleado(String nombre) {
+    public Empleado(String nombre, String numEmpleado) {
         this.nombre = nombre;
-        this.numEmpleado = 0000;
+        this.numEmpleado = numEmpleado;
     }
     
-    public Empleado(String nombre, int numEmpleado, String puesto, String contraseña) {
+    public Empleado(String nombre, String numEmpleado, String puesto, String contraseña) {
         this.nombre = nombre;
         this.numEmpleado = numEmpleado;
         this.puesto = puesto;
@@ -47,11 +47,11 @@ public class Empleado {
         this.puesto = puesto;
     }
 
-    public int getNumEmpleado() {
+    public String getNumEmpleado() {
         return numEmpleado;
     }
 
-    public void setNumEmpleado(int numEmpleado) {
+    public void setNumEmpleado(String numEmpleado) {
         this.numEmpleado = numEmpleado;
     }
 
