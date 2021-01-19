@@ -6,6 +6,9 @@
 package vista;
 
 //se importa la clase gerente del paquete Login (usando asterisco despues del nombre del paquete y el "." se importan todas las clases publicas del paquete)
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import modelo.usuarios.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -19,7 +22,7 @@ import modelo.productos.*;
  *
  * @author Equipo D
  */
-public class Proyecto_v2 {
+public class MainMenu {
 
     /**
      * @param args the command line arguments
@@ -30,26 +33,28 @@ public class Proyecto_v2 {
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         int opcion = 0;
         KeyboardInput input = new KeyboardInput();
-        Empleado usuario = null;
-        String user, pass, cargoDeUsuarioActual = null;
         
-        Hashtable<String, Empleado> empleados = new Hashtable<>();
-        Gerente empleadoActual = new Gerente("Eduardo", 23, "admin");
-        empleados.put("prueba123",empleadoActual); //prueba de login con puesto gerente usuario: prueba123, pass: admin
-      
+        File archivoUsuario = null;
+        String pass, cargoDeUsuarioActual = null, nombreUsuario = null;
+        System.out.println("Prueba de commit");
         while(opcion != 5){ //ciclo del LogIn
             System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Cancelar y salir\n\nOpción a elegir:");
             opcion = input.readInteger();
             switch(opcion){
+                
                 case 1:
                     System.out.println("\nIngrese nombre de usuario: ");
-                    user = input.readString();
-                    if(empleados.containsKey(user)){
-                        usuario = empleados.get(user);
+                    nombreUsuario = input.readString();
+                    try{
+                    archivoUsuario = new File("usuarios/"+nombreUsuario+".txt");
+                    if(archivoUsuario.exists()){
+                        cargoDeUsuarioActual = "Gerente";
+                        FileReader fileReader = new FileReader("usuarios/"+nombreUsuario+".txt");
+                        BufferedReader bufferReader = new BufferedReader(fileReader);
+                        nombreUsuario = bufferReader.readLine();
                         System.out.println("\nIngrese contraseña: ");
                         pass = input.readString();
-                        if((usuario.getPuesto() == "Gerente") && (pass.equals(usuario.getPinAcceso() ) ) ){
-                            cargoDeUsuarioActual = usuario.getPuesto();
+                        if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
                             System.out.println("\nAcceso permitido");
                             opcion = 5;
                         }else{
@@ -57,43 +62,58 @@ public class Proyecto_v2 {
                         }
                     }else{
                         System.out.println("Usuario incorrecto");
-                    }          
+                    }
+                    }catch(Exception e){}
                     break;
+                    
+                    
                 case 2:
-                    System.out.println("Ingrese nombre de usuario");
-                    user = input.readString();
-                    if(empleados.containsKey(user)){
-                        usuario = empleados.get(user);
-                        System.out.println("Ingrese contraseña");
+                    System.out.println("\nIngrese nombre de usuario: ");
+                    nombreUsuario = input.readString();
+                    try{
+                    archivoUsuario = new File("usuarios/"+nombreUsuario+".txt");
+                    if(archivoUsuario.exists()){
+                        cargoDeUsuarioActual = "Vendedor";
+                        FileReader fileReader = new FileReader("usuarios/"+nombreUsuario+".txt");
+                        BufferedReader bufferReader = new BufferedReader(fileReader);
+                        nombreUsuario = bufferReader.readLine();
+                        System.out.println("\nIngrese contraseña: ");
                         pass = input.readString();
-                        if((usuario.getPuesto() == "Vendedor") && (pass.equals(usuario.getPinAcceso() ) ) ){
-                            cargoDeUsuarioActual = usuario.getPuesto();
-                            System.out.println("Acceso permitido");
+                        if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
+                            System.out.println("\nAcceso permitido");
                             opcion = 5;
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");
                         }
                     }else{
                         System.out.println("Usuario incorrecto");
-                    }          
+                    }
+                    }catch(Exception e){}
                     break;
+                    
+                    
                 case 3:
-                    System.out.println("Ingrese nombre de usuario");
-                    user = input.readString();
-                    if(empleados.containsKey(user)){
-                        usuario = empleados.get(user);
-                        System.out.println("Ingrese contraseña");
+                    System.out.println("\nIngrese nombre de usuario: ");
+                    nombreUsuario = input.readString();
+                    try{
+                    archivoUsuario = new File("usuarios/"+nombreUsuario+".txt");
+                    if(archivoUsuario.exists()){
+                        cargoDeUsuarioActual = "Acomodador";
+                        FileReader fileReader = new FileReader("usuarios/"+nombreUsuario+".txt");
+                        BufferedReader bufferReader = new BufferedReader(fileReader);
+                        nombreUsuario = bufferReader.readLine();
+                        System.out.println("\nIngrese contraseña: ");
                         pass = input.readString();
-                        if((usuario.getPuesto() == "Acomodador") && (pass.equals(usuario.getPinAcceso() ) ) ){
-                            cargoDeUsuarioActual = usuario.getPuesto();
-                            System.out.println("Acceso permitido");
+                        if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
+                            System.out.println("\nAcceso permitido");
                             opcion = 5;
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");
                         }
                     }else{
                         System.out.println("Usuario incorrecto");
-                    }          
+                    }
+                    }catch(Exception e){} 
                     break;
                 case 4:
                     return;
@@ -108,26 +128,31 @@ public class Proyecto_v2 {
         
         opcion = 1;
         ArrayList<Producto> inventario = new ArrayList<>();
-        System.out.println("Empleado en turno: "+usuario.getNombre());
+        Almacen almacen = new Almacen(inventario);
+        almacen.llenarInventario();
+        System.out.println("Empleado en turno: "+nombreUsuario);
        
         while(opcion != 8){
-            System.out.print("\n¿Que desea realizar?\n 1)Prueba de venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
+            System.out.print("\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
                     if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
-                        inventario.add(new Audifonos("A1", 100, "sony"));
-                        Gerente tmpUsuario = new Gerente();
-                        tmpUsuario.venderProducto(inventario);
+                        Vendedor tmpUsuario = new Vendedor();
+                        inventario.add(new Audifonos("X2", 300, "Beats"));
+                        tmpUsuario.venderProducto(inventario, nombreUsuario);
                     }
             
                     break;
                 case 2:
                     if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
                         Producto tmpProd;
-                        inventario.add(new Audifonos("A2", 300, "Beats"));
-                        Gerente tmpUsuario2 = new Gerente();
-                        tmpProd = tmpUsuario2.buscarProducto(inventario);
+                        inventario.add(new Audifonos("x2", 300, "Beats"));
+                        inventario.add(new Audifonos("z1", 100, "sony"));
+                        Almacen almace = new Almacen();
+                        almace.llenarInventario();
+                        Acomodador acom1 = new Acomodador();
+                        acom1.ordenarInventario(inventario);
                         
                     }
                     break;
@@ -158,19 +183,7 @@ public class Proyecto_v2 {
             }
         }
         
-        /* Prueba ingresar datos
-        KeyboardInput input = new KeyboardInput();
-        System.out.println("Ingrese datos de la cancion");
-        Cancion cancion1 = new Cancion();
-        cancion1.fechaPublicacion = input.readString();
-        System.out.println("fecha"+cancion1.fechaPublicacion);
-        */
         
-        //prueba: usar clases de otros paquetes
-        //creando un areglo de album's
-        /*for(Album album : inventario){
-            System.out.println(album);
-        } */ 
     }
     
      /*public void crearUsuario(){

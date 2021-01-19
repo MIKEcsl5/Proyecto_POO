@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import modelo.productos.*;
 import vista.caja.Caja;
 import modelo.Almacen;
+import modelo.usuarios.Empleado;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Venta {
     public Venta() {
     }
    
-    public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+    public void venderProducto(ArrayList<Producto> inventario, String nombreUsuario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
         Producto producto = null;
         Almacen almacenTMP = new Almacen(inventario);
         producto = almacenTMP.buscarProducto(1);
@@ -29,7 +30,7 @@ public class Venta {
         }else{
             Caja caja_1 = new Caja();
             caja_1.cobrar(producto);
-            caja_1.crearArchivoTicket(producto);
+            caja_1.crearArchivoTicket(producto, nombreUsuario);
         }
     }
 }
