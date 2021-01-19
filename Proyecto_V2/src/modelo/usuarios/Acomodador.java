@@ -27,6 +27,10 @@ public class Acomodador extends Empleado {
     public void ponerCancion(){
         
     }
+    
+    public void acomodarInventario(){
+        
+    }
 
     @Override
     public String toString() {

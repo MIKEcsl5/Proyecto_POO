@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import modelo.*;
-import modelo.productos.Producto;
+import modelo.productos.*;
 
 
 
@@ -31,7 +31,7 @@ public class Proyecto_v2 {
         int opcion = 0;
         KeyboardInput input = new KeyboardInput();
         Empleado usuario = null;
-        String user, pass, cargoDeUsuarioActual;
+        String user, pass, cargoDeUsuarioActual = null;
         
         Hashtable<String, Empleado> empleados = new Hashtable<>();
         Gerente empleadoActual = new Gerente("Eduardo", 23, "admin");
@@ -42,11 +42,11 @@ public class Proyecto_v2 {
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
-                    System.out.println("Ingrese nombre de usuario");
+                    System.out.println("Ingrese nombre de usuario: ");
                     user = input.readString();
                     if(empleados.containsKey(user)){
                         usuario = empleados.get(user);
-                        System.out.println("Ingrese contraseña");
+                        System.out.println("Ingrese contraseña: ");
                         pass = input.readString();
                         if((usuario.getPuesto() == "Gerente") && (pass.equals(usuario.getPinAcceso() ) ) ){
                             cargoDeUsuarioActual = usuario.getPuesto();
@@ -97,26 +97,32 @@ public class Proyecto_v2 {
                     break;
                 case 4:
                     return;
+                case 5:
+                    break;
                 default:
                     System.out.println("Opcion no valida");
+                    break;
                     
             }
         } //ciclo del LogIn 
         
         opcion = 1;
         ArrayList<Producto> inventario = new ArrayList<>();
-        System.out.println("Empleado en turno:");
-        System.out.println(empleados);
-        
-        
+        System.out.println("Empleado en turno: "+usuario.getNombre());
+       
         while(opcion != 8){
-            System.out.print("¿Que desea realizar?\n 1)Iniciar sesion\n 2)Prueba de venta de un producto\n 3)Buscar producto\n 4)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
+            System.out.print("¿Que desea realizar?\n 1)Prueba de venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
-                case 1: 
-                    Object sd;
-                    CrearUsuario a =  new CrearUsuario("pruebaNombre", empleadoActual);
-                    new LogIn("pruebaNombre","2390");
+                case 1:
+                    if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
+                        Producto tmpProd;
+                    inventario.add(new Audifonos("A1", 100, "sony"));
+                        Gerente tmpUsuario = new Gerente();
+                        tmpProd = tmpUsuario.buscarProducto(inventario);
+                        System.out.println(tmpProd);
+                    }
+            
                     break;
                 case 2:
                     Gerente temporal3 = new Gerente();

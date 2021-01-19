@@ -23,10 +23,10 @@ public class Almacen {
         this.inventario = inventario;
     }
     
-    public int buscarProducto() {
+    public Producto buscarProducto() {
         if(inventario.isEmpty()){
             System.out.println("\nInventario vacio......\n");
-            return -1;
+            return null;
         }
         int opcion = 0;
         String busqueda;
@@ -42,11 +42,11 @@ public class Almacen {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getNombre().equals(busqueda)){
                         System.out.println(prodBuscado.toString());
-                        return i;
+                        return inventario.remove(i);
                     } 
                 }
                 System.out.println("No se ha encontrado el producto\n");
-                return -1;
+                return null;
                 
             case 2:
                 System.out.println("\nIngrese el SKU del producto que busca: ");
@@ -55,15 +55,15 @@ public class Almacen {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getSku().equals(busqueda)){
                         System.out.println(prodBuscado.toString());
-                        return i;
+                        return inventario.remove(i);
                     } 
                 }
                 System.out.println("No se ha encontrado el producto\n");
-                return -1;
+                return null;
                 
             default:
                 System.out.println("Opcion no valida");
-                return -1;
+                return null;
                 
         }
        

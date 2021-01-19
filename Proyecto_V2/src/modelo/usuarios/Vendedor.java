@@ -26,7 +26,7 @@ public class Vendedor extends Empleado {
     }
 
     public Vendedor(String nombre, int numEmpleado, String pass) {
-        super(nombre, numEmpleado, "Vendedor");
+        super(nombre, numEmpleado, "endedor");
         super.setPinAcceso(pass);
     }
     
@@ -38,7 +38,7 @@ public class Vendedor extends Empleado {
     public Producto buscarProducto(ArrayList<Producto> inventario){
         Producto producto;
         Almacen almacen = new Almacen();
-        producto = almacen.buscarProducto(inventario);
+        producto = almacen.buscarProducto();
         return producto;
        
     }
