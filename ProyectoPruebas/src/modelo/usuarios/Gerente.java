@@ -5,7 +5,6 @@
  */
 package modelo.usuarios;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import modelo.productos.*;
@@ -18,29 +17,27 @@ import controlador.Venta;
  */
 public class Gerente extends Empleado  {
 
-    public Gerente() {
+    public Gerente(){
         super.setPinAcceso("2390"); //PIN de accesos por defecto para un objeto de la clase Gerente
-        
+    }
+    
+    public Gerente(String nombre) {
+        super(nombre);
     }
 
     public Gerente(String nombre, int numEmpleado, String pass) {
-        super(nombre, numEmpleado, "Gerente");
+        super(nombre, numEmpleado, "Gerente", pass);
         super.setPinAcceso(pass);
     }
     
-    
-    
-    public void venderProducto(ArrayList<Producto> inventario, String nombreUsuario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+    public void venderProducto(Almacen almacen, String nombreUsuario) {
         Venta venta_1 = new Venta();
-        venta_1.venderProducto(inventario, nombreUsuario);
+        venta_1.venderProducto(almacen, nombreUsuario);
        
     }
     
-    public Producto buscarProducto(ArrayList<Producto> inventario) {
-        Producto producto;
-        Almacen almacen = new Almacen(inventario);
-        producto = almacen.buscarProducto(0);
-        return producto;
+    public void buscarProducto(Almacen almacen) {
+        almacen.buscarProducto(0);
     }
     
     
@@ -55,8 +52,7 @@ public class Gerente extends Empleado  {
         }
     }
     
-    public void agregarProducto (ArrayList<Producto> inventario){
-        Almacen almacen = new Almacen(inventario);
+    public void agregarProducto (Almacen almacen){
         almacen.agregarProducto();
     }
     

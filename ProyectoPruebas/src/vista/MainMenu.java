@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import modelo.*;
 import modelo.productos.*;
+import vista.menus.*;
 
 
 
@@ -33,18 +34,19 @@ public class MainMenu {
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         int opcion = 0;
         KeyboardInput input = new KeyboardInput();
-        
+        ArrayList<Producto> inventario = new ArrayList<>();
+        Almacen almacen = new Almacen(inventario);
+        almacen.llenarInventario();
         File archivoUsuario = null;
         String pass, cargoDeUsuarioActual = null, nombreUsuario = null;
         
-        
         System.out.println("Prueba de commit");
-        while(opcion != 5){ //ciclo del LogIn
+        while(opcion != 4){ //ciclo del LogIn
             System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Cancelar y salir\n\nOpción a elegir:");
             opcion = input.readInteger();
             switch(opcion){
                 
-                case 1:
+                case 1: //inicio de sesion gerente
                     System.out.println("\nIngrese nombre de usuario: ");
                     nombreUsuario = input.readString();
                     try{
@@ -58,7 +60,8 @@ public class MainMenu {
                         pass = input.readString();
                         if(pass.equals(bufferReader.readLine()) && (cargoDeUsuarioActual.equals(bufferReader.readLine())))  {                     
                             System.out.println("\nAcceso permitido");
-                            opcion = 5;
+                            MenuGerente mainMenuGerente = new MenuGerente();
+                            mainMenuGerente.despliegue(nombreUsuario, almacen);
                         }else{
                             System.out.println("Contraseña incorrecta o cargo incorrecto");
                         }
@@ -119,72 +122,12 @@ public class MainMenu {
                     break;
                 case 4:
                     return;
-                case 5:
-                    break;
                 default:
                     System.out.println("Opcion no valida");
                     break;
                     
             }
         } //ciclo del LogIn 
-        
-        opcion = 1;
-        ArrayList<Producto> inventario = new ArrayList<>();
-        Almacen almacen = new Almacen(inventario);
-        almacen.llenarInventario();
-        System.out.println("Empleado en turno: "+nombreUsuario);
-       
-        while(opcion != 8){
-            System.out.print("\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Salir\n\nOpción a elegir: ");
-            opcion = input.readInteger();
-            switch(opcion){
-                case 1:
-                    if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
-                        Vendedor tmpUsuario = new Vendedor();
-                        inventario.add(new Audifonos("X2", 300, "Beats"));
-                        tmpUsuario.venderProducto(inventario, nombreUsuario);
-                    }
-            
-                    break;
-                case 2:
-                    if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
-                        Producto tmpProd;
-                        inventario.add(new Audifonos("x2", 300, "Beats"));
-                        inventario.add(new Audifonos("z1", 100, "sony"));
-                        Almacen almace = new Almacen();
-                        almace.llenarInventario();
-                        Acomodador acom1 = new Acomodador();
-                        acom1.ordenarInventario(inventario);
-                        
-                    }
-                    break;
-                    
-                case 3:
-                    if(cargoDeUsuarioActual.equals("Gerente") || cargoDeUsuarioActual.equals("Vendedor")){
-                        Gerente tmpUsuario3 = new Gerente();
-                        tmpUsuario3.agregarProducto(inventario);
-                        
-                    }
-                    
-                case 4:
-                    Gerente temporal2 = new Gerente();
-                    temporal2.agregarProducto(inventario);
-                    
-                    break;
-                    
-                case 5:
-                    System.out.println("prueba :(");
-                    break;
-                    
-                case 8:
-                    System.out.println("Adios :)");
-                    break;
-                default:
-                    System.out.println(opcion + "no es opcion valida");
-                break;
-            }
-        }
-        
         
     }
     

@@ -19,6 +19,6 @@ public class MenuGerente extends Menu{
      */
     @Override
     public void despliegue() {
-        
+       
     }
 }

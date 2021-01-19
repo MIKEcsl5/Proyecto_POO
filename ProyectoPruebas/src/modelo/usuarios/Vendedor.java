@@ -6,7 +6,9 @@
 package modelo.usuarios;
 
 import controlador.Venta;
+import vista.caja.Caja;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import modelo.Almacen;
@@ -35,7 +37,7 @@ public class Vendedor extends Empleado {
     
     public Producto buscarProducto(ArrayList<Producto> inventario){
         Producto producto;
-        Almacen almacen = new Almacen(inventario);
+        Almacen almacen = new Almacen();
         producto = almacen.buscarProducto(0);
         return producto;
        
@@ -57,7 +59,7 @@ public class Vendedor extends Empleado {
     }
     
     public void agregarProducto (ArrayList<Producto> inventario){
-       Almacen almacen = new Almacen(inventario);
+       Almacen almacen = new Almacen();
        almacen.agregarProducto(); 
     }
     
