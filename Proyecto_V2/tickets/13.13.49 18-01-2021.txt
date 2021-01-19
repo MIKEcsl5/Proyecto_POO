@@ -1,3 +1,0 @@
-Nombre: sony
-SKU: A1
-Precio: $100

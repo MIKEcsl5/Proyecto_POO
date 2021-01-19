@@ -36,6 +36,7 @@ public class DiscoMusical extends Disco{
     public DiscoMusical(String sku, int precio, String nombre, String artista, String fechaPublicacion, int numCanciones) {
         super(artista, numCanciones, sku, precio, nombre);
         this.fechaPublicacion = fechaPublicacion;
+       
     }
      
     //Métodos de información
