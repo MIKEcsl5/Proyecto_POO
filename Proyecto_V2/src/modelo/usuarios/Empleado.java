@@ -11,8 +11,9 @@ package modelo.usuarios;
  */
 public class Empleado {
     String nombre;
+    String puesto;
     int numEmpleado;
-    private int pinAcceso;
+    private String pinAcceso;
 
     public Empleado() {
         this.nombre = "Nombre no asignado";
@@ -20,9 +21,10 @@ public class Empleado {
         
     }
     
-    public Empleado(String nombre, int numEmpleado) {
+    public Empleado(String nombre, int numEmpleado, String puesto) {
         this.nombre = nombre;
         this.numEmpleado = numEmpleado;
+        this.puesto = puesto;
     }
 
     public String getNombre() {
@@ -33,6 +35,14 @@ public class Empleado {
         this.nombre = nombre;
     }
 
+    public String getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
+    }
+
     public int getNumEmpleado() {
         return numEmpleado;
     }
@@ -41,13 +51,15 @@ public class Empleado {
         this.numEmpleado = numEmpleado;
     }
 
-    public int getPinAcceso() {
+    public String getPinAcceso() {
         return pinAcceso;
     }
 
-    public void setPinAcceso(int pinAcceso) {
+    public void setPinAcceso(String pinAcceso) {
         this.pinAcceso = pinAcceso;
     }
+
+   
 
     @Override
     public String toString() {

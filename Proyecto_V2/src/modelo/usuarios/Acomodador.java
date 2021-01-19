@@ -12,12 +12,12 @@ package modelo.usuarios;
 public class Acomodador extends Empleado {
     
     public Acomodador() {
-        super.setPinAcceso(4030); //PIN de accesos por defecto para un objeto de la clase Acomodador
+        super.setPinAcceso("4030"); //PIN de accesos por defecto para un objeto de la clase Acomodador
     }
 
-    public Acomodador(String nombre, int numEmpleado) {
-        super(nombre, numEmpleado);
-        super.setPinAcceso(4030);
+    public Acomodador(String nombre, int numEmpleado, String pass) {
+        super(nombre, numEmpleado, "Acomodador");
+        super.setPinAcceso(pass);
     }
     
     public void buscar(){
@@ -25,6 +25,10 @@ public class Acomodador extends Empleado {
     }
     
     public void ponerCancion(){
+        
+    }
+    
+    public void acomodarInventario(){
         
     }
 
