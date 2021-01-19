@@ -5,10 +5,13 @@
  */
 package modelo.usuarios;
 
+import vista.caja.Caja;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import modelo.productos.*;
+import vista.KeyboardInput;
 import modelo.*;
 import controlador.Venta;
 
@@ -16,7 +19,7 @@ import controlador.Venta;
  *
  * @author Equipo D
  */
-public class Gerente extends Empleado  {
+public class Gerente extends Empleado{
 
     public Gerente() {
         super.setPinAcceso(2390); //PIN de accesos por defecto para un objeto de la clase Gerente
@@ -29,9 +32,9 @@ public class Gerente extends Empleado  {
     
     
     
-    public void venderProducto(ArrayList<Producto> inventario, String nombreUsuario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+    public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
         Venta venta_1 = new Venta();
-        venta_1.venderProducto(inventario, nombreUsuario);
+        venta_1.venderProducto(inventario);
        
     }
     
@@ -41,14 +44,18 @@ public class Gerente extends Empleado  {
         
         producto = almacen.buscarProducto(inventario);
         return producto;
+   
     }
-    
     
     public void reproducirMultimedia(){
         
     }
     
-    public void imprimirListaInventario(ArrayList<Producto> inventario){
+    public void acomodarInventario(ArrayList<Object> inventario){
+        
+    }
+    
+    public void imprimirListaInventario(ArrayList<Object> inventario){
         Iterator iterador = inventario.iterator();
         while(iterador.hasNext()){
             System.out.println(iterador.next());
@@ -57,10 +64,10 @@ public class Gerente extends Empleado  {
     
     public void agregarProducto (ArrayList<Producto> inventario){
         Almacen almacen = new Almacen();
-        almacen.agregarProducto();
+        almacen.agregarProducto(inventario);
     }
     
-    public void editarProducto (ArrayList<Producto> inventario){
+    public void editarProducto (ArrayList<Object> inventario){
         
     }
 

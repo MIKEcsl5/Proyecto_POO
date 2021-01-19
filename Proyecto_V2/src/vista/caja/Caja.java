@@ -17,7 +17,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.productos.Producto;
-import modelo.usuarios.Empleado;
 
         
 /**
@@ -34,13 +33,14 @@ public class Caja {
         System.out.println("\nTotal a pagar: "+ precio);
     }
     
-    public void crearArchivoTicket(Producto producto, String nombreUsuario){
+    public void crearArchivoTicket(Producto producto){
         try {
             //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
             Date date = new Date();
             DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
             String fecha = hourdateFormat.format(date);
-           
+            
+            
             Ticket nuevoTicket = new Ticket(producto, fecha);
             String ruta = new String("tickets/"+nuevoTicket.getFecha()+".txt");
             File file = new File(ruta);

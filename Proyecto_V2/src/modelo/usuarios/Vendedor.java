@@ -30,9 +30,9 @@ public class Vendedor extends Empleado {
         super.setPinAcceso(pass);
     }
     
-    public void venderProducto(ArrayList<Producto> inventario, String nombreUsuario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
+    public void venderProducto(ArrayList<Producto> inventario) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
         Venta venta_1 = new Venta();
-        venta_1.venderProducto(inventario, nombreUsuario);
+        venta_1.venderProducto(inventario);
     }
     
     public Producto buscarProducto(ArrayList<Producto> inventario){
@@ -60,7 +60,7 @@ public class Vendedor extends Empleado {
     
     public void agregarProducto (ArrayList<Producto> inventario){
        Almacen almacen = new Almacen();
-       almacen.agregarProducto(); 
+       almacen.agregarProducto(inventario); 
     }
     
     public void editarProducto (ArrayList<Object> inventario){

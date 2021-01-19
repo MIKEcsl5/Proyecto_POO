@@ -69,7 +69,7 @@ public class Almacen {
        
     }
     
-    public void agregarProducto (){
+    public void agregarProducto (ArrayList<Producto> inventario){
         int opcion = 0, numCanciones, precio, cantidad; //String artista, int numCanciones, float duracion, String sku, int precio, String nombre
         String nombre, artista, sku, fechaPublicacion;
         float duracion;
@@ -164,7 +164,7 @@ public class Almacen {
         }
     }
     
-    public void llenarInventario(){
+    public void llenarInventario(ArrayList<Producto> inventario){
         for (int i = 0; i < 10; i++)
             inventario.add(new DiscoMusical("M0"+i,250,"Disco de musica "+i,"Generico","2021",10));
         for (int i = 0; i < 10; i++)
