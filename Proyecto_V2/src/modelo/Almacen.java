@@ -23,7 +23,7 @@ public class Almacen {
         this.inventario = inventario;
     }
     
-    public int buscarProducto() {
+    public int buscarProducto(ArrayList<Producto> inventario) {
         if(inventario.isEmpty()){
             System.out.println("\nInventario vacio......\n");
             return -1;
