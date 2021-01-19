@@ -37,10 +37,6 @@ public class Producto {
     public String getNombre() {
         return nombre;
     }
-
-    public int getPrecio() {
-        return precio;
-    }
     
     public String getSku(){
         return sku;
