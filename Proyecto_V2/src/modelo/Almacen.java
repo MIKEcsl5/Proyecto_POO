@@ -23,12 +23,12 @@ public class Almacen {
         this.inventario = inventario;
     }
     
-    public Producto buscarProducto(int OP) {
+    public int buscarProducto(ArrayList<Producto> inventario) {
         if(inventario.isEmpty()){
             System.out.println("\nInventario vacio......\n");
-            return null;
+            return -1;
         }
-        int opcion;
+        int opcion = 0;
         String busqueda;
         Producto prodBuscado;
         KeyboardInput entrada = new KeyboardInput();
@@ -41,20 +41,12 @@ public class Almacen {
                 for(int i=0;i<inventario.size();i++) {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getNombre().equals(busqueda)){
-                        System.out.println("\n"+prodBuscado.toString());
-                        
-                        if (OP == 0)
-                            return null;
-                        
-                        
-                        else
-                          if (OP == 1)
-                              return inventario.remove(i);
-                   
+                        System.out.println(prodBuscado.toString());
+                        return i;
                     } 
                 }
                 System.out.println("No se ha encontrado el producto\n");
-                return null;
+                return -1;
                 
             case 2:
                 System.out.println("\nIngrese el SKU del producto que busca: ");
@@ -62,23 +54,16 @@ public class Almacen {
                 for(int i=0;i<inventario.size();i++) {
                     prodBuscado = inventario.get(i);
                     if(prodBuscado.getSku().equals(busqueda)){
-                        System.out.println("\n"+prodBuscado.toString());
-                        
-                        if (OP == 0)
-                            return null;
-                        
-                        
-                        else
-                          if (OP == 1)
-                              return inventario.remove(i);
+                        System.out.println(prodBuscado.toString());
+                        return i;
                     } 
                 }
                 System.out.println("No se ha encontrado el producto\n");
-                return null;
+                return -1;
                 
             default:
                 System.out.println("Opcion no valida");
-                return null;
+                return -1;
                 
         }
        
@@ -95,7 +80,7 @@ public class Almacen {
                 tmpCantidad = new KeyboardInput();
        
         while (opcion != 4){
-            System.out.print("\nQue producto desea agregar \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
+            System.out.print("\nQue producto desea agrear \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
