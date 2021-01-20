@@ -7,7 +7,7 @@ import vista.KeyboardInput;
 
 /**
  *
- * @author Daniel Rojas
+ * @author Equipo D
  */
 public class MenuAcomodador extends Menu{
     

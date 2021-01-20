@@ -5,15 +5,13 @@
  */
 package controlador;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import modelo.productos.*;
 import vista.caja.Caja;
 import modelo.Almacen;
 
 /**
  *
- * @author line_
+ * @author Equipo D
  */
 public class Venta {
 

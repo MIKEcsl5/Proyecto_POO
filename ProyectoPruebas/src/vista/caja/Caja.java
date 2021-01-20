@@ -9,20 +9,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.productos.Producto;
-import modelo.usuarios.Empleado;
 
         
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Caja {
     

@@ -11,7 +11,7 @@ import vista.KeyboardInput;
 
 /**
  *
- * @author Daniel Rojas
+ * @author Equipo D
  */
 public class Almacen {
     public ArrayList<Producto> inventario;

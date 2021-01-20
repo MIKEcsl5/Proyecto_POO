@@ -7,7 +7,7 @@ package modelo.productos;
 
 /**
  *
- * @author roble
+ * @author Equipo D
  */
 public class Disco extends Producto{
     protected String artista;

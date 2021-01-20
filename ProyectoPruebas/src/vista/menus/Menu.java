@@ -6,11 +6,11 @@ import modelo.Almacen;
 /**
  * Esta clase supone un menú generico de entrada al usuario donde se presenta el acceso de un empleado,
  * este deberá identificarse para acceder a ciertas características según su nivel de usuario.
- * @author Daniel Rojas
+ * @author Equipo D
  */
 public abstract class Menu {
     
-    protected int respuesta;
+   
     
     /**
      * El método despliegue es un método abstracto que debe ser implementado por cada menu específico

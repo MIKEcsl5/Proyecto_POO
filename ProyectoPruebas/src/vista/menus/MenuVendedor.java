@@ -2,13 +2,12 @@
 package vista.menus;
 
 import modelo.Almacen;
-import modelo.usuarios.Gerente;
 import modelo.usuarios.Vendedor;
 import vista.KeyboardInput;
 
 /**
  *
- * @author Daniel Rojas
+ * @author Equipo D
  */
 public class MenuVendedor extends Menu{
     

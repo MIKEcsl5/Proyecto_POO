@@ -10,7 +10,7 @@ import modelo.productos.Producto;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class PrecioComparator implements Comparator{
 

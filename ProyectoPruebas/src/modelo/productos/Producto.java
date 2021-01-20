@@ -7,7 +7,7 @@ package modelo.productos;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Producto {
     protected String nombre;

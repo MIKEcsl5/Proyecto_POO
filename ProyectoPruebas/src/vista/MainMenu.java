@@ -5,15 +5,12 @@
  */
 package vista;
 
-//se importa la clase gerente del paquete Login (usando asterisco despues del nombre del paquete y el "." se importan todas las clases publicas del paquete)
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import modelo.usuarios.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Hashtable;
-import modelo.*;
+import modelo.*; //usando " .* " se importa todo el paquete
 import modelo.productos.*;
 import vista.menus.*;
 

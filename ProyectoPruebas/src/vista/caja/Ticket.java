@@ -9,7 +9,7 @@ import modelo.productos.Producto;
 
 /**
  *
- * @author socce
+ * @author Equipo D
  */
 public class Ticket {
     Producto producto;

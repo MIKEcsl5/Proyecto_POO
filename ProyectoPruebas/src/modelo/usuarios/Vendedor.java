@@ -6,14 +6,9 @@
 package modelo.usuarios;
 
 import controlador.Venta;
-import vista.caja.Caja;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Iterator;
 import modelo.Almacen;
-import modelo.productos.*;
-import vista.KeyboardInput;
+
 
 /**
  *
@@ -48,23 +43,18 @@ public class Vendedor extends Empleado {
         
     }
     
-    public void acomodarInventario(ArrayList<Object> inventario){
+    public void acomodarInventario(Almacen almacen){
         
     }
     
-    public void imprimirListaInventario(ArrayList<Object> inventario){
-        Iterator iterador = inventario.iterator();
+    public void imprimirListaInventario(Almacen almacen){
+        Iterator iterador = almacen.inventario.iterator();
         while(iterador.hasNext()){
             System.out.println(iterador.next());
         }
     }
     
-    public void agregarProducto (ArrayList<Producto> inventario){
-       Almacen almacen = new Almacen();
-       almacen.agregarProducto(); 
-    }
-    
-    public void editarProducto (ArrayList<Object> inventario){
+    public void editarProducto (Almacen almacen){
         
     }
 
