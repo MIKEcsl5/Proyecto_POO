@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 package modelo.aparatosDeAmbiente;
-import controlador.AparatoAmbiental;
-import java.util.ArrayList;
 import modelo.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
 /**
  *
- * @author roble
+ * @author Equipo D
  */
 public class VideoPlayed {
 

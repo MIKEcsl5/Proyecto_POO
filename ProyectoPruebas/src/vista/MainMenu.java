@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import modelo.*; //usando " .* " se importa todo el paquete
 import modelo.productos.*;
 import vista.menus.*;
-import modelo.aparatosDeAmbiente.VideoPlayed;
 
 
 
@@ -40,7 +39,7 @@ public class MainMenu {
         
         System.out.println("Prueba de commit");
         while(opcion != 5){ //ciclo del LogIn
-            System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 4)Crear nuevo usuario\n 5)Cancelar y salir\n\nOpción a elegir:");
+            System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 5)Cancelar y salir\n\nOpción a elegir:");
             opcion = input.readInteger();
             switch(opcion){
                 
@@ -130,34 +129,14 @@ public class MainMenu {
                     }catch(Exception e){}
                     break;
                     
-                case 4:
-                    crearUsuario();
-                    break;
                 case 5:
                     return;
+                    
                 default:
                     System.out.println("Opcion no valida");
                     break;
                     
             }
-        } //ciclo del LogIn 
-        
+        } //ciclo del LogIn  
     }
-    
-     public static void crearUsuario(){
-        int eleccion = 0;
-        System.out.println("\n¿Con que perfil quiere iniciar sesion?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
-        switch(eleccion){
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                System.out.println("Opcion no valida");
-                break;
-        }        
-    }
-    
 }

@@ -12,7 +12,7 @@ import vista.KeyboardInput;
 
 /**
  *
- * @author roble
+ * @author Equipo D
  */
 public class MusicPlayed {
 

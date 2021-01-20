@@ -29,40 +29,15 @@ public class Almacen {
             System.out.println("\nInventario vacio......\n");
             return null;
         }
-        int opcion;
         String busqueda;
         Producto prodBuscado;
-        KeyboardInput entrada = new KeyboardInput();
-        System.out.println("\nBuscar por\n\t 1)Nombre\n\t 2)SKU\n\nOpción: ");
-        opcion = entrada.readInteger();
-        switch(opcion){
-            case 1: //Busqueda por nombre
-                System.out.println("\nIngrese el nombre del producto que busca: ");
+        KeyboardInput entrada = new KeyboardInput();  
+        
+                System.out.println("\nIngrese el nombre o SKU del producto que busca: ");
                 busqueda = entrada.readString();
                 for(int i=0;i<inventario.size();i++) {
                     prodBuscado = inventario.get(i);
-                    if(prodBuscado.getNombre().equals(busqueda)){
-                        System.out.println("\n"+prodBuscado.toString());
-                        
-                        if (OP == 0)
-                            return inventario.get(i);
-                        
-                        
-                        else
-                          if (OP == 1)
-                              return inventario.remove(i);
-                   
-                    } 
-                }
-                System.out.println("\nNo se ha encontrado el producto\n");
-                return productoVacio;
-                
-            case 2:
-                System.out.println("\nIngrese el SKU del producto que busca: ");
-                busqueda = entrada.readString();
-                for(int i=0;i<inventario.size();i++) {
-                    prodBuscado = inventario.get(i);
-                    if(prodBuscado.getSku().equals(busqueda)){
+                    if((prodBuscado.getNombre().equals(busqueda)) || (prodBuscado.getSku().equals(busqueda)) ){
                         System.out.println("\n"+prodBuscado.toString());
                         
                         if (OP == 0)
@@ -75,14 +50,10 @@ public class Almacen {
                     } 
                 }
                 System.out.println("\nNo se ha encontrado el producto\n");
-                return productoVacio;
-                
-            default:
-                return productoVacio;
-                
+                return productoVacio;  
         }
        
-    }
+    
     
     public void agregarProducto (){
         int opcion = 0, numCanciones, precio, cantidad; //String artista, int numCanciones, float duracion, String sku, int precio, String nombre
@@ -146,9 +117,8 @@ public class Almacen {
                     System.out.println("\nIngrese la cantidad de productos para agregar: ");
                     cantidad = tmpCantidad.readInteger();
                     for (int i = 0; i < cantidad; i++) {
-                        inventario.add(new DiscoVideo(duracion, artista, numCanciones, sku, precio, nombre));
+                        inventario.add(new DiscoVideo(duracion, artista, numCanciones, sku, precio, nombre)); //creacion de objeto en tiempo de ejecucion
                     }
-                    //creacion de objeto en tiempo dinamico
                     break;
                     
                 case 3:
