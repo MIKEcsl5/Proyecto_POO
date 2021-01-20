@@ -35,19 +35,11 @@ public class Vendedor extends Acomodador {
        
     }
     
-    public void acomodarInventario(Almacen almacen){
-        
-    }
-    
     public void imprimirListaInventario(Almacen almacen){
         Iterator iterador = almacen.inventario.iterator();
         while(iterador.hasNext()){
             System.out.println(iterador.next());
         }
-    }
-    
-    public void editarProducto (Almacen almacen){
-        
     }
 
     @Override
