@@ -14,7 +14,7 @@ import modelo.Almacen;
  *
  * @author Equipo D
  */
-public class Vendedor extends Empleado {
+public class Vendedor extends Acomodador {
     
     public Vendedor() {
         super.setPinAcceso("3170"); //PIN de accesos por defecto para un objeto de la clase Vendedor
@@ -23,9 +23,9 @@ public class Vendedor extends Empleado {
      public Vendedor(String nombre, String numEmpleado) {
         super(nombre, numEmpleado);
     }
-     
+
     public Vendedor(String nombre, String numEmpleado, String pass) {
-        super(nombre, numEmpleado, "Vendedor", pass);
+        super(nombre, numEmpleado, pass);
         super.setPinAcceso(pass);
     }
     
@@ -33,14 +33,6 @@ public class Vendedor extends Empleado {
         Venta venta_1 = new Venta();
         venta_1.venderProducto(almacen, nombreUsuario);
        
-    }
-    
-    public void buscarProducto(Almacen almacen) {
-        almacen.buscarProducto(0);
-    }
-    
-    public void ponerCancion(Almacen almacen){
-        
     }
     
     public void acomodarInventario(Almacen almacen){
