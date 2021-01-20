@@ -53,13 +53,21 @@ public class VideoPlayed {
         System.out.println("¿Que dico desea tocar?");
         productoTMP = almacen.buscarProducto(0);
         Class a = DiscoVideo.class;
+        Class b = Producto.class;
         
         if(productoTMP.getClass() == a){
             System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
         }
         
         else{
-            System.out.println("\nEste producto no es un disco de video");
+            if (productoTMP.getClass()== b){
+                System.out.println("Intente buscar otro disco: ");
+            }
+            
+            else{
+               System.out.println("\nEste producto no es un disco de video"); 
+            }
+           
         }
     }
     
@@ -68,13 +76,20 @@ public class VideoPlayed {
         System.out.println("¿Que dico desea tocar?");
         productoTMP = almacen.buscarProducto(0);
         Class a = DiscoMusical.class;
+        Class b = Producto.class;
         
         if(productoTMP.getClass() == a){
             System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
         }
         
         else{
-            System.out.println("Este producto no es un disco musical");
+            if (productoTMP.getClass()== b){
+                System.out.println("Intente buscar otro disco: ");
+            }
+            
+            else{
+               System.out.println("\nEste producto no es un disco musical"); 
+            }
         }
     }
 }

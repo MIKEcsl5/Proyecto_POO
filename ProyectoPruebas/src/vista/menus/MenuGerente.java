@@ -44,11 +44,7 @@ public class MenuGerente extends Menu{
                         empleadoGerente.agregarProducto(almacen);
                 case 4:
                     break;
-                    
-                case 5:
-                    System.out.println("prueba :(");
-                    break;
-                    
+ 
                 case 8:
                     System.out.println("Adios "+empleadoGerente.getNombre()+"\n");
                     break;

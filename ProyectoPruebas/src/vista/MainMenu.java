@@ -93,10 +93,10 @@ public class MainMenu {
                             bufferReader.close();
                             mainMenuVendedor.despliegue(nombreUsuario, numEmpleado ,almacen);
                         }else{
-                            System.out.println("Contraseña incorrecta o cargo incorrecto");
+                            System.out.println("\nContraseña incorrecta o cargo incorrecto\n");
                         }
                     }else{
-                        System.out.println("Usuario incorrecto");
+                        System.out.println("\nUsuario incorrecto\n");
                     }
                     }catch(Exception e){}
                     break;
@@ -122,10 +122,10 @@ public class MainMenu {
                             bufferReader.close();
                             mainMenuAcomodador.despliegue(nombreUsuario, numEmpleado ,almacen);
                         }else{
-                            System.out.println("Contraseña incorrecta o cargo incorrecto");
+                            System.out.println("\nContraseña incorrecta o cargo incorrecto\n");
                         }
                     }else{
-                        System.out.println("Usuario incorrecto");
+                        System.out.println("\nUsuario incorrecto\n");
                     }
                     }catch(Exception e){}
                     break;
