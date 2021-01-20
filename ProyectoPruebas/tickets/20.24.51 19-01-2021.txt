@@ -1,0 +1,3 @@
+Nombre: Sony
+SKU: A6
+Precio: $900

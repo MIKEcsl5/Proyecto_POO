@@ -44,7 +44,7 @@ public class Almacen {
                         System.out.println("\n"+prodBuscado.toString());
                         
                         if (OP == 0)
-                            return null;
+                            return inventario.get(i);
                         
                         
                         else
@@ -65,7 +65,7 @@ public class Almacen {
                         System.out.println("\n"+prodBuscado.toString());
                         
                         if (OP == 0)
-                            return null;
+                            return inventario.get(i);
                         
                         
                         else

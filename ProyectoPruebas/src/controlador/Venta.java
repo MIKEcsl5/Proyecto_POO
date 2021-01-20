@@ -23,7 +23,7 @@ public class Venta {
         producto = almacen.buscarProducto(1);
         if(producto == null){
             System.out.println("Venta fallida\n");
-//        }else{
+        }else{
             Caja caja_1 = new Caja();
             caja_1.cobrar(producto);
             caja_1.crearArchivoTicket(producto, nombreUsuario);

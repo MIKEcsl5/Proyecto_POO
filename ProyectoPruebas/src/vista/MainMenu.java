@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import modelo.*; //usando " .* " se importa todo el paquete
 import modelo.productos.*;
 import vista.menus.*;
+import modelo.aparatosDeAmbiente.VideoPlayed;
 
 
 
@@ -63,10 +64,10 @@ public class MainMenu {
                             bufferReader.close();
                             mainMenuGerente.despliegue(nombreUsuario, numEmpleado ,almacen);
                         }else{
-                            System.out.println("Contraseña incorrecta o cargo incorrecto");
+                            System.out.println("\nContraseña incorrecta o cargo incorrecto\n");
                         }
                     }else{
-                        System.out.println("Usuario incorrecto");
+                        System.out.println("\nUsuario incorrecto\n");
                     }
                     }catch(Exception e){}
                     break;
@@ -145,7 +146,7 @@ public class MainMenu {
     
      public static void crearUsuario(){
         int eleccion = 0;
-        System.out.println("con que perfil quiere iniciar sesion\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
+        System.out.println("\n¿Con que perfil quiere iniciar sesion?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador");
         switch(eleccion){
             case 1:
                 break;

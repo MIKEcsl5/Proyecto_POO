@@ -28,9 +28,9 @@ public class MenuGerente extends Menu{
         int opcion = 1;
         KeyboardInput input = new KeyboardInput();
         Gerente empleadoGerente = new Gerente(nombreUsuario, numEmpleado);
-       
+        System.out.println("Hola " + empleadoGerente.getNombre());
         while(opcion != 8){
-            System.out.print("Hola " + empleadoGerente.getNombre()+"\n**********MENU GERENTE*************\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Cerrar sesion\n\nOpción a elegir: ");
+            System.out.print("\n**********MENU GERENTE*************\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 8)Cerrar sesion\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
@@ -50,7 +50,7 @@ public class MenuGerente extends Menu{
                     break;
                     
                 case 8:
-                    System.out.println("Adios "+empleadoGerente.getNombre());
+                    System.out.println("Adios "+empleadoGerente.getNombre()+"\n");
                     break;
                 default:
                     System.out.println(opcion + "no es opcion valida");

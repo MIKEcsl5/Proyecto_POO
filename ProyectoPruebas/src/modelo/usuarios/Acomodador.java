@@ -34,7 +34,8 @@ public class Acomodador extends Empleado {
     }
     
     public void ponerCancion(Almacen almacen){
-        
+        AparatoAmbiental aparatoTMP = new AparatoAmbiental();
+        aparatoTMP.elegirReproductor(almacen);
     }
     
     public void ordenarInventario(Almacen almacen){

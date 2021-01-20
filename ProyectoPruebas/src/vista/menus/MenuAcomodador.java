@@ -25,9 +25,9 @@ public class MenuAcomodador extends Menu{
         int opcion = 1;
         KeyboardInput input = new KeyboardInput();
         Acomodador empleadoAcomodador = new Acomodador(nombreUsuario, numEmpleado);
-        
+        System.out.println("Hola " + empleadoAcomodador.getNombre());
         while(opcion != 8){
-            System.out.print("Hola " + empleadoAcomodador.getNombre()+"\n**********MENU ACOMODADOR*************\n¿Que desea realizar?\n 1)Reproducir disco\n 2)Buscar producto\n 3)Ordenar el inventario\n 8)Cerrar sesion\n\nOpción a elegir: ");
+            System.out.print("\n**********MENU ACOMODADOR*************\n¿Que desea realizar?\n 1)Reproducir disco\n 2)Buscar producto\n 3)Ordenar el inventario\n 8)Cerrar sesion\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
@@ -47,7 +47,7 @@ public class MenuAcomodador extends Menu{
                     break;
                     
                 case 8:
-                    System.out.println("Adios "+empleadoAcomodador.getNombre());
+                    System.out.println("Adios "+empleadoAcomodador.getNombre()+"\n");
                     break;
                 default:
                     System.out.println(opcion + "no es opcion valida");
