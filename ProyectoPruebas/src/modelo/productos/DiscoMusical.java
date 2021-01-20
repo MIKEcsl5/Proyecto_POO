@@ -67,7 +67,7 @@ public class DiscoMusical extends Disco{
                 System.out.println("\n\t" + (i+1) + ". " + listaCanciones.get(i));
             }
         }else
-            System.out.println("El album no cuenta con canciones. Revise el contenido con un Gerente");
+            System.out.println("El album no cuenta con canciones.");
     }
     
     /**
@@ -76,9 +76,7 @@ public class DiscoMusical extends Disco{
      */
     @Override
     public String toString() {
-        System.out.println(super.toString() + "\nFecha de Publicacion: " + fechaPublicacion + "\nLista de canciones: ");
-        mostrarCanciones();
-        return "";
+        return super.toString()+ "\nFecha de publicacion: "+fechaPublicacion;
     }
     
     

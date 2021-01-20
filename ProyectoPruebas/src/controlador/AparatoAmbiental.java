@@ -36,7 +36,8 @@ public class AparatoAmbiental {
                     break;
                     
                 case 2:
-                    System.out.println("");
+                    MusicPlayed musicTMP = new MusicPlayed();
+                    musicTMP.tocarDisco(almacen);
                     break;
                     
                 case 3:

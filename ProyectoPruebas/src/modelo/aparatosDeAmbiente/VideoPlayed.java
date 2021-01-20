@@ -29,7 +29,7 @@ public class VideoPlayed {
             
             switch(opcion){
                 case 1:
-                    System.out.println("");
+                    tocarDiscoMusical(almacen);
                     break;
                 
                 case 2:
@@ -56,6 +56,25 @@ public class VideoPlayed {
         
         if(productoTMP.getClass() == a){
             System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
+        }
+        
+        else{
+            System.out.println("\nEste producto no es un disco de video");
+        }
+    }
+    
+    public void tocarDiscoMusical(Almacen almacen){
+        Producto productoTMP = new Producto();
+        System.out.println("¿Que dico desea tocar?");
+        productoTMP = almacen.buscarProducto(0);
+        Class a = DiscoMusical.class;
+        
+        if(productoTMP.getClass() == a){
+            System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
+        }
+        
+        else{
+            System.out.println("Este producto no es un disco musical");
         }
     }
 }
