@@ -8,6 +8,7 @@ package controlador;
 import modelo.productos.*;
 import vista.caja.Caja;
 import modelo.Almacen;
+import modelo.usuarios.Empleado;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Venta {
     public Venta() {
     }
    
-    public void venderProducto(Almacen almacen, String nombreUsuario) {
+    public void venderProducto(Almacen almacen, Empleado empleadoActual) {
         Producto producto = null;
         producto = almacen.buscarProducto(1);
         if(producto == null){
@@ -26,7 +27,7 @@ public class Venta {
         }else{
             Caja caja_1 = new Caja();
             caja_1.cobrar(producto);
-            caja_1.crearArchivoTicket(producto, nombreUsuario);
+            caja_1.crearArchivoTicket(producto, empleadoActual);
         }
     }
 }

@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.productos.Producto;
+import modelo.usuarios.Empleado;
 
         
 /**
@@ -29,7 +30,7 @@ public class Caja {
         System.out.println("\nTotal a pagar: "+ precio);
     }
     
-    public void crearArchivoTicket(Producto producto, String nombreUsuario){
+    public void crearArchivoTicket(Producto producto, Empleado empleadoActual){
         try {
             //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
             Date date = new Date();
@@ -37,19 +38,21 @@ public class Caja {
             String fecha = hourdateFormat.format(date);
            
             Ticket nuevoTicket = new Ticket(producto, fecha);
-            String ruta = new String("tickets/"+nuevoTicket.getFecha()+".txt");
+            String ruta = "tickets/"+producto.getNombre()+" "+nuevoTicket.getFecha()+".txt";
             File file = new File(ruta);
             System.out.println(ruta);
             file.createNewFile();
             
-            FileWriter fw = new FileWriter(file);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(producto.toString());
-            bw.close();
+            FileWriter fileWriter = new FileWriter(file);
+            try (BufferedWriter ticket = new BufferedWriter(fileWriter)) {
+                ticket.write("Atendio: "+empleadoActual.getNombre()+"\n");
+                ticket.write(fecha+"\n");
+                ticket.write(producto.toString());
+            }
             System.out.println("Archivo de ticket creado con exito :3");
             
         } catch (IOException ex) {
-            System.out.println("Error al crear ticket");;
+            System.out.println("Error al crear ticket");
         }
     }
 }

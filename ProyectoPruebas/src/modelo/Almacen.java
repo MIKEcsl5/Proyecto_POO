@@ -24,7 +24,7 @@ public class Almacen {
     }
     
     public Producto buscarProducto(int OP) {
-        Producto productoVacio = new Producto();
+        
         if(inventario.isEmpty()){
             System.out.println("\nInventario vacio......\n");
             return null;
@@ -50,7 +50,7 @@ public class Almacen {
                     } 
                 }
                 System.out.println("\nNo se ha encontrado el producto\n");
-                return productoVacio;  
+                return null;  
         }
        
     

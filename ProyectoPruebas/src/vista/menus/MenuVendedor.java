@@ -32,7 +32,7 @@ public class MenuVendedor extends Menu{
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
-                        empleadoVendedor.venderProducto(almacen, nombreUsuario);
+                        empleadoVendedor.venderProducto(almacen, empleadoVendedor);
                     break;
                 case 2:
                         empleadoVendedor.buscarProducto(almacen);

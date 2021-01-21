@@ -5,9 +5,6 @@
  */
 package modelo.usuarios;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import modelo.productos.*;
 import modelo.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,18 +34,11 @@ public class Gerente extends Vendedor  {
         super.setPinAcceso(pass);
     }
     
-    public void imprimirListaInventario(ArrayList<Producto> inventario){
-        Iterator iterador = inventario.iterator();
-        while(iterador.hasNext()){
-            System.out.println(iterador.next());
-        }
-    }
-    
     public void agregarProducto (Almacen almacen){
         almacen.agregarProducto();
     }
     
-    public void editarProducto (ArrayList<Producto> inventario){
+    public void editarProducto (Almacen almacen){
         
     }
     public void crearUsuario(){

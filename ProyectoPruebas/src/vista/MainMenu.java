@@ -8,6 +8,7 @@ package vista;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import modelo.*; //usando " .* " se importa todo el paquete
@@ -68,7 +69,7 @@ public class MainMenu {
                     }else{
                         System.out.println("\nUsuario incorrecto\n");
                     }
-                    }catch(Exception e){}
+                    }catch(IOException e){System.out.println("Error al iniciar sesion");}
                     break;
                     
                     
@@ -97,7 +98,7 @@ public class MainMenu {
                     }else{
                         System.out.println("\nUsuario incorrecto\n");
                     }
-                    }catch(Exception e){}
+                    }catch(IOException e){System.out.println("Error al iniciar sesion");}
                     break;
                     
                     
@@ -126,7 +127,7 @@ public class MainMenu {
                     }else{
                         System.out.println("\nUsuario incorrecto\n");
                     }
-                    }catch(Exception e){}
+                    }catch(IOException e){System.out.println("Error al iniciar sesion");}
                     break;
                     
                 case 5:

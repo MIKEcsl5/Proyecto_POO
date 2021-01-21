@@ -29,10 +29,9 @@ public class Vendedor extends Acomodador {
         super.setPinAcceso(pass);
     }
     
-    public void venderProducto(Almacen almacen, String nombreUsuario) {
+    public void venderProducto(Almacen almacen, Empleado empleadoActual) {
         Venta venta_1 = new Venta();
-        venta_1.venderProducto(almacen, nombreUsuario);
-       
+        venta_1.venderProducto(almacen, empleadoActual);
     }
     
     public void imprimirListaInventario(Almacen almacen){
