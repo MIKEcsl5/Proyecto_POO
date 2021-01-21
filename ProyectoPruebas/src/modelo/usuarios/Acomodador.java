@@ -6,6 +6,7 @@
 package modelo.usuarios;
 
 import controlador.*;
+import java.lang.reflect.InvocationTargetException;
 import modelo.Almacen;
 import modelo.productos.Producto;
 import vista.KeyboardInput;
@@ -33,7 +34,7 @@ public class Acomodador extends Empleado {
         almacen.buscarProducto(0);
     }
     
-    public void ponerCancion(Almacen almacen){
+    public void ponerCancion(Almacen almacen) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException  {
         AparatoAmbiental aparatoTMP = new AparatoAmbiental();
         aparatoTMP.elegirReproductor(almacen);
     }
@@ -54,7 +55,7 @@ public class Acomodador extends Empleado {
             case 2:
                 almacen.inventario.sort(new PrecioComparator());
                 for(Producto tmpProducto : almacen.inventario){
-                    System.out.println(tmpProducto.getNombre()+ tmpProducto.getPrecio());
+                    System.out.println(tmpProducto.getNombre()+tmpProducto.getPrecio());
                 }
                 break;
         }

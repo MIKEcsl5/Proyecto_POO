@@ -36,7 +36,13 @@ public class DiscoMusical extends Disco{
     public DiscoMusical(String sku, int precio, String nombre, String artista, String fechaPublicacion, int numCanciones) {
         super(artista, numCanciones, sku, precio, nombre);
         this.fechaPublicacion = fechaPublicacion;
-       
+        setCanciones();
+    }
+    
+    public DiscoMusical(String sku, int precio, String nombre, String artista, String fechaPublicacion) {
+        super(artista, 4, sku, precio, nombre);
+        this.fechaPublicacion = fechaPublicacion;
+        setCancionesGenerico();
     }
      
     //Métodos de información
@@ -51,11 +57,22 @@ public class DiscoMusical extends Disco{
      */
     public void setCanciones(){
         String cancion;
-        for (int i = 0; i < numCanciones; i++) {
-            System.out.println("Ingrese nombre de la cancion " + i);
+        for (int i = 0; i < this.numCanciones; i++) {
+            System.out.println("Ingrese nombre de la cancion " + i+1);
             cancion = resp.readString();
             listaCanciones.add(i, cancion);
         }
+    }
+    
+    public void setCancionesGenerico(){
+        String cancion;
+        for (int i = 0; i < 4; i++) {
+            listaCanciones.add(i, "cancion "+i);
+        }
+    }
+    
+    public ArrayList<String> getCanciones(){
+        return listaCanciones;
     }
     
     /**

@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/usuarios/Vendedor.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/Almacen.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/vista/caja/Caja.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/controlador/Venta.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/aparatosDeAmbiente/MusicPlayed.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/vista/menus/MenuGerente.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/usuarios/Gerente.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/aparatosDeAmbiente/VideoPlayed.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/usuarios/Empleado.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/vista/MainMenu.java</file>
-            <file>file:/D:/GitHub/Proyecto_POO/ProyectoPruebas/src/modelo/usuarios/Acomodador.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -5,10 +5,12 @@
  */
 package controlador;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Almacen;
 import modelo.aparatosDeAmbiente.*;
-import modelo.productos.*;
 import vista.KeyboardInput;
 
 /**
@@ -16,7 +18,8 @@ import vista.KeyboardInput;
  * @author roble
  */
 public class AparatoAmbiental extends Thread{
-
+    ArrayList<String> listaCanciones;
+    
     public AparatoAmbiental() {
     }
     
@@ -24,7 +27,12 @@ public class AparatoAmbiental extends Thread{
         super(nombre);
     }
     
-    public void elegirReproductor(Almacen almacen){
+    public AparatoAmbiental(String nombre, ArrayList<String> listaCanciones) {
+        super(nombre);
+        this.listaCanciones = listaCanciones;
+    }
+    
+    public void elegirReproductor(Almacen almacen) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException  {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
     
@@ -59,7 +67,15 @@ public class AparatoAmbiental extends Thread{
     
     @Override
     public void run(){
-        for(int j=0;j<=10;j++)
-            System.out.println("\n"+getName()+" Sonando...");
+        for (int i = 0; i < listaCanciones.size(); i++) {
+            int random = (int) (20000 * Math.random() + 1000);
+                System.out.println("\t\t\t\t\t\t"+getName()+": "+listaCanciones.get(i)+" Sonando...");
+            try {
+                sleep(random);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(AparatoAmbiental.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        System.out.println("\t\t\t\t\t\tTermino Disco: "+getName());
     }
 }

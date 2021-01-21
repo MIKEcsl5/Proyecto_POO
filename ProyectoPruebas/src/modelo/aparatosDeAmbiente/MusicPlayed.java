@@ -6,6 +6,9 @@
 package modelo.aparatosDeAmbiente;
 
 import controlador.AparatoAmbiental;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 import modelo.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
@@ -19,7 +22,7 @@ public class MusicPlayed {
     public MusicPlayed() {
     }
     
-    public void tocarDisco(Almacen almacen){
+    public void tocarDisco(Almacen almacen) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException{
         
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
@@ -41,9 +44,11 @@ public class MusicPlayed {
                         if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class)
                             System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");
                         else
-                            if(productoTMP.getClass() == DiscoMusical.class)
-                                new AparatoAmbiental(productoTMP.getNombre()).start();
-                                        
+                            if(productoTMP.getClass() == DiscoMusical.class){
+                                Method getListaCanciones = productoTMP.getClass().getMethod("getCanciones");
+                                ArrayList<String> listaCanciones = (ArrayList<String>) getListaCanciones.invoke(productoTMP);
+                                new AparatoAmbiental(productoTMP.getNombre(), listaCanciones).start(); 
+                            }
                     break;
          
                 case 2:

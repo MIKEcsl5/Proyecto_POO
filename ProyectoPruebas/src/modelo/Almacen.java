@@ -79,17 +79,18 @@ public class Almacen {
                     System.out.println("\nIngrese fecha de publicacion: ");
                     fechaPublicacion = tmpFechaPublicacion.readString();
                     
-                    System.out.println("\nIngrese el numero de canciones: ");
-                    numCanciones = tmpNumCanciones.readInteger();
-                    
                     System.out.println("\nIngrese el precio: ");
                     precio = tmpPrecio.readInteger();
                     
                     System.out.println("\nIngrese el SKU de identificacion: ");
                     sku = tmpSku.readString();
                     
+                    System.out.println("\nIngrese el numero de canciones: ");
+                    numCanciones = tmpNumCanciones.readInteger();
+                    
                     System.out.println("\nIngrese la cantidad de productos para agregar: ");
                     cantidad = tmpCantidad.readInteger();
+                    
                     for (int i = 0; i < cantidad; i++) {
                         inventario.add(new DiscoMusical(sku,precio,nombre,artista,fechaPublicacion,numCanciones));
                     }
@@ -151,7 +152,7 @@ public class Almacen {
     
     public void llenarInventario(){
         for (int i = 0; i < 10; i++)
-            inventario.add(new DiscoMusical("M0"+i,250,"Disco de musica "+i,"Generico","2021",10));
+            inventario.add(new DiscoMusical("M0"+i,250,"Disco de musica "+i,"Generico","2021"));
         for (int i = 0; i < 10; i++)
             inventario.add(new DiscoVideo(50f, "Generico", 10, "V0"+i, 300, "Disco de video "+i));
         for (int i = 0; i < 10; i++)

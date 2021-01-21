@@ -1,6 +1,9 @@
 
 package vista.menus;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Almacen;
 import modelo.usuarios.Vendedor;
 import vista.KeyboardInput;
@@ -39,7 +42,13 @@ public class MenuVendedor extends Menu{
                     break;
                     
                 case 3:
+                    try {
                         empleadoVendedor.ponerCancion(almacen);
+                    } catch (NoSuchMethodException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+                        Logger.getLogger(MenuVendedor.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                break;
+            
                 case 4:
                     break;
                     

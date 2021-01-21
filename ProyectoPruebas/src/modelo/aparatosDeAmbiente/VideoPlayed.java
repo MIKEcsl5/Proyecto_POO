@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package modelo.aparatosDeAmbiente;
+import static java.lang.Thread.sleep;
 import modelo.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
@@ -16,7 +17,7 @@ public class VideoPlayed {
     public VideoPlayed() {
     }
     
-    public void elegirTipoDisco(Almacen almacen){
+    public void elegirTipoDisco(Almacen almacen) {
         
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
@@ -59,7 +60,7 @@ public class VideoPlayed {
             else
                 if(productoTMP.getClass() == DiscoVideo.class)
                     for(int j=0;j<=10;j++)
-                        System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
+                        System.out.println("\t\t\t\n"+productoTMP.getNombre()+" Sonando...");
     }
     
     public void tocarDiscoMusical(Almacen almacen){
@@ -75,7 +76,7 @@ public class VideoPlayed {
             else
                 if(productoTMP.getClass() == DiscoMusical.class)
                     for(int j=0;j<=10;j++)
-                        System.out.println("\n"+productoTMP.getNombre()+" Sonando...");                                
-                
+                        System.out.println("\t\t\t\n"+productoTMP.getNombre()+" Sonando...");                                
+                        
     }
 }
