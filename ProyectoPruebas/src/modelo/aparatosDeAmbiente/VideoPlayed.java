@@ -50,21 +50,32 @@ public class VideoPlayed {
         Producto productoTMP = new Producto();
         System.out.println("¿Que dico desea tocar?");
         productoTMP = almacen.buscarProducto(0); 
-        if(productoTMP == null || productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoMusical.class){
-            System.out.println("Este producto no es un disco de video");
-        }else if(productoTMP.getClass() == DiscoVideo.class){
-            System.out.println("\n"+productoTMP.getNombre()+" Reproduciendo...");
-        }
+        
+        if(productoTMP == null)
+            System.out.println("Intente buscar otro disco: ");
+        else 
+            if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoMusical.class)
+                System.out.println("\nEste producto no es un disco de video\nIntente buscar otro disco: ");     
+            else
+                if(productoTMP.getClass() == DiscoVideo.class)
+                    for(int j=0;j<=10;j++)
+                        System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
     }
     
     public void tocarDiscoMusical(Almacen almacen){
         Producto productoTMP = new Producto();
         System.out.println("¿Que dico desea tocar?");
         productoTMP = almacen.buscarProducto(0); 
-        if(productoTMP == null || productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class){
-            System.out.println("Este producto no es un disco musical");
-        }else if(productoTMP.getClass() == DiscoMusical.class){
-            System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
-        }
+        
+        if(productoTMP == null)
+            System.out.println("Intente buscar otro disco: ");
+        else 
+            if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class)
+                System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");     
+            else
+                if(productoTMP.getClass() == DiscoMusical.class)
+                    for(int j=0;j<=10;j++)
+                        System.out.println("\n"+productoTMP.getNombre()+" Sonando...");                                
+                
     }
 }

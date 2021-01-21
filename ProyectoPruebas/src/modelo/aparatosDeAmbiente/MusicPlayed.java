@@ -5,6 +5,7 @@
  */
 package modelo.aparatosDeAmbiente;
 
+import controlador.AparatoAmbiental;
 import modelo.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
@@ -33,11 +34,16 @@ public class MusicPlayed {
                     Producto productoTMP = new Producto();
                     System.out.println("¿Que dico desea tocar?");
                     productoTMP = almacen.buscarProducto(0); 
-                    if(productoTMP == null || productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class){
-                        System.out.println("Este producto no es un disco musical");
-                    }else if(productoTMP.getClass() == DiscoMusical.class){
-                        System.out.println("\n"+productoTMP.getNombre()+" Sonando...");
-                    }
+                    
+                    if(productoTMP == null)
+                        System.out.println("Intente buscar otro disco: "); 
+                    else 
+                        if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class)
+                            System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");
+                        else
+                            if(productoTMP.getClass() == DiscoMusical.class)
+                                new AparatoAmbiental(productoTMP.getNombre()).start();
+                                        
                     break;
          
                 case 2:

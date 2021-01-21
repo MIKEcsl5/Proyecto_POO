@@ -15,9 +15,13 @@ import vista.KeyboardInput;
  *
  * @author roble
  */
-public class AparatoAmbiental {
+public class AparatoAmbiental extends Thread{
 
     public AparatoAmbiental() {
+    }
+    
+    public AparatoAmbiental(String nombre) {
+        super(nombre);
     }
     
     public void elegirReproductor(Almacen almacen){
@@ -51,5 +55,11 @@ public class AparatoAmbiental {
             }
         }
         
+    }
+    
+    @Override
+    public void run(){
+        for(int j=0;j<=10;j++)
+            System.out.println("\n"+getName()+" Sonando...");
     }
 }
