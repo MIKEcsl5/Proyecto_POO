@@ -13,6 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import modelo.Almacen;
 import modelo.productos.Producto;
@@ -29,37 +30,46 @@ public class Caja {
     public Caja() {
     }
     
-    public void cobrar(Producto producto, Empleado empleadoActual, Almacen almacen){
-        int cantidadRecibida;
+    public void cobrar(ArrayList<Producto> carritoCompras, Empleado empleadoActual, Almacen almacen){
+        int cantidadRecibida, cantidadPagar = 0;
         KeyboardInput input = new KeyboardInput();
-        System.out.println("\nTotal a pagar: "+ producto.getPrecio());
+        
+        for (int k=0; k < carritoCompras.size(); k++){
+            cantidadPagar = cantidadPagar+carritoCompras.get(k).getPrecio();
+        }
+        
+        System.out.println("\nTotal a pagar: "+ cantidadPagar);
         System.out.println("Cantidad recibida: ");
         cantidadRecibida = input.readInteger();
-        if(cantidadRecibida<producto.getPrecio()){
+        
+        if(cantidadRecibida<cantidadPagar){
             System.out.println("Cantidad insuficiente");
-            almacen.inventario.add(producto);
+            for(int k=0;k<carritoCompras.size();k++)
+                almacen.inventario.add(carritoCompras.get(k));
         }else{
-            System.out.println("Cambio a devolver: "+(cantidadRecibida-producto.getPrecio()));
-            crearArchivoTicket(producto, empleadoActual, cantidadRecibida);
+            System.out.println("Cambio a devolver: "+(cantidadRecibida-cantidadPagar));
+            crearArchivoTicket(carritoCompras, empleadoActual, cantidadRecibida, cantidadPagar);
         }
     }
     
-    public void crearArchivoTicket(Producto producto, Empleado empleadoActual, int cantidadRecibida){
+    public void crearArchivoTicket(ArrayList<Producto> carritoCompras, Empleado empleadoActual, int cantidadRecibida, int cantidadPagar){
         try {
             //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
             Date date = new Date();
             DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
             String fecha = hourdateFormat.format(date);
-            String ruta = "tickets/"+producto.getNombre()+" "+fecha+".txt";
+            String ruta = "tickets/"+fecha+".txt";
             File file = new File(ruta);
             file.createNewFile();
             FileWriter fileWriter = new FileWriter(file);
             try (BufferedWriter ticket = new BufferedWriter(fileWriter)) {
                 ticket.write("Atendio: "+empleadoActual.getNombre()+"\n");
                 ticket.write(fecha+"\n\n");
-                ticket.write("Detalles del producto:\n"+producto.toString()+"\n\n");
+                ticket.write("Detalles del producto:\n\n");
+                for (int k=0; k < carritoCompras.size(); k++)
+                    ticket.write(carritoCompras.get(k).toString()+"\n\n");
                 ticket.write("Pago: "+cantidadRecibida+"\n");
-                ticket.write("Cambio: "+(cantidadRecibida-producto.getPrecio()));
+                ticket.write("Cambio: "+(cantidadRecibida-cantidadPagar));
                 ticket.close();
                 fileWriter.close();
                 System.out.println("Archivo de ticket creado con exito en: "+ruta);

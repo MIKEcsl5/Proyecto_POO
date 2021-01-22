@@ -65,8 +65,8 @@ public class Almacen {
                 tmpSku = new KeyboardInput(), tmpDuracion = new KeyboardInput(),
                 tmpCantidad = new KeyboardInput();
        
-        while (opcion != 4){
-            System.out.print("\nQue producto desea agregar \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 4)Cancelar\n\nOpción: ");
+        while (opcion != 8){
+            System.out.print("\nQue producto desea agregar \n 1)Disco de musica \n 2)Disco de video\n 3)Audifonos \n 8)Cancelar\n\nOpción: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
@@ -139,9 +139,9 @@ public class Almacen {
                     }
                     break;
                     
-                case 4:
+                case 8:
                     System.out.println("\nOperacion cancelada");
-                    opcion = 4;
+                    opcion = 8;
                     break;
                 default:
                     System.out.println("\nOpcion no valida");

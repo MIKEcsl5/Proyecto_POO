@@ -26,8 +26,8 @@ public class MusicPlayed {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
         
-        while(opcion != 2){
-            System.out.println("\n1)Tocar uno o varios discos musicales\n2)Cancelar y salir");
+        while(opcion != 8){
+            System.out.println("\n1)Tocar uno o varios discos musicales\n8)Cancelar y salir");
             System.out.println("\nOpcion a elegir: ");
             opcion = input.readInteger();
             Producto productoTMP = new Producto();
@@ -53,9 +53,9 @@ public class MusicPlayed {
                     }
                     opcion = input.readInteger();
                     break;
-                case 2:
+                case 8:
                     System.out.println("\nOperacion cancelada...");
-                    opcion = 2;
+                    opcion = 8;
                     break;
                     
                 default:

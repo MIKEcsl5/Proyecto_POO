@@ -25,8 +25,8 @@ public class VideoPlayed {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
         
-        while(opcion != 3){
-            System.out.println("\nQue tipo de disco desea tocar?\n 1)Disco musical\n 2)Disco de video\n 3)Cancelar y salir");
+        while(opcion != 8){
+            System.out.println("\nQue tipo de disco desea tocar?\n 1)Disco musical\n 2)Disco de video\n 8)Cancelar y salir");
             opcion = input.readInteger();
             
             switch(opcion){
@@ -38,9 +38,9 @@ public class VideoPlayed {
                     tocarDiscoVideo(almacen);
                     break;
                 
-                case 3:
+                case 8:
                     System.out.println("\nOperacion cancelada...");
-                    opcion = 3;
+                    opcion = 8;
                     break;
                 default:
                     System.out.println("\nOpcion no valida");

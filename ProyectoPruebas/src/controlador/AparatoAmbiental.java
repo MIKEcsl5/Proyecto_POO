@@ -36,8 +36,8 @@ public class AparatoAmbiental extends Thread{
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
     
-        while(opcion != 3){
-            System.out.println("\n¿Que aparato ambiental desea usar?\n 1)Video Played\n 2)Music Played\n 3)Cancelar y salir");
+        while(opcion != 8){
+            System.out.println("\n¿Que aparato ambiental desea usar?\n 1)Video Played\n 2)Music Played\n 8)Cancelar y salir");
             System.out.println("\nOpción a elegir: ");
             opcion = input.readInteger();
             
@@ -52,9 +52,9 @@ public class AparatoAmbiental extends Thread{
                     musicTMP.tocarDisco(almacen);
                     break;
                     
-                case 3:
+                case 8:
                     System.out.println("\nOperacion cancelada...");
-                    opcion = 3;
+                    opcion = 8;
                     break;
                 
                 default:
