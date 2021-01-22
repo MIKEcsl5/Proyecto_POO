@@ -20,7 +20,5 @@ public class NombreComparator implements Comparator{
         Producto tmpProducto2 = (Producto) producto2;
         
         return (tmpProducto1.getNombre().compareTo(tmpProducto2.getNombre()));
-        
     }
-    
 }
