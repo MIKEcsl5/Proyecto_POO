@@ -30,7 +30,7 @@ public class MenuGerente extends Menu{
         Gerente empleadoGerente = new Gerente(nombreUsuario, numEmpleado);
         System.out.println("Hola " + empleadoGerente.getNombre());
         while(opcion != 8){
-            System.out.print("\n**********MENU GERENTE*************\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 4)Crear nuevo usuario\n 8)Cerrar sesion\n\nOpción a elegir: ");
+            System.out.print("\n**********MENU GERENTE*************\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Agregar Producto al inventario\n 4)Crear nuevo usuario\n 5)Tocar un disco\n 8)Cerrar sesion\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
@@ -44,6 +44,9 @@ public class MenuGerente extends Menu{
                     break;
                 case 4:
                     empleadoGerente.crearUsuario();
+                    break;
+                case 5:
+                    empleadoGerente.ponerCancion(almacen);
                     break;
                 case 8:
                     System.out.println("Adios "+empleadoGerente.getNombre()+"\n");

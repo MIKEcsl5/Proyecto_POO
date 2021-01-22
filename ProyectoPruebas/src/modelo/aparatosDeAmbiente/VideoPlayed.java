@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package modelo.aparatosDeAmbiente;
+import controlador.AparatoAmbiental;
+import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
@@ -57,9 +61,18 @@ public class VideoPlayed {
             if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoMusical.class)
                 System.out.println("\nEste producto no es un disco de video\nIntente buscar otro disco: ");     
             else
-                if(productoTMP.getClass() == DiscoVideo.class)
-                    for(int j=0;j<=10;j++)
-                        System.out.println("\t\t\t\n"+productoTMP.getNombre()+" Sonando...");
+                if(productoTMP.getClass() == DiscoVideo.class){
+                    for (int i = 0; i < 4; i++) {
+                        int random = (int) (20000 * Math.random() + 1000);
+                        System.out.println("\t\t\t\t\t\t"+productoTMP.getNombre()+": Reproduciendo video...");
+                        try {
+                            sleep(random);
+                        }catch (InterruptedException ex) {
+                            Logger.getLogger(AparatoAmbiental.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                    }
+                    System.out.println("\t\t\t\t\t\tTermino Disco: "+productoTMP.getNombre());
+                }    
     }
     
     public void tocarDiscoMusical(Almacen almacen){
@@ -73,9 +86,18 @@ public class VideoPlayed {
             if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class)
                 System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");     
             else
-                if(productoTMP.getClass() == DiscoMusical.class)
-                    for(int j=0;j<=10;j++)
-                        System.out.println("\t\t\t\n"+productoTMP.getNombre()+" Sonando...");                                
-                        
+                if(productoTMP.getClass() == DiscoMusical.class){
+                    DiscoMusical disco = (DiscoMusical) productoTMP;
+                    for (int i = 0; i < disco.getCanciones().size(); i++) {
+                        int random = (int) (20000 * Math.random() + 1000);
+                        System.out.println("\t\t\t\t\t\t"+disco.getNombre()+": "+disco.getCanciones().get(i)+" Sonando...");
+                        try {
+                            sleep(random);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(AparatoAmbiental.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                    }
+                System.out.println("\t\t\t\t\t\tTermino Disco: "+disco.getNombre());                                
+                }         
     }
 }

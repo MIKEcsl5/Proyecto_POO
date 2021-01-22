@@ -38,7 +38,7 @@ public class MainMenu {
         File archivoUsuario = null;
         String pass, cargoDeUsuarioActual = null, nombreUsuario = null, numEmpleado;
         
-        System.out.println("Prueba de commit");
+        //System.out.println("Prueba de commit");
         while(opcion != 5){ //ciclo del LogIn
             System.out.println("Que tipo de cargo ocupa?\n 1)Gerente\n 2)Vendedor\n 3)Acomodador\n 5)Cancelar y salir\n\nOpción a elegir:");
             opcion = input.readInteger();

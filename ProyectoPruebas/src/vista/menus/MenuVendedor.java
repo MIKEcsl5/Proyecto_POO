@@ -42,18 +42,10 @@ public class MenuVendedor extends Menu{
                     break;
                     
                 case 3:
-                 
                         empleadoVendedor.ponerCancion(almacen);
-                   
-                break;
-            
+                    break;
                 case 4:
-                    break;
-                    
-                case 5:
-                    System.out.println("prueba :(");
-                    break;
-                    
+                    break;                
                 case 8:
                     System.out.println("Adios "+empleadoVendedor.getNombre()+"\n");
                     break;

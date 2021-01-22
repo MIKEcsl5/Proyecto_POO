@@ -26,33 +26,14 @@ public class MusicPlayed {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
         
-        while(opcion != 3){
-            System.out.println("\n1)Tocar solo un disco musical\n2)Tocar dos o mas discos musicales\n3)Cancelar y salir");
+        while(opcion != 2){
+            System.out.println("\n1)Tocar uno o varios discos musicales\n2)Cancelar y salir");
             System.out.println("\nOpcion a elegir: ");
             opcion = input.readInteger();
-            
+            Producto productoTMP = new Producto();
             switch(opcion){
                 case 1:
-                    Producto productoTMP = new Producto();
-                    System.out.println("¿Que dico desea tocar?");
-                    productoTMP = almacen.buscarProducto(0); 
-                    
-                    if(productoTMP == null)
-                        System.out.println("Intente buscar otro disco: "); 
-                    else 
-                        if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class)
-                            System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");
-                        else
-                            if(productoTMP.getClass() == DiscoMusical.class){
-                                DiscoMusical disco = (DiscoMusical) productoTMP;
-                                new AparatoAmbiental(disco.getNombre(), disco.getCanciones()).start(); 
-                            }
-                    
-                    opcion = input.readInteger();
-                    break;
-                
-                case 2:
-                    System.out.println("¿Cuantos discos desea buscar?: ");
+                    System.out.println("¿Cuantos discos desea reproducir?: ");
                     opcion = input.readInteger();
                     ArrayList<DiscoMusical> discosTocar = new ArrayList<>();
                     for (int j=0;j<opcion;j++){
@@ -72,9 +53,9 @@ public class MusicPlayed {
                     }
                     opcion = input.readInteger();
                     break;
-                case 3:
+                case 2:
                     System.out.println("\nOperacion cancelada...");
-                    opcion = 3;
+                    opcion = 2;
                     break;
                     
                 default:
