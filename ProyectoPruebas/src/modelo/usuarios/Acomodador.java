@@ -34,7 +34,7 @@ public class Acomodador extends Empleado {
         almacen.buscarProducto(0);
     }
     
-    public void ponerCancion(Almacen almacen) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException  {
+    public void ponerCancion(Almacen almacen) {
         AparatoAmbiental aparatoTMP = new AparatoAmbiental();
         aparatoTMP.elegirReproductor(almacen);
     }

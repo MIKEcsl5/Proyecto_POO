@@ -1,0 +1,13 @@
+Atendio: Angel
+20.16.03 21-01-2021
+
+Detalles del producto:
+Nombre: Disco de musica 0
+SKU: M00
+Precio: $250
+Artista: Generico
+Num. de canciones: 4
+Fecha de publicacion: 2021
+
+Pago: 21232
+Cambio: 20982

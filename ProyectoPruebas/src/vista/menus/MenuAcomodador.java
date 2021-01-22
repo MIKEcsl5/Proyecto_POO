@@ -34,11 +34,9 @@ public class MenuAcomodador extends Menu{
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
-                    try {
+                    
                         empleadoAcomodador.ponerCancion(almacen);
-                    } catch (NoSuchMethodException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-                        Logger.getLogger(MenuAcomodador.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                   
                     break;
                 case 2:
                         empleadoAcomodador.buscarProducto(almacen);

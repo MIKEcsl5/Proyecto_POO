@@ -32,7 +32,7 @@ public class AparatoAmbiental extends Thread{
         this.listaCanciones = listaCanciones;
     }
     
-    public void elegirReproductor(Almacen almacen) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException  {
+    public void elegirReproductor(Almacen almacen) {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
     

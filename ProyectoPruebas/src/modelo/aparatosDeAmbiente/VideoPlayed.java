@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package modelo.aparatosDeAmbiente;
-import static java.lang.Thread.sleep;
 import modelo.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;

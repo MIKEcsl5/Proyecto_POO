@@ -7,7 +7,6 @@ package modelo.aparatosDeAmbiente;
 
 import controlador.AparatoAmbiental;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import modelo.Almacen;
 import modelo.productos.*;
@@ -22,7 +21,7 @@ public class MusicPlayed {
     public MusicPlayed() {
     }
     
-    public void tocarDisco(Almacen almacen) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException{
+    public void tocarDisco(Almacen almacen){
         
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
@@ -68,10 +67,9 @@ public class MusicPlayed {
                                     discosTocar.add((DiscoMusical) productoTMP);
                                 }
                     }
-                        for (DiscoMusical discoMusical : discosTocar) {
-                            new AparatoAmbiental(discoMusical.getNombre(),discoMusical.getCanciones()).start();
-                        }
-
+                    for (DiscoMusical discoMusical : discosTocar) {
+                        new AparatoAmbiental(discoMusical.getNombre(),discoMusical.getCanciones()).start();
+                    }
                     opcion = input.readInteger();
                     break;
                 case 3:

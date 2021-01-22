@@ -37,7 +37,7 @@ public class Disco extends Producto{
 
     @Override
     public String toString() {
-        return "\nArtista: " + artista + "\nNum. de canciones: " + numCanciones;
+        return super.toString()+"\nArtista: " + artista + "\nNum. de canciones: " + numCanciones;
     }
     
     

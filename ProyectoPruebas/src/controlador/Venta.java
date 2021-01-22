@@ -26,8 +26,7 @@ public class Venta {
             System.out.println("Venta fallida\n");
         }else{
             Caja caja_1 = new Caja();
-            caja_1.cobrar(producto);
-            caja_1.crearArchivoTicket(producto, empleadoActual);
+            caja_1.cobrar(producto, empleadoActual, almacen);
         }
     }
 }

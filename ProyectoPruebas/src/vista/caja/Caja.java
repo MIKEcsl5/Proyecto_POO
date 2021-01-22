@@ -5,15 +5,19 @@
  */
 package vista.caja;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import modelo.Almacen;
 import modelo.productos.Producto;
 import modelo.usuarios.Empleado;
+import vista.KeyboardInput;
 
         
 /**
@@ -25,31 +29,55 @@ public class Caja {
     public Caja() {
     }
     
-    public void cobrar(Producto producto){
-        int precio = producto.getPrecio(); 
-        System.out.println("\nTotal a pagar: "+ precio);
+    public void cobrar(Producto producto, Empleado empleadoActual, Almacen almacen){
+        int cantidadRecibida;
+        KeyboardInput input = new KeyboardInput();
+        System.out.println("\nTotal a pagar: "+ producto.getPrecio());
+        System.out.println("Cantidad recibida: ");
+        cantidadRecibida = input.readInteger();
+        if(cantidadRecibida<producto.getPrecio()){
+            System.out.println("Cantidad insuficiente");
+            almacen.inventario.add(producto);
+        }else{
+            System.out.println("Cambio a devolver: "+(cantidadRecibida-producto.getPrecio()));
+            crearArchivoTicket(producto, empleadoActual, cantidadRecibida);
+        }
     }
     
-    public void crearArchivoTicket(Producto producto, Empleado empleadoActual){
+    public void crearArchivoTicket(Producto producto, Empleado empleadoActual, int cantidadRecibida){
         try {
             //prueba crear un archivo (ticket) que tendra como nombre la fecha y hora en la que se cree
             Date date = new Date();
             DateFormat hourdateFormat = new SimpleDateFormat("HH.mm.ss dd-MM-yyyy");
             String fecha = hourdateFormat.format(date);
-           
-            Ticket nuevoTicket = new Ticket(producto, fecha);
-            String ruta = "tickets/"+producto.getNombre()+" "+nuevoTicket.getFecha()+".txt";
+            String ruta = "tickets/"+producto.getNombre()+" "+fecha+".txt";
             File file = new File(ruta);
-            System.out.println(ruta);
             file.createNewFile();
-            
             FileWriter fileWriter = new FileWriter(file);
             try (BufferedWriter ticket = new BufferedWriter(fileWriter)) {
                 ticket.write("Atendio: "+empleadoActual.getNombre()+"\n");
-                ticket.write(fecha+"\n");
-                ticket.write(producto.toString());
+                ticket.write(fecha+"\n\n");
+                ticket.write("Detalles del producto:\n"+producto.toString()+"\n\n");
+                ticket.write("Pago: "+cantidadRecibida+"\n");
+                ticket.write("Cambio: "+(cantidadRecibida-producto.getPrecio()));
+                ticket.close();
+                fileWriter.close();
+                System.out.println("Archivo de ticket creado con exito en: "+ruta);
             }
-            System.out.println("Archivo de ticket creado con exito :3");
+            try{
+                BufferedReader ticket;
+                try (FileReader fileReader = new FileReader(ruta)) {
+                    ticket = new BufferedReader(fileReader);
+                    System.out.println("Datos del ticket: \n");
+                    String linea = ticket.readLine();
+                    while(linea != null){
+                        System.out.println(linea);
+                        linea = ticket.readLine();
+                    }
+                }
+                ticket.close();
+            }catch(IOException ioe3){}
+            
             
         } catch (IOException ex) {
             System.out.println("Error al crear ticket");
