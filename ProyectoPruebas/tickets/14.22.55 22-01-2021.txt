@@ -1,0 +1,12 @@
+Atendio: Erick
+Puesto: Vendedor
+14.22.55 22-01-2021
+
+Detalles del producto:
+
+Nombre: Audifonos 7
+SKU: A07
+Precio: $750
+
+Pago: 800
+Cambio: 50

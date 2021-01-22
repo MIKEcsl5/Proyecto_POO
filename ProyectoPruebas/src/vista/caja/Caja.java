@@ -64,6 +64,7 @@ public class Caja {
             FileWriter fileWriter = new FileWriter(file);
             try (BufferedWriter ticket = new BufferedWriter(fileWriter)) {
                 ticket.write("Atendio: "+empleadoActual.getNombre()+"\n");
+                ticket.write(empleadoActual.toString()+"\n");
                 ticket.write(fecha+"\n\n");
                 ticket.write("Detalles del producto:\n\n");
                 for (int k=0; k < carritoCompras.size(); k++)

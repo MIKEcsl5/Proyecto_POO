@@ -133,7 +133,7 @@ public class Gerente extends Vendedor  {
 
     @Override
     public String toString() {
-        return super.toString() + "Puesto: Gerente";
+        return "Puesto: Gerente";
     }
     
     

@@ -35,7 +35,7 @@ public class Vendedor extends Acomodador {
 
     @Override
     public String toString() {
-        return super.toString() +  "Puesto: Vendedor";
+        return "Puesto: Vendedor";
     }
     
     
