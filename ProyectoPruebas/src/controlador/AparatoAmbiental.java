@@ -77,5 +77,6 @@ public class AparatoAmbiental extends Thread{
             }
         }
         System.out.println("\t\t\t\t\t\tTermino Disco: "+getName());
+  
     }
 }

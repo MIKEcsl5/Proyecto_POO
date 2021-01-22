@@ -27,8 +27,8 @@ public class MusicPlayed {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
         
-        while(opcion != 2){
-            System.out.println("\n1)Tocar Disco Musical\n2)Cancelar y salir");
+        while(opcion != 3){
+            System.out.println("\n1)Tocar solo un disco musical\n2)Tocar dos o mas discos musicales\n3)Cancelar y salir");
             System.out.println("\nOpcion a elegir: ");
             opcion = input.readInteger();
             
@@ -45,15 +45,38 @@ public class MusicPlayed {
                             System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");
                         else
                             if(productoTMP.getClass() == DiscoMusical.class){
-                                Method getListaCanciones = productoTMP.getClass().getMethod("getCanciones");
-                                ArrayList<String> listaCanciones = (ArrayList<String>) getListaCanciones.invoke(productoTMP);
-                                new AparatoAmbiental(productoTMP.getNombre(), listaCanciones).start(); 
+                                DiscoMusical disco = (DiscoMusical) productoTMP;
+                                new AparatoAmbiental(disco.getNombre(), disco.getCanciones()).start(); 
                             }
+                    
+                    opcion = input.readInteger();
                     break;
-         
+                
                 case 2:
+                    System.out.println("¿Cuantos discos desea buscar?: ");
+                    opcion = input.readInteger();
+                    ArrayList<DiscoMusical> discosTocar = new ArrayList<>();
+                    for (int j=0;j<opcion;j++){
+                        productoTMP = almacen.buscarProducto(0);
+                        if(productoTMP == null)
+                            System.out.println("Intente buscar otro disco: ");
+                        else 
+                            if (productoTMP.getClass() == Audifonos.class || productoTMP.getClass() == DiscoVideo.class)
+                                System.out.println("\nEste producto no es un disco musical\nIntente buscar otro disco: ");
+                            else
+                                if(productoTMP.getClass() == DiscoMusical.class){
+                                    discosTocar.add((DiscoMusical) productoTMP);
+                                }
+                    }
+                        for (DiscoMusical discoMusical : discosTocar) {
+                            new AparatoAmbiental(discoMusical.getNombre(),discoMusical.getCanciones()).start();
+                        }
+
+                    opcion = input.readInteger();
+                    break;
+                case 3:
                     System.out.println("\nOperacion cancelada...");
-                    opcion = 2;
+                    opcion = 3;
                     break;
                     
                 default:
