@@ -1,9 +1,6 @@
 
 package vista.menus;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.Almacen;
 import modelo.usuarios.Vendedor;
 import vista.KeyboardInput;
@@ -31,21 +28,24 @@ public class MenuVendedor extends Menu{
         Vendedor empleadoVendedor = new Vendedor(nombreUsuario, numEmpleado);
         System.out.println("Hola " + empleadoVendedor.getNombre());
         while(opcion != 8){
-            System.out.print("\n**********MENU VENDEDOR*************\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Reproducir disco\n 8)Cerrar sesion\n\nOpción a elegir: ");
+            System.out.print("\n**********MENU VENDEDOR*************\n¿Que desea realizar?\n 1)Venta de un producto\n 2)Buscar producto\n 3)Tocar un disco\n 4)Ordenar inventario\n 5)Imprimir lista de productos\n 8)Cerrar sesion\n\nOpción a elegir: ");
             opcion = input.readInteger();
             switch(opcion){
                 case 1:
-                        empleadoVendedor.venderProducto(almacen, empleadoVendedor);
+                    empleadoVendedor.venderProducto(almacen, empleadoVendedor);
                     break;
                 case 2:
-                        empleadoVendedor.buscarProducto(almacen);
+                    empleadoVendedor.buscarProducto(almacen);
                     break;
-                    
                 case 3:
-                        empleadoVendedor.ponerCancion(almacen);
+                    empleadoVendedor.ponerCancion(almacen);
                     break;
                 case 4:
-                    break;                
+                    empleadoVendedor.ordenarInventario(almacen);
+                    break;  
+                case 5:
+                    empleadoVendedor.imprimirListaInventario(almacen);
+                    break;
                 case 8:
                     System.out.println("Adios "+empleadoVendedor.getNombre()+"\n");
                     break;

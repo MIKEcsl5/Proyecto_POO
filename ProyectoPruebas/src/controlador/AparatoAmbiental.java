@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +14,7 @@ import vista.KeyboardInput;
 
 /**
  *
- * @author roble
+ * @author Equipo D
  */
 public class AparatoAmbiental extends Thread{
     ArrayList<String> listaCanciones;
@@ -62,13 +61,12 @@ public class AparatoAmbiental extends Thread{
                     break;
             }
         }
-        
     }
     
     @Override
     public void run(){
         for (int i = 0; i < listaCanciones.size(); i++) {
-            int random = (int) (20000 * Math.random() + 1000);
+            int random = (int) (15000 * Math.random() + 1000);
                 System.out.println("\t\t\t\t\t\t"+getName()+": "+listaCanciones.get(i)+" Sonando...");
             try {
                 sleep(random);
@@ -77,6 +75,5 @@ public class AparatoAmbiental extends Thread{
             }
         }
         System.out.println("\t\t\t\t\t\tTermino Disco: "+getName());
-  
     }
 }

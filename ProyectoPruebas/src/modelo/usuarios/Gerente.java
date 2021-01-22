@@ -38,9 +38,6 @@ public class Gerente extends Vendedor  {
         almacen.agregarProducto();
     }
     
-    public void editarProducto (Almacen almacen){
-        
-    }
     public void crearUsuario(){
         int opcion = 0;
         KeyboardInput entrada = new KeyboardInput();

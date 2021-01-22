@@ -6,7 +6,6 @@
 package modelo.usuarios;
 
 import controlador.Venta;
-import java.util.Iterator;
 import modelo.Almacen;
 
 
@@ -32,13 +31,6 @@ public class Vendedor extends Acomodador {
     public void venderProducto(Almacen almacen, Empleado empleadoActual) {
         Venta venta_1 = new Venta();
         venta_1.venderProducto(almacen, empleadoActual);
-    }
-    
-    public void imprimirListaInventario(Almacen almacen){
-        Iterator iterador = almacen.inventario.iterator();
-        while(iterador.hasNext()){
-            System.out.println(iterador.next());
-        }
     }
 
     @Override

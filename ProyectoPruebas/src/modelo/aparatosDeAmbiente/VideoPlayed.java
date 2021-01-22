@@ -45,8 +45,7 @@ public class VideoPlayed {
                 default:
                     System.out.println("\nOpcion no valida");
                     break;
-            }
-                    
+            }        
         }
     }
     
