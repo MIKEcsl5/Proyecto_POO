@@ -87,6 +87,8 @@ public class Caja {
                 }
                 ticket.close();
             }catch(IOException ioe3){}
+            
+            
         } catch (IOException ex) {
             System.out.println("Error al crear ticket");
         }

@@ -21,4 +21,5 @@ public abstract class Menu {
      * @param almacen
      */
     public abstract void despliegue(String nombreUsuario, String numEmpleado, Almacen almacen);
+    
 }

@@ -6,7 +6,7 @@
 package modelo.usuarios;
 
 import controlador.*;
-import java.util.Iterator;
+import java.lang.reflect.InvocationTargetException;
 import modelo.Almacen;
 import modelo.productos.Producto;
 import vista.KeyboardInput;
@@ -37,14 +37,6 @@ public class Acomodador extends Empleado {
     public void ponerCancion(Almacen almacen) {
         AparatoAmbiental aparatoTMP = new AparatoAmbiental();
         aparatoTMP.elegirReproductor(almacen);
-    }
-    
-    public void imprimirListaInventario(Almacen almacen){
-        Iterator iterador = almacen.inventario.iterator();
-        while(iterador.hasNext()){
-            System.out.println("***************************");
-            System.out.println(iterador.next());
-        }
     }
     
     public void ordenarInventario(Almacen almacen){

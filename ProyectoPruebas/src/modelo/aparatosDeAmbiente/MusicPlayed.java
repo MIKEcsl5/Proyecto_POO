@@ -6,6 +6,7 @@
 package modelo.aparatosDeAmbiente;
 
 import controlador.AparatoAmbiental;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import modelo.Almacen;
 import modelo.productos.*;
@@ -60,7 +61,8 @@ public class MusicPlayed {
                 default:
                     System.out.println("\nOpcion no valida");
                     break;
-            }        
+            }
+                    
         }
     }
 }

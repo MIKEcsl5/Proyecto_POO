@@ -58,6 +58,7 @@ public class Producto {
         return precio;
     }
     
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + "\nSKU: " + sku + "\nPrecio: $" + precio;
