@@ -1,7 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Prueba descripcion
  */
 package vista;
 
@@ -17,13 +15,13 @@ import vista.menus.*;
 
 
 /**
- *
+ * Clase del menu principal del programa
  * @author Equipo D
  */
 public class MainMenu {
 
     /**
-     * Menu principal del prigrama
+     * Menu principal del programa
      * @param args 
      */
     public static void main(String[] args){

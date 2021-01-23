@@ -6,7 +6,7 @@ import modelo.usuarios.Gerente;
 import vista.KeyboardInput;
 
 /**
- *
+ * Con esta clase se creara el objeto que generara el menu personalizado para el inicio de sesion Gerente
  * @author Equipo D
  */
 public class MenuGerente extends Menu{

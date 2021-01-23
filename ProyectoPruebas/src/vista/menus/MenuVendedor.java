@@ -6,7 +6,7 @@ import modelo.usuarios.Vendedor;
 import vista.KeyboardInput;
 
 /**
- *
+ * Con esta clase se creara el objeto que generara el menu personalizado para el inicio de sesion Vendedor
  * @author Equipo D
  */
 public class MenuVendedor extends Menu{

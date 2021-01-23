@@ -6,7 +6,7 @@ import modelo.usuarios.Acomodador;
 import vista.KeyboardInput;
 
 /**
- *
+ * Con esta clase se creara el objeto que generara el menu personalizado para el inicio de sesion Acomodador
  * @author Equipo D
  */
 public class MenuAcomodador extends Menu{
