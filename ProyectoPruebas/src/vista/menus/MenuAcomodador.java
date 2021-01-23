@@ -19,6 +19,9 @@ public class MenuAcomodador extends Menu{
     
     /**
      * Este método despliega el menú específico de un usuario que accedió como acomodador.
+     * @param nombreUsuario Dato tipo String que representa el nombre del empleado con sesion iniciada actua
+     * @param numEmpleado Dato tipo String que representa el numero de empleado
+     * @param almacen Recibe almacen que contiene el inventario de los productos
      */
     @Override
     public void despliegue(String nombreUsuario, String numEmpleado, Almacen almacen){

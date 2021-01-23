@@ -23,8 +23,8 @@ import vista.menus.*;
 public class MainMenu {
 
     /**
-     * @param args the command line arguments
-     * 
+     * Menu principal del prigrama
+     * @param args 
      */
     public static void main(String[] args){
         int opcion = 0;

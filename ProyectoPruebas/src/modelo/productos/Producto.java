@@ -6,7 +6,7 @@
 package modelo.productos;
 
 /**
- *
+ * Clase Producto de la cual van a heredar las clases Disco y Audifonos
  * @author Equipo D
  */
 public class Producto {
@@ -31,33 +31,59 @@ public class Producto {
         this.sku = sku;
         this.precio = precio;
     }
-
-    //Métodos de información
     
+    /**
+     * Con este método obtenemos el nombre del producto
+     * @return Dato tipo String que representa el nombre del producto
+     */
     public String getNombre() {
         return nombre;
     }
     
+    /**
+     * Con este metodo obtenemos el SKU de identificación del producto
+     * @return Dato tipo String que representa el SKU de identificacion del producto
+     */
     public String getSku(){
         return sku;
     }
 
+    /**
+     * Este método modifica el atributo nombre
+     * @param nombre Dato tipo String que representa el nombre de un producto
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * Este metodo modifica el atributo SKU
+     * @param sku Dato tipo String que representa el SKU de identificacion del producto
+     */
     public void setSku(String sku) {
         this.sku = sku;
     }
 
+    /**
+     * Este método modifica el atributo Precio 
+     * @param precio Dato tipo entero que representa el precio de un producto
+     */
     public void setPrecio(int precio) {
         this.precio = precio;
     }
 
+    /**
+     * Con este método se obtiene el Precio de un producto
+     * @return Retorna dato tipo entero que representa el Precio de un producto
+     */
     public int getPrecio() {
         return precio;
     }
     
+    /**
+     * 
+     * @return Retorna los datos de un producto para que sean impresos
+     */
     @Override
     public String toString() {
         return "Nombre: " + nombre + "\nSKU: " + sku + "\nPrecio: $" + precio;

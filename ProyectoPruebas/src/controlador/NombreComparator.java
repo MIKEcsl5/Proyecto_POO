@@ -9,7 +9,7 @@ import java.util.Comparator;
 import modelo.productos.Producto;
 
 /**
- *
+ * Esta clase sirve para poder hacer un orden alfabetico de datos de tipo String
  * @author Equipo D
  */
 public class NombreComparator implements Comparator{

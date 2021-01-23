@@ -6,7 +6,7 @@
 package modelo.productos;
 
 /**
- *
+ * Clase Audifonos con la que se crean objetos que representan productos
  * @author Equipo D
  */
 public class Audifonos extends Producto{

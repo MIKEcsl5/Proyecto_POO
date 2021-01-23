@@ -10,19 +10,31 @@ import modelo.productos.*;
 import vista.KeyboardInput;
 
 /**
- *
+ * Clase donde se alojan los productos y los metodos relacionados a ellos
  * @author Equipo D
  */
 public class Almacen {
     public ArrayList<Producto> inventario;
     
+    /**
+     * Constructor vacio de la clase Almacen
+     */
     public Almacen() {
     }
 
+    /**
+     * 
+     * @param inventario Arreglo de objetos de tipo Productos y/o heredados 
+     */
     public Almacen(ArrayList<Producto> inventario) {
         this.inventario = inventario;
     }
     
+    /**
+     * Metodo donde se realiza la busqueda de un Objeto de tipo Producto y/o heredados ingresando nombre o SKU
+     * @param OP El dato de entrada tipo entero representa el tipo de operacion para la cual se hace invoca este metodo si recibe un 1 es porque este metodo va buscar un producto para ser vendido y debe ser removido del inventario; si recibe un 0 significa que este metodo fue invocado para solo consultar un producto
+     * @return Un objeto que representa el producto buscado en caso de haber sido encontrado o null en caso de que el producto no se encuentre 
+     */
     public Producto buscarProducto(int OP) {
         
         if(inventario.isEmpty()){
@@ -51,10 +63,11 @@ public class Almacen {
                 }
                 System.out.println("\nNo se ha encontrado el producto\n");
                 return null;  
-        }
+    }
        
-    
-    
+    /**
+     * Con este metodo se agregan Objetos al inventario de esta misma clase que representan los productos
+     */
     public void agregarProducto (){
         int opcion = 0, numCanciones, precio, cantidad; //String artista, int numCanciones, float duracion, String sku, int precio, String nombre
         String nombre, artista, sku, fechaPublicacion;
@@ -150,6 +163,9 @@ public class Almacen {
         }
     }
     
+    /**
+     * este metodo no es indispensable, su uso es inicializar un inventario creando objetos genericos para su demostración
+     */
     public void llenarInventario(){
         for (int i = 0; i < 10; i++)
             inventario.add(new DiscoMusical("M0"+i,250,"Disco de musica "+i,"Generico","2021"));

@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 import vista.KeyboardInput;
 
 /**
- *
+ * Clase Gerente que hereda de la Clase Vendedor y tiene mas metodos
  * @author Equipo D
  */
 public class Gerente extends Vendedor  {
@@ -25,19 +25,37 @@ public class Gerente extends Vendedor  {
         super.setPinAcceso("2390"); //PIN de accesos por defecto para un objeto de la clase Gerente
     }
     
+    /**
+     * 
+     * @param nombre Dato tipo String que representa el nombre del Acomodador
+     * @param numEmpleado Dato tipo String que representa el numero de empleado
+     */
     public Gerente(String nombre, String numEmpleado) {
         super(nombre, numEmpleado);
     }
 
+    /**
+     * Constructor sobrecargado
+     * @param nombre Dato tipo String que representa el nombre del Vendedor
+     * @param numEmpleado Dato tipo String que representa el numero de empleado
+     * @param pass Dato tipo String que representa la contraseña del empleado
+     */
     public Gerente(String nombre, String numEmpleado, String pass) {
         super(nombre, numEmpleado, pass);
         super.setPinAcceso(pass);
     }
     
+    /**
+     * 
+     * @param almacen Recibe almacen que contiene el inventario de los productos
+     */
     public void agregarProducto (Almacen almacen){
         almacen.agregarProducto();
     }
     
+    /**
+     * Con este metodo creamos un nuevo empleado 
+     */
     public void crearUsuario(){
         int opcion = 0;
         KeyboardInput entrada = new KeyboardInput();
@@ -130,7 +148,11 @@ public class Gerente extends Vendedor  {
                 break;
         }      
     }
-
+    
+    /**
+     * 
+     * @return Retorna el puesto que ejerce el empleado
+     */
     @Override
     public String toString() {
         return "Puesto: Gerente";

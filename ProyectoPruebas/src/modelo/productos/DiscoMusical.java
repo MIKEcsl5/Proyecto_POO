@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import vista.KeyboardInput;
 
 /**
- *
+ * Clase DiscoMusical con la que se crean objetos que representan productos
  * @author Equipo D
  */
 public class DiscoMusical extends Disco{
@@ -28,7 +28,7 @@ public class DiscoMusical extends Disco{
      * Este es el constructor completo de un álbum.
      * @param sku Representa el código numérico de almacén con el que puede ser ubicado por los empleados.
      * @param precio Representa una cantidad monetaria del costo del producto.
-     * @param nombre Representa una cadena de caracteres que componen el nombre del álbum..
+     * @param nombre Representa una cadena de caracteres que componen el nombre del álbum.
      * @param artista Representa una cadena de caracteres que componen el nombre del artista del álbum.
      * @param fechaPublicacion Representa una cadena de caracteres que componen la fecha de publicación del álbum.
      * @param numCanciones Representa la cantidad numérica de canciones incluídas en el álbum.
@@ -45,8 +45,10 @@ public class DiscoMusical extends Disco{
         setCancionesGenerico();
     }
      
-    //Métodos de información
-
+    /**
+     * Con este metodo se modifica el atributo fechaPublicacion
+     * @param fechaPublicacion Dato tipo String que representa la fecha de publicacion de un disco
+     */
     public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
@@ -64,6 +66,9 @@ public class DiscoMusical extends Disco{
         }
     }
     
+    /**
+     * Con este método se agregan canciones con titulos genericos para una muestra.
+     */
     public void setCancionesGenerico(){
         String cancion;
         for (int i = 0; i < 4; i++) {
@@ -71,6 +76,10 @@ public class DiscoMusical extends Disco{
         }
     }
     
+    /**
+     * Con este método se obtienen la lista de canciones del disco musical
+     * @return Arreglo con datos tipo string que representa las canciones que contiene el disco musical
+     */
     public ArrayList<String> getCanciones(){
         return listaCanciones;
     }

@@ -1,7 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Paquete controlador
  */
 package controlador;
 
@@ -13,24 +11,40 @@ import modelo.aparatosDeAmbiente.*;
 import vista.KeyboardInput;
 
 /**
- *
+ * Clase AparatoAmbiental que genera hilos para reproducir varios discos de musica a la vez
  * @author Equipo D
  */
 public class AparatoAmbiental extends Thread{
     ArrayList<String> listaCanciones;
     
+    /**
+     * Constructor vacio de la clase AparatoAmbiental
+     */
     public AparatoAmbiental() {
     }
     
+    /**
+     * 
+     * @param nombre Recibe dato tipo String que sera el nombre del hilo
+     */
     public AparatoAmbiental(String nombre) {
         super(nombre);
     }
     
+    /**
+     * 
+     * @param nombre Recibe dato tipo String que sera el nombre del hilo
+     * @param listaCanciones Recibe un arreglo de datos de tipo String que representa la lista de canciones que reproducira el aparato ambiental
+     */
     public AparatoAmbiental(String nombre, ArrayList<String> listaCanciones) {
         super(nombre);
         this.listaCanciones = listaCanciones;
     }
     
+    /**
+     * Metodo donde se elige que tipo de reproducto se desea utilizar
+     * @param almacen Recibe un objeto de la clase Almacen que representa el inventario donde se extraen los productos
+     */
     public void elegirReproductor(Almacen almacen) {
         KeyboardInput input = new KeyboardInput();
         int opcion = 0;
@@ -63,10 +77,13 @@ public class AparatoAmbiental extends Thread{
         }
     }
     
+    /**
+     * Metodo run donde se crea el hilo y se reproducen los discos
+     */
     @Override
     public void run(){
         for (int i = 0; i < listaCanciones.size(); i++) {
-            int random = (int) (15000 * Math.random() + 1000);
+            int random = (int) (17000 * Math.random() + 1000);
                 System.out.println("\t\t\t\t\t\t"+getName()+": "+listaCanciones.get(i)+" Sonando...");
             try {
                 sleep(random);

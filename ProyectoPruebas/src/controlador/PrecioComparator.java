@@ -9,7 +9,7 @@ import java.util.Comparator;
 import modelo.productos.Producto;
 
 /**
- *
+ * Esta clase sirve para poder hacer un orden de menor a mayor de datos enteros
  * @author Equipo D
  */
 public class PrecioComparator implements Comparator{
