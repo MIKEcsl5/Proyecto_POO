@@ -33,12 +33,10 @@ public class MainMenu {
         File archivoUsuario = null;
         String pass, cargoDeUsuarioActual = null, nombreUsuario = null, numEmpleado;
         
-        System.out.println("Prueba de commit");
         while(opcion != 2){
             System.out.println("******************BIENVENIDO******************\n 1)Iniciar sesion\n 2)Salir\n\nIngrese opción:");
             opcion = input.readInteger();
             switch(opcion){
-                
                 case 1:
                     System.out.println("\nIngrese nombre de usuario: ");
                     nombreUsuario = input.readString();
