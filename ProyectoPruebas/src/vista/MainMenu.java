@@ -3,12 +3,12 @@
  */
 package vista;
 
+import modelo.almacen.Almacen;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import modelo.*; //usando " .* " se importa todo el paquete
 import modelo.productos.*;
 import vista.menus.*;
 

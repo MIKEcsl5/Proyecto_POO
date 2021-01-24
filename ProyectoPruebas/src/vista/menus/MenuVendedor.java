@@ -1,7 +1,7 @@
 
 package vista.menus;
 
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.usuarios.Vendedor;
 import vista.KeyboardInput;
 
@@ -15,7 +15,6 @@ public class MenuVendedor extends Menu{
      * Constructor vacío de la clase.
      */
     public MenuVendedor() {
-        
     }
     
     /**

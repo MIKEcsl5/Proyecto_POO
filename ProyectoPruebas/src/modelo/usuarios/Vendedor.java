@@ -6,7 +6,7 @@
 package modelo.usuarios;
 
 import controlador.Venta;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 
 
 /**

@@ -7,7 +7,7 @@ package modelo.aparatosDeAmbiente;
 
 import controlador.AparatoAmbiental;
 import java.util.ArrayList;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
 

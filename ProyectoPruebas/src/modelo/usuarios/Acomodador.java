@@ -7,7 +7,7 @@ package modelo.usuarios;
 
 import controlador.*;
 import java.util.Iterator;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.productos.Producto;
 import vista.KeyboardInput;
 

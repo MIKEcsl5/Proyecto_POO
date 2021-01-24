@@ -26,9 +26,7 @@ public class Audifonos extends Producto{
     public Audifonos(String sku, int precio, String nombre) {
         super(sku, precio, nombre);
     }
-
-    //Métodos de información  
-
+  
     @Override
     public String toString() {
         return super.toString();

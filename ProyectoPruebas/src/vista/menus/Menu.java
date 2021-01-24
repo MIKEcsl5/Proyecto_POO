@@ -1,7 +1,7 @@
 
 package vista.menus;
 
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 
 /**
  * Esta clase supone un menú generico de entrada al usuario donde se presenta el acceso de un empleado,

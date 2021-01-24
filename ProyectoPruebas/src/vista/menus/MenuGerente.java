@@ -1,7 +1,7 @@
 
 package vista.menus;
 
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.usuarios.Gerente;
 import vista.KeyboardInput;
 
@@ -14,8 +14,7 @@ public class MenuGerente extends Menu{
     /**
      * Constructor vacío de la clase.
      */
-    public MenuGerente() {
-        
+    public MenuGerente() {   
     }
     
     /**

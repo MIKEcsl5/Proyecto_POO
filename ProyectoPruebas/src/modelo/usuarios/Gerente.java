@@ -5,7 +5,7 @@
  */
 package modelo.usuarios;
 
-import modelo.*;
+import modelo.almacen.Almacen;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

@@ -6,7 +6,7 @@ package controlador;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.aparatosDeAmbiente.*;
 import vista.KeyboardInput;
 

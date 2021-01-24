@@ -1,7 +1,7 @@
 
 package vista.menus;
 
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.usuarios.Acomodador;
 import vista.KeyboardInput;
 

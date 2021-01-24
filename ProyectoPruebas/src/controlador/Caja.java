@@ -15,7 +15,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.productos.Producto;
 import modelo.usuarios.Empleado;
 import vista.KeyboardInput;

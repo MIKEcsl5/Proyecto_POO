@@ -8,7 +8,7 @@ package controlador;
 import java.util.ArrayList;
 import vista.KeyboardInput;
 import modelo.productos.*;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.usuarios.Empleado;
 
 /**

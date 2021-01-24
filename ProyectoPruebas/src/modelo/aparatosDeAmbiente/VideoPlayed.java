@@ -9,7 +9,7 @@ import controlador.AparatoAmbiental;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Almacen;
+import modelo.almacen.Almacen;
 import modelo.productos.*;
 import vista.KeyboardInput;
 
@@ -19,6 +19,9 @@ import vista.KeyboardInput;
  */
 public class VideoPlayed {
 
+    /**
+     * Constructor vacio de la clase VideoPlayed
+     */
     public VideoPlayed() {
     }
     
