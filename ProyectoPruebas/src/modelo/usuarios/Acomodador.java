@@ -92,9 +92,6 @@ public class Acomodador extends Empleado {
             
             case 2:
                 almacen.inventario.sort(new PrecioComparator());
-                for(Producto tmpProducto : almacen.inventario){
-                    System.out.println(tmpProducto.getNombre()+tmpProducto.getPrecio());
-                }
                 break;
         }
     }

@@ -19,7 +19,7 @@ public class PrecioComparator implements Comparator{
         int resultado;
         Producto tmpProducto1 = (Producto) producto1;
         Producto tmpProducto2 = (Producto) producto2;
-        
+        System.out.println(tmpProducto1.getNombre()+": "+tmpProducto1.getPrecio());
         if (tmpProducto1.getPrecio() < tmpProducto2.getPrecio()){
             resultado = -1;
         }else if(tmpProducto1.getPrecio() > tmpProducto2.getPrecio()){
